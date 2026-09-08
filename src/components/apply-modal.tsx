@@ -5,6 +5,9 @@ import { useEffect, useId, useMemo, useState } from "react";
 import { useApply } from "@/components/apply-context";
 import { Stamp } from "@/components/brand";
 import { quiz } from "@/lib/content";
+import { fetchSheetLocations } from "@/lib/location-parse";
+import { googleSheetsCsvUrl } from "@/lib/public-config";
+import { submitFranchiseApplication } from "@/lib/telegram";
 import type { BudgetBand, ExperienceLevel, FranchiseLocation } from "@/lib/types";
 
 const EXPERIENCE: ExperienceLevel[] = ["yes", "no", "partial"];
@@ -15,10 +18,27 @@ type Status = "idle" | "submitting" | "success" | "queued" | "error";
 export function ApplyModal({ cities }: { cities: FranchiseLocation[] }) {
   const { open, city, session, closeApply } = useApply();
   const titleId = useId();
+  const [liveCities, setLiveCities] = useState(cities);
   const cityOptions = useMemo(
-    () => Array.from(new Set(cities.map((item) => item.city))),
-    [cities],
+    () => Array.from(new Set(liveCities.map((item) => item.city))),
+    [liveCities],
   );
+
+  useEffect(() => {
+    let cancelled = false;
+    const sheetUrl = googleSheetsCsvUrl();
+    if (!sheetUrl) {
+      return;
+    }
+    fetchSheetLocations(sheetUrl).then((payload) => {
+      if (!cancelled && payload && payload.locations.length > 0) {
+        setLiveCities(payload.locations);
+      }
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   useEffect(() => {
     if (!open) {
@@ -109,24 +129,15 @@ function QuizForm({
     setStatus("submitting");
     setError("");
     try {
-      const response = await fetch("/api/apply", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          city: form.city,
-          experience: form.experience,
-          budget: form.budget,
-          name: form.name,
-          contact: form.contact,
-          company: form.company,
-        }),
+      const json = await submitFranchiseApplication({
+        city: form.city,
+        experience: form.experience,
+        budget: form.budget,
+        name: form.name,
+        contact: form.contact,
+        company: form.company,
       });
-      const json = (await response.json()) as {
-        ok?: boolean;
-        delivered?: boolean;
-        error?: string;
-      };
-      if (!response.ok || !json.ok) {
+      if (!json.ok) {
         setStatus("error");
         setError(json.error || quiz.error);
         return;

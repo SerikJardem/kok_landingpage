@@ -11,8 +11,6 @@ import { Marquee } from "@/components/marquee";
 import { Phygital } from "@/components/phygital";
 import { loadLocations } from "@/lib/locations";
 
-export const revalidate = 60;
-
 export default async function Home() {
   const { locations, source } = await loadLocations();
 

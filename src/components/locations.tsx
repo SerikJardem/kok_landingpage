@@ -1,8 +1,11 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useApply } from "@/components/apply-context";
 import { Stamp } from "@/components/brand";
 import { territories } from "@/lib/content";
+import { fetchSheetLocations } from "@/lib/location-parse";
+import { googleSheetsCsvUrl } from "@/lib/public-config";
 import type { FranchiseLocation, LocationSource, LocationStatus } from "@/lib/types";
 
 const statusTone: Record<LocationStatus, string> = {
@@ -19,6 +22,25 @@ export function Locations({
   source: LocationSource;
 }) {
   const { openApply } = useApply();
+  const [rows, setRows] = useState(locations);
+  const [liveSource, setLiveSource] = useState(source);
+
+  useEffect(() => {
+    let cancelled = false;
+    const sheetUrl = googleSheetsCsvUrl();
+    if (!sheetUrl) {
+      return;
+    }
+    fetchSheetLocations(sheetUrl).then((payload) => {
+      if (!cancelled && payload && payload.locations.length > 0) {
+        setRows(payload.locations);
+        setLiveSource(payload.source);
+      }
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   return (
     <section id="locations" className="bg-forest px-4 py-20 text-cream sm:px-6 sm:py-28">
@@ -32,7 +54,7 @@ export function Locations({
             <p className="mt-4 max-w-xl text-cream/80">{territories.deck}</p>
           </div>
           <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-sage">
-            {source === "sheet" ? territories.sourceSheet : territories.sourceFallback}
+            {liveSource === "sheet" ? territories.sourceSheet : territories.sourceFallback}
           </p>
         </div>
 
@@ -44,7 +66,7 @@ export function Locations({
             <span>Запуск</span>
             <span></span>
           </div>
-          {locations.map((location) => (
+          {rows.map((location) => (
             <article
               key={`${location.city}-${location.region}`}
               className="grid gap-3 border-b border-cream/15 px-5 py-5 md:grid-cols-[1.2fr_1fr_0.9fr_0.9fr_auto] md:items-center"
