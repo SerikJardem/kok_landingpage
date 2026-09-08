@@ -16,14 +16,22 @@ export function Hero() {
   return (
     <section id="top" className="relative bg-ink px-3 pb-8 pt-20 sm:px-5 sm:pb-10 sm:pt-24">
       <div className="relative mx-auto min-h-[calc(100svh-6rem)] max-w-6xl overflow-hidden border-[1.5px] border-lime p-3 sm:p-4">
-        <div className="relative flex min-h-[calc(100svh-8.5rem)] flex-col border border-lime/80 px-4 py-5 sm:px-8 sm:py-7">
-          <div className="relative z-20 flex items-start justify-between gap-6">
-            <p className="font-display text-[11px] font-bold uppercase tracking-[0.28em] text-lime">
-              KŌK
-            </p>
-            <p className="max-w-[16rem] text-right text-[11px] leading-relaxed text-cream/75 sm:max-w-xs sm:text-sm">
-              {hero.cornerTop}
-            </p>
+        <div className="relative flex min-h-[calc(100svh-8.5rem)] flex-col overflow-hidden border border-lime/80 px-4 py-5 sm:px-8 sm:py-7">
+          <div
+            className="pointer-events-none absolute -right-[18%] -top-[28%] z-0 h-[58vw] max-h-[420px] w-[58vw] max-w-[420px] rounded-full bg-lime sm:-right-[12%] sm:-top-[22%]"
+            aria-hidden
+          />
+          <div
+            className="pointer-events-none absolute -bottom-[32%] -left-[16%] z-0 h-[64vw] max-h-[460px] w-[64vw] max-w-[460px] rounded-full bg-lime sm:-bottom-[28%] sm:-left-[10%]"
+            aria-hidden
+          />
+
+          <div className="relative z-20">
+            <ul className="space-y-1 font-display text-[11px] font-bold uppercase tracking-[0.18em] text-cream sm:text-xs">
+              {hero.values.map((value) => (
+                <li key={value}>{value}</li>
+              ))}
+            </ul>
           </div>
 
           <div className="relative z-10 flex flex-1 flex-col justify-center py-10 sm:py-14">
@@ -66,18 +74,20 @@ export function Hero() {
               <p className="font-display text-base font-bold lowercase tracking-[0.08em] text-cream sm:text-xl">
                 {hero.mantra}
               </p>
-              <div className="mt-3 flex items-center gap-3 text-lime">
-                <p className="font-display text-[10px] font-bold uppercase tracking-[0.22em]">
-                  Fast Casual
-                </p>
-                <WaveTriple className="h-5 w-16" />
-              </div>
-              <p className="mt-1 font-display text-[10px] font-bold uppercase tracking-[0.22em] text-lime">
+              <p className="mt-3 font-display text-[10px] font-bold uppercase tracking-[0.22em] text-lime">
+                Fast Casual
+              </p>
+              <WaveTriple className="mt-2 h-5 w-16 text-lime" />
+              <p className="mt-2 font-display text-[10px] font-bold uppercase tracking-[0.22em] text-lime">
                 Urban Nomad Food
               </p>
               <h1 className="sr-only">{hero.title}</h1>
-              <p className="mt-5 max-w-md text-sm leading-relaxed text-cream/70 sm:text-base">
-                {hero.title}. {hero.deck}
+              <p className="mt-5 max-w-lg text-sm leading-relaxed text-cream/70 sm:text-base">
+                {hero.deckLines.map((line) => (
+                  <span key={line} className="block">
+                    {line}
+                  </span>
+                ))}
               </p>
               <button
                 type="button"
@@ -89,21 +99,11 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="relative z-20 mt-auto flex items-end justify-between gap-6 pb-2">
-            <ul className="space-y-1 font-display text-[11px] font-bold uppercase tracking-[0.18em] text-cream/80 sm:text-xs">
-              {hero.values.map((value) => (
-                <li key={value}>{value}</li>
-              ))}
-            </ul>
-            <p className="max-w-[15rem] text-right text-[11px] leading-relaxed text-cream/65 sm:max-w-xs sm:text-sm">
+          <div className="relative z-20 mt-auto flex justify-end pb-2">
+            <p className="max-w-[15rem] text-right text-[11px] leading-relaxed text-cream/80 sm:max-w-xs sm:text-sm">
               {hero.cornerBottom}
             </p>
           </div>
-
-          <div
-            className="pointer-events-none absolute bottom-[-18%] left-1/2 z-0 h-[42vw] max-h-[280px] w-[42vw] max-w-[280px] -translate-x-1/2 rounded-full bg-lime"
-            aria-hidden
-          />
         </div>
       </div>
     </section>

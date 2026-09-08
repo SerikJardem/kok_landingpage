@@ -14,7 +14,13 @@ export function Footer() {
         </div>
         <div className="text-right">
           <Zigzag className="ml-auto mb-3 h-4 w-32 text-terra" />
-          <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-cream/40">
+          <a
+            href={`mailto:${footer.email}`}
+            className="block font-mono text-[12px] lowercase tracking-[0.08em] text-lime hover:text-cream"
+          >
+            {footer.email}
+          </a>
+          <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.16em] text-cream/40">
             {footer.rights}
           </p>
         </div>
