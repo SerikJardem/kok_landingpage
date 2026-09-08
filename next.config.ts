@@ -1,11 +1,17 @@
 import type { NextConfig } from "next";
 
+const pagesBasePath = process.env.PAGES_BASE_PATH || "";
+
 const nextConfig: NextConfig = {
   output: "export",
-  images: {
-    unoptimized: true,
+  basePath: pagesBasePath || undefined,
+  env: {
+    NEXT_PUBLIC_PAGES_BASE_PATH: pagesBasePath,
   },
-  basePath: process.env.PAGES_BASE_PATH || undefined,
+  images: {
+    loader: "custom",
+    loaderFile: "./src/lib/image-loader.ts",
+  },
 };
 
 export default nextConfig;
