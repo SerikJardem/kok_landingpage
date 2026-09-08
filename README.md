@@ -31,4 +31,15 @@ Repository Actions secrets / variables used by `.github/workflows/deploy.yml`:
 
 ## GitHub Pages
 
-Pushes to `main` build `output: "export"` and deploy through GitHub Actions. Manual runs are available from the Actions tab (`workflow_dispatch`).
+This repository currently publishes from the branch root (not GitHub Actions), so the static export is committed at the repo root: `index.html`, `_next/`, `brand/`.
+
+Rebuild and refresh those files with:
+
+```bash
+npm run build:pages
+```
+
+That uses `basePath` `/kok_landingpage` so assets load at https://serikjardem.github.io/kok_landingpage/. `.nojekyll` tells GitHub not to run Jekyll, which would otherwise hide `_next` and fall back to this README.
+
+If you later switch Pages to **Source: GitHub Actions**, `.github/workflows/deploy.yml` will build `out/` on each push to `main`.
+

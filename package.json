@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:pages": "PAGES_BASE_PATH=/kok_landingpage next build && node scripts/sync-pages-root.mjs",
     "start": "next start",
     "lint": "eslint"
   },
