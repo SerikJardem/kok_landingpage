@@ -18,11 +18,11 @@ export function Hero() {
       <div className="relative mx-auto min-h-[calc(100svh-6rem)] max-w-6xl overflow-hidden border-[1.5px] border-lime p-3 sm:p-4">
         <div className="relative flex min-h-[calc(100svh-8.5rem)] flex-col overflow-hidden border border-lime/80 px-4 py-5 sm:px-8 sm:py-7">
           <div
-            className="pointer-events-none absolute -right-[18%] -top-[28%] z-0 h-[58vw] max-h-[420px] w-[58vw] max-w-[420px] rounded-full bg-lime sm:-right-[12%] sm:-top-[22%]"
+            className="pointer-events-none absolute right-0 top-0 z-0 h-20 w-20 translate-x-[45%] -translate-y-[45%] rounded-full bg-lime sm:h-24 sm:w-24"
             aria-hidden
           />
           <div
-            className="pointer-events-none absolute -bottom-[32%] -left-[16%] z-0 h-[64vw] max-h-[460px] w-[64vw] max-w-[460px] rounded-full bg-lime sm:-bottom-[28%] sm:-left-[10%]"
+            className="pointer-events-none absolute bottom-0 left-0 z-0 h-32 w-32 -translate-x-[30%] translate-y-[40%] rounded-full bg-lime sm:h-40 sm:w-40"
             aria-hidden
           />
 
@@ -62,7 +62,7 @@ export function Hero() {
 
             <motion.div
               style={{ y: markY, scale: markScale }}
-              className="relative z-10 mx-auto w-[min(92%,720px)] text-lime"
+              className="relative z-20 mx-auto w-[min(92%,720px)] text-lime"
             >
               <Wordmark className="h-auto w-full drop-shadow-[0_0_28px_rgba(184,229,46,0.18)]" />
               <span className="absolute -right-1 -top-1 font-display text-sm font-bold text-lime sm:right-2 sm:top-2 sm:text-base">
@@ -70,21 +70,23 @@ export function Hero() {
               </span>
             </motion.div>
 
-            <div className="relative z-10 mx-auto mt-5 flex max-w-xl flex-col items-center text-center">
+            <div className="relative z-10 mx-auto mt-5 flex w-full max-w-2xl flex-col items-start">
               <p className="font-display text-base font-bold lowercase tracking-[0.08em] text-cream sm:text-xl">
                 {hero.mantra}
               </p>
-              <p className="mt-3 font-display text-[10px] font-bold uppercase tracking-[0.22em] text-lime">
-                Fast Casual
-              </p>
-              <WaveTriple className="mt-2 h-5 w-16 text-lime" />
-              <p className="mt-2 font-display text-[10px] font-bold uppercase tracking-[0.22em] text-lime">
+              <div className="mt-3 flex items-center gap-3 text-lime">
+                <p className="font-display text-[10px] font-bold uppercase tracking-[0.22em]">
+                  Fast Casual
+                </p>
+                <WaveTriple className="h-5 w-16" />
+              </div>
+              <p className="mt-1 font-display text-[10px] font-bold uppercase tracking-[0.22em] text-lime">
                 Urban Nomad Food
               </p>
               <h1 className="sr-only">{hero.title}</h1>
-              <p className="mt-5 max-w-lg text-sm leading-relaxed text-cream/70 sm:text-base">
+              <p className="mt-5 w-full text-left text-sm leading-relaxed text-cream/70 sm:text-base">
                 {hero.deckLines.map((line) => (
-                  <span key={line} className="block">
+                  <span key={line} className="block sm:whitespace-nowrap">
                     {line}
                   </span>
                 ))}
@@ -92,7 +94,7 @@ export function Hero() {
               <button
                 type="button"
                 onClick={() => openApply()}
-                className="mt-7 bg-lime px-7 py-3 font-display text-[12px] font-bold uppercase tracking-[0.18em] text-ink transition hover:bg-cream"
+                className="mt-7 self-center bg-lime px-7 py-3 font-display text-[12px] font-bold uppercase tracking-[0.18em] text-ink transition hover:bg-cream"
               >
                 {hero.ctaApply}
               </button>
