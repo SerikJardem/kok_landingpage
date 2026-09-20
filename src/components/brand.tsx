@@ -182,10 +182,11 @@ export function Wordmark({
   className?: string;
   title?: string;
 }) {
+  const base = process.env.NEXT_PUBLIC_PAGES_BASE_PATH || "";
   return (
-    // eslint-disable-next-line @next/next/no-img-element -- static export + cream-keyed PNG mark
+    // eslint-disable-next-line @next/next/no-img-element -- cream-keyed PNG; basePath applied manually
     <img
-      src="/brand/kok-wordmark-mark.png"
+      src={`${base}/brand/kok-wordmark-mark.png`}
       alt={title}
       className={`object-contain object-left ${className}`}
       width={1020}
