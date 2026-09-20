@@ -12,18 +12,12 @@ import {
 } from "@/components/brand";
 import { hero } from "@/lib/content";
 
-const toneChips = hero.cornerBottom
-  .split(".")
-  .map((chip) => chip.trim())
-  .filter(Boolean);
-
 export function Hero() {
   const { openApply } = useApply();
 
   return (
     <section id="top" className="relative overflow-hidden bg-paper px-4 pb-16 pt-24 sm:px-6 sm:pb-20 sm:pt-28">
       <SparkBurst className="pointer-events-none absolute right-[7%] top-24 h-10 w-10 text-ochre sm:h-14 sm:w-14" />
-      <SparkBurst className="pointer-events-none absolute left-[42%] top-36 hidden h-7 w-7 text-leaf sm:block" />
       <LeafSprig className="pointer-events-none absolute left-[5%] top-28 h-16 w-12 rotate-[-18deg] text-leaf sm:h-20 sm:w-16" />
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
@@ -32,23 +26,31 @@ export function Hero() {
           <p className="mt-3 font-display text-xl font-bold text-ink sm:text-2xl">
             {hero.tagline}
           </p>
-          <h1 className="mt-8 max-w-xl font-display text-3xl font-black leading-[1.05] tracking-[-0.03em] text-ink sm:text-5xl">
-            {hero.kazakh}
-          </h1>
-          <p className="mt-3 text-sm text-ink/70 sm:text-base">{hero.kazakhSub}</p>
-          <div className="mt-6 flex items-center justify-start gap-3 text-leaf">
+          <div className="mt-5 flex items-center justify-start gap-3 text-leaf">
             <p className="font-display text-[10px] font-bold uppercase tracking-[0.22em]">
               {hero.eyebrow}
             </p>
             <WaveTriple className="h-5 w-20 shrink-0" />
           </div>
-          <p className="mt-6 max-w-xl text-left text-sm leading-relaxed text-ink/80 sm:text-base">
-            {hero.deckLines.map((line) => (
-              <span key={line} className="block">
-                {line}
-              </span>
-            ))}
+          <h1 className="mt-6 max-w-xl font-display text-3xl font-black leading-[1.05] tracking-[-0.03em] text-ink sm:text-5xl">
+            {hero.title}
+          </h1>
+          <p className="mt-4 max-w-xl text-sm leading-relaxed text-ink/75 sm:text-base">
+            {hero.deck}
           </p>
+          <ul className="mt-8 max-w-xl space-y-4">
+            {hero.hooks.map((hook) => (
+              <li key={hook.label} className="border-l-4 border-leaf pl-4">
+                <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-leaf">
+                  {hook.label}
+                </p>
+                <p className="mt-1 font-display text-base font-bold leading-snug text-ink sm:text-lg">
+                  {hook.point}
+                </p>
+                <p className="mt-1 text-sm text-ink/65">{hook.gain}</p>
+              </li>
+            ))}
+          </ul>
           <button
             type="button"
             onClick={() => openApply()}
@@ -56,20 +58,6 @@ export function Hero() {
           >
             {hero.ctaApply}
           </button>
-          <ul className="mt-8 flex flex-wrap gap-3 font-display text-[11px] font-bold uppercase tracking-[0.16em] text-ink/80">
-            {hero.values.map((value) => (
-              <li key={value} className="border border-leaf px-3 py-1 text-leaf">
-                {value}
-              </li>
-            ))}
-          </ul>
-          <ul className="mt-4 flex flex-wrap gap-2 font-display text-[10px] font-bold uppercase tracking-[0.14em] text-ink">
-            {toneChips.map((chip) => (
-              <li key={chip} className="bg-ochre px-2.5 py-1">
-                {chip}
-              </li>
-            ))}
-          </ul>
         </div>
 
         <div className="relative mx-auto w-full max-w-md lg:max-w-none">
