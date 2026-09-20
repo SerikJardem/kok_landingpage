@@ -1,110 +1,101 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
 import { useApply } from "@/components/apply-context";
-import { WaveTriple, Wordmark } from "@/components/brand";
+import {
+  BrushStroke,
+  LeafSprig,
+  SparkBurst,
+  StickerSeal,
+  WaveTriple,
+  Wordmark,
+} from "@/components/brand";
 import { hero } from "@/lib/content";
+
+const toneChips = hero.cornerBottom
+  .split(".")
+  .map((chip) => chip.trim())
+  .filter(Boolean);
 
 export function Hero() {
   const { openApply } = useApply();
-  const { scrollY } = useScroll();
-  const markY = useTransform(scrollY, [0, 420], [0, -40]);
-  const markScale = useTransform(scrollY, [0, 420], [1, 0.92]);
-  const photoY = useTransform(scrollY, [0, 420], [0, 28]);
 
   return (
-    <section id="top" className="relative bg-ink px-3 pb-8 pt-20 sm:px-5 sm:pb-10 sm:pt-24">
-      <div className="relative mx-auto min-h-[calc(100svh-6rem)] max-w-6xl overflow-hidden border-[1.5px] border-lime p-3 sm:p-4">
-        <div className="relative flex min-h-[calc(100svh-8.5rem)] flex-col overflow-hidden border border-lime/80 px-4 py-5 sm:px-8 sm:py-7">
-          <div
-            className="pointer-events-none absolute right-0 top-0 z-0 h-20 w-20 translate-x-[45%] -translate-y-[45%] rounded-full bg-lime sm:h-24 sm:w-24"
-            aria-hidden
-          />
-          <div
-            className="pointer-events-none absolute bottom-0 left-0 z-0 h-32 w-32 -translate-x-[30%] translate-y-[40%] rounded-full bg-lime sm:h-40 sm:w-40"
-            aria-hidden
-          />
+    <section id="top" className="relative overflow-hidden bg-paper px-4 pb-16 pt-24 sm:px-6 sm:pb-20 sm:pt-28">
+      <SparkBurst className="pointer-events-none absolute right-[7%] top-24 h-10 w-10 text-ochre sm:h-14 sm:w-14" />
+      <SparkBurst className="pointer-events-none absolute left-[42%] top-36 hidden h-7 w-7 text-leaf sm:block" />
+      <LeafSprig className="pointer-events-none absolute left-[5%] top-28 h-16 w-12 rotate-[-18deg] text-leaf sm:h-20 sm:w-16" />
 
-          <div className="relative z-20">
-            <ul className="space-y-1 font-display text-[11px] font-bold uppercase tracking-[0.18em] text-cream sm:text-xs">
-              {hero.values.map((value) => (
-                <li key={value}>{value}</li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="relative z-10 flex flex-1 flex-col justify-center py-10 sm:py-14">
-            <motion.div style={{ y: photoY }} className="pointer-events-none absolute inset-x-0 top-[8%] z-0 flex justify-center gap-3 sm:top-[4%] sm:gap-6">
-              <div className="relative h-[42vw] max-h-[340px] w-[30vw] max-w-[240px] -rotate-2 overflow-hidden border border-lime/40 sm:h-[360px] sm:w-[250px]">
-                <Image
-                  src="/brand/kok-street-male.png"
-                  alt="KŌK street style — мужской портрет"
-                  fill
-                  priority
-                  className="object-cover object-[center_18%]"
-                  sizes="(max-width: 768px) 30vw, 250px"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-ink/10" />
-              </div>
-              <div className="relative mt-8 h-[42vw] max-h-[340px] w-[30vw] max-w-[240px] rotate-2 overflow-hidden border border-lime/40 sm:mt-12 sm:h-[360px] sm:w-[250px]">
-                <Image
-                  src="/brand/kok-street-female.png"
-                  alt="KŌK street style — женский портрет"
-                  fill
-                  priority
-                  className="object-cover object-[center_20%]"
-                  sizes="(max-width: 768px) 30vw, 250px"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-ink/10" />
-              </div>
-            </motion.div>
-
-            <motion.div
-              style={{ y: markY, scale: markScale }}
-              className="relative z-20 mx-auto w-[min(92%,720px)] text-lime"
-            >
-              <Wordmark className="h-auto w-full drop-shadow-[0_0_28px_rgba(184,229,46,0.18)]" />
-              <span className="absolute -right-1 -top-1 font-display text-sm font-bold text-lime sm:right-2 sm:top-2 sm:text-base">
-                {hero.year}
-              </span>
-            </motion.div>
-
-            <div className="relative z-10 mx-auto mt-5 flex w-full max-w-2xl flex-col items-start">
-              <p className="font-display text-base font-bold lowercase tracking-[0.08em] text-cream sm:text-xl">
-                {hero.mantra}
-              </p>
-              <div className="mt-3 flex items-center gap-3 text-lime">
-                <p className="font-display text-[10px] font-bold uppercase tracking-[0.22em]">
-                  Fast Casual
-                </p>
-                <WaveTriple className="h-5 w-16" />
-              </div>
-              <p className="mt-1 font-display text-[10px] font-bold uppercase tracking-[0.22em] text-lime">
-                Urban Nomad Food
-              </p>
-              <h1 className="sr-only">{hero.title}</h1>
-              <p className="mt-5 w-full text-left text-sm leading-relaxed text-cream/70 sm:text-base">
-                {hero.deckLines.map((line) => (
-                  <span key={line} className="block sm:whitespace-nowrap">
-                    {line}
-                  </span>
-                ))}
-              </p>
-              <button
-                type="button"
-                onClick={() => openApply()}
-                className="mt-7 self-center bg-lime px-7 py-3 font-display text-[12px] font-bold uppercase tracking-[0.18em] text-ink transition hover:bg-cream"
-              >
-                {hero.ctaApply}
-              </button>
-            </div>
-          </div>
-
-          <div className="relative z-20 mt-auto flex justify-end pb-2">
-            <p className="max-w-[15rem] text-right text-[11px] leading-relaxed text-cream/80 sm:max-w-xs sm:text-sm">
-              {hero.cornerBottom}
+      <div className="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+        <div>
+          <Wordmark className="h-auto w-[min(100%,34rem)] text-leaf" />
+          <p className="mt-3 font-display text-xl font-bold text-ink sm:text-2xl">
+            {hero.tagline}
+          </p>
+          <h1 className="mt-8 max-w-xl font-display text-3xl font-black leading-[1.05] tracking-[-0.03em] text-ink sm:text-5xl">
+            {hero.kazakh}
+          </h1>
+          <p className="mt-3 text-sm text-ink/70 sm:text-base">{hero.kazakhSub}</p>
+          <div className="mt-6 flex items-center justify-start gap-3 text-leaf">
+            <p className="font-display text-[10px] font-bold uppercase tracking-[0.22em]">
+              {hero.eyebrow}
             </p>
+            <WaveTriple className="h-5 w-20 shrink-0" />
+          </div>
+          <p className="mt-6 max-w-xl text-left text-sm leading-relaxed text-ink/80 sm:text-base">
+            {hero.deckLines.map((line) => (
+              <span key={line} className="block">
+                {line}
+              </span>
+            ))}
+          </p>
+          <button
+            type="button"
+            onClick={() => openApply()}
+            className="mt-8 bg-leaf px-7 py-3 font-display text-[12px] font-bold uppercase tracking-[0.18em] text-cream transition hover:bg-ink"
+          >
+            {hero.ctaApply}
+          </button>
+          <ul className="mt-8 flex flex-wrap gap-3 font-display text-[11px] font-bold uppercase tracking-[0.16em] text-ink/80">
+            {hero.values.map((value) => (
+              <li key={value} className="border border-leaf px-3 py-1 text-leaf">
+                {value}
+              </li>
+            ))}
+          </ul>
+          <ul className="mt-4 flex flex-wrap gap-2 font-display text-[10px] font-bold uppercase tracking-[0.14em] text-ink">
+            {toneChips.map((chip) => (
+              <li key={chip} className="bg-ochre px-2.5 py-1">
+                {chip}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+          <BrushStroke className="pointer-events-none absolute -left-10 -right-6 top-4 h-[92%] w-[120%] text-cobalt sm:-left-16" />
+          <LeafSprig className="pointer-events-none absolute -right-2 bottom-24 h-14 w-12 rotate-[22deg] text-leaf sm:h-16" />
+          <div className="relative aspect-[4/5] rotate-[-3deg] overflow-hidden printed">
+            <Image
+              src="/brand/kok-pita-wrap.png"
+              alt="KŌK пита с курицей су-вид"
+              fill
+              preload
+              className="object-cover"
+              sizes="(max-width: 1024px) 90vw, 480px"
+            />
+          </div>
+          <StickerSeal className="absolute -left-3 bottom-24 w-24 rotate-[-12deg] drop-shadow-md sm:-left-6 sm:w-32" />
+          <div className="absolute -bottom-6 -right-3 w-28 rotate-[8deg] overflow-hidden rounded-full border-4 border-paper shadow-lg sm:-right-4 sm:w-36">
+            <div className="relative aspect-square bg-ochre">
+              <Image
+                src="/brand/kok-green-cup.png"
+                alt="KŌK стакан street food"
+                fill
+                className="object-cover"
+                sizes="144px"
+              />
+            </div>
           </div>
         </div>
       </div>

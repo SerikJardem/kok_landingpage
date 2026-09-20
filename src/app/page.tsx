@@ -1,6 +1,7 @@
 import { ApplyProvider } from "@/components/apply-context";
 import { ApplyModal } from "@/components/apply-modal";
 import { CloseCta } from "@/components/close-cta";
+import { Daypart } from "@/components/daypart";
 import { Economics } from "@/components/economics";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
@@ -9,6 +10,8 @@ import { Locations } from "@/components/locations";
 import { Manifesto } from "@/components/manifesto";
 import { Marquee } from "@/components/marquee";
 import { Phygital } from "@/components/phygital";
+import { Sauces } from "@/components/sauces";
+import { Zoning } from "@/components/zoning";
 import { loadLocations } from "@/lib/locations";
 
 export default async function Home() {
@@ -22,6 +25,9 @@ export default async function Home() {
         <Marquee />
         <Manifesto />
         <Phygital />
+        <Zoning />
+        <Sauces />
+        <Daypart />
         <Economics />
         <Locations locations={locations} source={source} />
         <CloseCta />

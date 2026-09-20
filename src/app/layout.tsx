@@ -1,17 +1,17 @@
 import type { Metadata, Viewport } from "next";
-import { IBM_Plex_Mono, Manrope, Unbounded } from "next/font/google";
+import { IBM_Plex_Mono, Inter, Unbounded } from "next/font/google";
 import { SvgFilters } from "@/components/brand";
 import "./globals.css";
 
 const unbounded = Unbounded({
   variable: "--font-unbounded",
-  subsets: ["latin", "cyrillic"],
+  subsets: ["latin", "cyrillic", "cyrillic-ext"],
   weight: ["500", "700", "900"],
 });
 
-const manrope = Manrope({
-  variable: "--font-manrope",
-  subsets: ["latin", "cyrillic"],
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin", "cyrillic", "cyrillic-ext"],
 });
 
 const ibm = IBM_Plex_Mono({
@@ -21,13 +21,13 @@ const ibm = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "KŌK — франшиза urban nomad food",
+  title: "KŌK — street food франшиза",
   description:
-    "KŌK — современный fast-casual. Знакомая казахская еда на языке города. Заявите территорию.",
+    "KŌK — fast casual street food: пита с курицей су-вид, Hub & Spoke, точка как терминал сборки. Тез. Таза. Fresh.",
 };
 
 export const viewport: Viewport = {
-  themeColor: "#2F3A25",
+  themeColor: "#3DAE5A",
   width: "device-width",
   initialScale: 1,
 };
@@ -36,9 +36,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="ru"
-      className={`${unbounded.variable} ${manrope.variable} ${ibm.variable} h-full antialiased`}
+      className={`${unbounded.variable} ${inter.variable} ${ibm.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-cream text-ink">
+      <body className="min-h-full bg-paper text-ink">
         <SvgFilters />
         <div className="grain" aria-hidden />
         {children}

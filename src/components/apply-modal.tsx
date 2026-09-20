@@ -61,7 +61,7 @@ export function ApplyModal({ cities }: { cities: FranchiseLocation[] }) {
     <AnimatePresence>
       {open ? (
         <motion.div
-          className="fixed inset-0 z-[70] flex items-end justify-center bg-ink/55 p-0 sm:items-center sm:p-6"
+          className="fixed inset-0 z-[90] flex items-end justify-center bg-ink/55 p-0 sm:items-center sm:p-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -76,7 +76,7 @@ export function ApplyModal({ cities }: { cities: FranchiseLocation[] }) {
             role="dialog"
             aria-modal="true"
             aria-labelledby={titleId}
-            className="relative max-h-[92svh] w-full max-w-lg overflow-y-auto border-2 border-forest bg-cream p-6 shadow-[10px_12px_0_#2f3a25] sm:p-8"
+            className="relative max-h-[92svh] w-full max-w-lg overflow-y-auto border-2 border-ink bg-cream p-6 shadow-[10px_12px_0_#2A2A2A] sm:p-8"
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 24, opacity: 0 }}
@@ -84,14 +84,14 @@ export function ApplyModal({ cities }: { cities: FranchiseLocation[] }) {
             <div className="flex items-start justify-between gap-4">
               <div>
                 <Stamp className="text-terra">QUIZ</Stamp>
-                <h2 id={titleId} className="mt-3 font-display text-2xl font-black text-forest">
+                <h2 id={titleId} className="mt-3 font-display text-2xl font-black text-ink">
                   {quiz.title}
                 </h2>
               </div>
               <button
                 type="button"
                 onClick={closeApply}
-                className="font-display text-[11px] font-bold uppercase tracking-[0.16em] text-forest"
+                className="font-display text-[11px] font-bold uppercase tracking-[0.16em] text-ink"
               >
                 {quiz.close}
               </button>
@@ -158,7 +158,7 @@ function QuizForm({
   if (status === "success" || status === "queued") {
     return (
       <div className="mt-8">
-        <p className="font-display text-3xl font-black text-forest">
+        <p className="font-display text-3xl font-black text-ink">
           {status === "success" ? quiz.successTitle : quiz.queuedTitle}
         </p>
         <p className="mt-4 text-ink/80">
@@ -172,17 +172,17 @@ function QuizForm({
     <>
       <ol className="mt-6 flex gap-2">
         {quiz.steps.map((label, index) => (
-          <li key={label} className={`h-1.5 flex-1 ${index <= step ? "bg-forest" : "bg-forest/20"}`} />
+          <li key={label} className={`h-1.5 flex-1 ${index <= step ? "bg-leaf" : "bg-leaf/20"}`} />
         ))}
       </ol>
-      <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.16em] text-forest/60">
+      <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.16em] text-ink/60">
         {step + 1} / 4 · {quiz.steps[step]}
       </p>
 
       <div className="mt-6">
         {step === 0 ? (
           <fieldset>
-            <legend className="mb-4 font-display text-lg font-bold text-forest">
+            <legend className="mb-4 font-display text-lg font-bold text-ink">
               {quiz.cityLabel}
             </legend>
             <div className="grid grid-cols-2 gap-2">
@@ -196,8 +196,8 @@ function QuizForm({
                   }}
                   className={`border-2 px-3 py-2 text-left text-sm ${
                     form.city === option && !other
-                      ? "border-forest bg-forest text-cream"
-                      : "border-forest/30 bg-cream text-forest"
+                      ? "border-ochre bg-ochre text-ink"
+                      : "border-leaf/35 bg-cream text-ink"
                   }`}
                 >
                   {option}
@@ -210,7 +210,7 @@ function QuizForm({
                   setForm((current) => ({ ...current, city: "" }));
                 }}
                 className={`border-2 px-3 py-2 text-left text-sm ${
-                  other ? "border-forest bg-forest text-cream" : "border-forest/30 text-forest"
+                  other ? "border-ochre bg-ochre text-ink" : "border-leaf/35 text-ink"
                 }`}
               >
                 {quiz.cityOther}
@@ -218,7 +218,7 @@ function QuizForm({
             </div>
             {other ? (
               <input
-                className="mt-3 w-full border-2 border-forest bg-cream px-3 py-2 outline-none"
+                className="mt-3 w-full border-2 border-ink bg-cream px-3 py-2 outline-none"
                 placeholder={quiz.cityPlaceholder}
                 value={form.city}
                 onChange={(event) =>
@@ -231,7 +231,7 @@ function QuizForm({
 
         {step === 1 ? (
           <fieldset>
-            <legend className="mb-4 font-display text-lg font-bold text-forest">
+            <legend className="mb-4 font-display text-lg font-bold text-ink">
               {quiz.experienceLabel}
             </legend>
             <div className="grid gap-2">
@@ -242,8 +242,8 @@ function QuizForm({
                   onClick={() => setForm((current) => ({ ...current, experience: value }))}
                   className={`border-2 px-4 py-3 text-left font-display text-sm font-bold uppercase tracking-[0.12em] ${
                     form.experience === value
-                      ? "border-forest bg-ochre text-forest"
-                      : "border-forest/30 text-forest"
+                      ? "border-ochre bg-ochre text-ink"
+                      : "border-leaf/35 text-ink"
                   }`}
                 >
                   {quiz.experience[value]}
@@ -255,7 +255,7 @@ function QuizForm({
 
         {step === 2 ? (
           <fieldset>
-            <legend className="mb-4 font-display text-lg font-bold text-forest">
+            <legend className="mb-4 font-display text-lg font-bold text-ink">
               {quiz.budgetLabel}
             </legend>
             <div className="grid gap-2">
@@ -266,8 +266,8 @@ function QuizForm({
                   onClick={() => setForm((current) => ({ ...current, budget: value }))}
                   className={`border-2 px-4 py-3 text-left font-mono text-sm ${
                     form.budget === value
-                      ? "border-forest bg-forest text-cream"
-                      : "border-forest/30 text-forest"
+                      ? "border-ochre bg-ochre text-ink"
+                      : "border-leaf/35 text-ink"
                   }`}
                 >
                   {quiz.budget[value]}
@@ -279,11 +279,11 @@ function QuizForm({
 
         {step === 3 ? (
           <fieldset className="grid gap-4">
-            <legend className="mb-2 font-display text-lg font-bold text-forest">Контакт</legend>
+            <legend className="mb-2 font-display text-lg font-bold text-ink">Контакт</legend>
             <label className="grid gap-1 text-sm">
               {quiz.nameLabel}
               <input
-                className="border-2 border-forest bg-cream px-3 py-2 outline-none"
+                className="border-2 border-ink bg-cream px-3 py-2 outline-none"
                 value={form.name}
                 onChange={(event) =>
                   setForm((current) => ({ ...current, name: event.target.value }))
@@ -293,7 +293,7 @@ function QuizForm({
             <label className="grid gap-1 text-sm">
               {quiz.contactLabel}
               <input
-                className="border-2 border-forest bg-cream px-3 py-2 outline-none"
+                className="border-2 border-ink bg-cream px-3 py-2 outline-none"
                 placeholder={quiz.contactPlaceholder}
                 value={form.contact}
                 onChange={(event) =>
@@ -320,7 +320,7 @@ function QuizForm({
       <div className="mt-8 flex items-center justify-between gap-3">
         <button
           type="button"
-          className="font-display text-[11px] font-bold uppercase tracking-[0.16em] text-forest disabled:opacity-30"
+          className="font-display text-[11px] font-bold uppercase tracking-[0.16em] text-ink disabled:opacity-30"
           onClick={() => setStep((value) => Math.max(0, value - 1))}
           disabled={step === 0 || status === "submitting"}
         >
@@ -331,7 +331,7 @@ function QuizForm({
             type="button"
             disabled={!canNext}
             onClick={() => setStep((value) => value + 1)}
-            className="bg-forest px-5 py-3 font-display text-[11px] font-bold uppercase tracking-[0.16em] text-cream disabled:opacity-40"
+            className="bg-leaf px-5 py-3 font-display text-[11px] font-bold uppercase tracking-[0.16em] text-cream transition hover:bg-ink disabled:opacity-40"
           >
             {quiz.next}
           </button>
@@ -340,7 +340,7 @@ function QuizForm({
             type="button"
             disabled={!canNext || status === "submitting"}
             onClick={submit}
-            className="bg-forest px-5 py-3 font-display text-[11px] font-bold uppercase tracking-[0.16em] text-cream disabled:opacity-40"
+            className="bg-leaf px-5 py-3 font-display text-[11px] font-bold uppercase tracking-[0.16em] text-cream transition hover:bg-ink disabled:opacity-40"
           >
             {status === "submitting" ? "…" : quiz.submit}
           </button>
