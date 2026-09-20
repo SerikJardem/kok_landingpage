@@ -8,7 +8,6 @@ import {
   SparkBurst,
   StickerSeal,
   WaveTriple,
-  Wordmark,
 } from "@/components/brand";
 import { hero } from "@/lib/content";
 
@@ -22,11 +21,7 @@ export function Hero() {
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
         <div>
-          <Wordmark className="h-14 w-auto sm:h-20" />
-          <p className="mt-3 font-display text-xl font-bold text-ink sm:text-2xl">
-            {hero.tagline}
-          </p>
-          <div className="mt-5 flex items-center justify-start gap-3 text-leaf">
+          <div className="flex items-center justify-start gap-3 text-leaf">
             <p className="font-display text-[10px] font-bold uppercase tracking-[0.22em]">
               {hero.eyebrow}
             </p>

@@ -23,9 +23,16 @@ export function Header() {
         scrolled ? "bg-paper/95 shadow-[0_1px_0_#3dae5a] backdrop-blur-md" : "bg-paper/80"
       }`}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-        <a href="#top" className="text-leaf" onClick={() => setMenuOpen(false)}>
-          <Wordmark className="h-8 w-auto sm:h-9" />
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+        <a
+          href="#top"
+          className="flex min-w-0 items-center gap-3 text-leaf"
+          onClick={() => setMenuOpen(false)}
+        >
+          <Wordmark className="h-8 w-auto shrink-0 sm:h-9" />
+          <span className="truncate font-display text-[12px] font-bold tracking-[-0.02em] text-ink sm:text-sm">
+            Тез. Таза. Fresh.
+          </span>
         </a>
         <nav className="hidden items-center gap-8 font-display text-[12px] font-bold uppercase tracking-[0.18em] text-ink md:flex">
           <a href="#format" className="hover:text-leaf">
