@@ -1,39 +1,32 @@
-import { Crown, LeafSprig, SparkBurst, Stamp, WavePattern } from "@/components/brand";
+import { SparkBurst, Stamp, Zigzag } from "@/components/brand";
 import { manifesto } from "@/lib/content";
 
 export function Manifesto() {
   return (
-    <section id="manifesto" className="relative overflow-hidden scroll-mt-24 bg-paper px-4 py-20 sm:px-6 sm:py-28">
-      <LeafSprig className="pointer-events-none absolute right-[8%] top-16 h-16 w-12 rotate-12 text-leaf/40" />
-      <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-        <div>
-          <Stamp className="text-terra">{manifesto.stamp}</Stamp>
-          <Crown className="mt-8 h-7 w-12 text-leaf" />
-          <p className="mt-4 font-display text-3xl font-black leading-tight tracking-[-0.03em] text-ink sm:text-5xl">
-            {manifesto.lead}
-          </p>
-          <p className="mt-4 max-w-md text-ink/75">{manifesto.deck}</p>
-          <WavePattern className="mt-6 h-5 w-40 text-leaf" />
-          <p className="mt-8 font-display text-[11px] font-bold uppercase tracking-[0.2em] text-leaf">
-            {manifesto.guestsLabel}
-          </p>
-          <ul className="mt-4 space-y-4">
-            {manifesto.guests.map((guest) => (
-              <li key={guest.kk} className="border-l-4 border-ochre pl-4">
-                <p className="font-display text-lg font-bold text-ink">{guest.kk}</p>
-                <p className="text-sm text-ink/75">{guest.ru}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="relative bg-leaf p-6 text-cream sm:p-10">
-          <SparkBurst className="absolute right-6 top-6 h-8 w-8 text-ochre" />
-          <Crown className="absolute right-16 top-7 h-7 w-12 text-cream/80" />
-          <div className="space-y-5 text-base leading-relaxed text-cream/95 sm:text-lg">
-            {manifesto.body.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
+    <section
+      id="manifesto"
+      className="relative overflow-hidden scroll-mt-24 bg-leaf px-4 py-16 text-cream sm:px-6 sm:py-20"
+    >
+      <SparkBurst className="pointer-events-none absolute right-[8%] top-10 h-10 w-10 text-ochre" />
+      <div className="relative mx-auto max-w-6xl">
+        <Stamp className="text-ochre">{manifesto.stamp}</Stamp>
+        <h2 className="mt-6 max-w-3xl font-display text-3xl font-black leading-tight tracking-[-0.03em] sm:text-5xl">
+          {manifesto.title}
+        </h2>
+        <p className="mt-4 max-w-2xl text-base text-cream/85 sm:text-lg">{manifesto.deck}</p>
+        <Zigzag className="mt-6 h-4 w-32 text-ochre" />
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {manifesto.points.map((point) => (
+            <article key={point.label} className="border border-cream/25 bg-leaf/40 p-5">
+              <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-ochre">
+                {point.label}
+              </p>
+              <h3 className="mt-3 font-display text-xl font-black tracking-[-0.02em]">
+                {point.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-cream/80">{point.body}</p>
+            </article>
+          ))}
         </div>
       </div>
     </section>
