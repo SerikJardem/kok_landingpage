@@ -172,7 +172,8 @@ export function StickerSeal({
 }
 
 /**
- * Brand-book wordmark: heavy K Ø K with a diagonal slash through the O.
+ * Official KØK logo mark (slashed Ø, textured green).
+ * Cream background is keyed out so it sits on paper or charcoal.
  */
 export function Wordmark({
   className = "",
@@ -182,28 +183,15 @@ export function Wordmark({
   title?: string;
 }) {
   return (
-    <svg
-      className={className}
-      viewBox="0 0 420 156"
-      role="img"
-      aria-label={title}
-      fill="currentColor"
-    >
-      <title>{title}</title>
-      <rect x="8" y="22" width="46" height="118" rx="3" />
-      <polygon points="54,78 122,22 168,22 96,84 168,140 122,140 54,100" />
-      <path d="M210 26c42 0 70 27 70 58s-28 58-70 58-70-27-70-58 28-58 70-58zm0 32c-20 0-32 12-32 26s12 26 32 26 32-12 32-26-12-26-32-26z" />
-      <rect
-        x="168"
-        y="72"
-        width="84"
-        height="16"
-        rx="2"
-        transform="rotate(-38 210 80)"
-      />
-      <rect x="292" y="22" width="46" height="118" rx="3" />
-      <polygon points="338,78 406,22 412,22 352,84 412,140 406,140 338,100" />
-    </svg>
+    // eslint-disable-next-line @next/next/no-img-element -- static export + cream-keyed PNG mark
+    <img
+      src="/brand/kok-wordmark-mark.png"
+      alt={title}
+      className={`object-contain object-left ${className}`}
+      width={1020}
+      height={300}
+      decoding="async"
+    />
   );
 }
 
