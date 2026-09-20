@@ -7,10 +7,7 @@ export function Zoning() {
       <LeafSprig className="pointer-events-none absolute right-[6%] top-14 h-16 w-12 rotate-12 text-leaf/35" />
       <div className="relative mx-auto max-w-6xl">
         <Stamp className="text-leaf">{zoning.stamp}</Stamp>
-        <p className="mt-8 font-display text-3xl font-black leading-tight tracking-[-0.03em] text-ink sm:text-5xl">
-          {zoning.kazakh}
-        </p>
-        <p className="mt-4 max-w-2xl font-display text-xl font-bold text-ink/80 sm:text-2xl">
+        <p className="mt-8 max-w-2xl font-display text-3xl font-black leading-tight tracking-[-0.03em] text-ink sm:text-5xl">
           {zoning.title}
         </p>
         <WavePattern className="mt-6 h-5 w-40 text-leaf" />

@@ -38,6 +38,18 @@ export function Hero() {
           <p className="mt-4 max-w-xl text-sm leading-relaxed text-ink/75 sm:text-base">
             {hero.deck}
           </p>
+          <dl className="mt-5 grid max-w-xl gap-3 sm:grid-cols-2">
+            {hero.model.map((item) => (
+              <div key={item.role} className="border border-leaf/35 bg-cream/60 px-4 py-3">
+                <dt className="font-mono text-[10px] uppercase tracking-[0.16em] text-leaf">
+                  {item.role}
+                  <span className="text-ink/40"> · </span>
+                  <span className="text-ink">{item.meaning}</span>
+                </dt>
+                <dd className="mt-1 text-sm text-ink/70">{item.note}</dd>
+              </div>
+            ))}
+          </dl>
           <ul className="mt-8 max-w-xl space-y-4">
             {hero.hooks.map((hook) => (
               <li key={hook.label} className="border-l-4 border-leaf pl-4">
