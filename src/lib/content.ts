@@ -136,7 +136,6 @@ export const territories = {
 
 export const closeCta = {
   title: "Город ещё можно собрать как терминал, не как ресторан.",
-  deck: "Четыре коротких шага. Без «осталось две франшизы».",
   cta: "Открыть заявку",
 } as const;
 

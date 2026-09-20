@@ -16,7 +16,6 @@ export function CloseCta() {
           {closeCta.title}
         </h2>
         <WavePattern className="mx-auto mt-6 h-5 w-48 text-ochre" />
-        <p className="mx-auto mt-6 max-w-xl text-lg text-cream/90">{closeCta.deck}</p>
         <button
           type="button"
           onClick={() => openApply()}
