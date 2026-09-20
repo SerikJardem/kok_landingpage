@@ -2,7 +2,14 @@
 
 import Image from "next/image";
 import { useApply } from "@/components/apply-context";
-import { WaveTriple, Wordmark } from "@/components/brand";
+import {
+  BrushStroke,
+  LeafSprig,
+  SparkBurst,
+  StickerSeal,
+  WaveTriple,
+  Wordmark,
+} from "@/components/brand";
 import { hero } from "@/lib/content";
 
 export function Hero() {
@@ -10,6 +17,9 @@ export function Hero() {
 
   return (
     <section id="top" className="relative overflow-hidden bg-paper px-4 pb-16 pt-24 sm:px-6 sm:pb-20 sm:pt-28">
+      <SparkBurst className="pointer-events-none absolute right-[7%] top-24 h-10 w-10 text-ochre sm:h-14 sm:w-14" />
+      <LeafSprig className="pointer-events-none absolute left-[5%] top-28 h-16 w-12 rotate-[-18deg] text-leaf sm:h-20 sm:w-16" />
+
       <div className="relative mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
         <div>
           <Wordmark className="h-14 w-auto sm:h-20" />
@@ -62,16 +72,31 @@ export function Hero() {
           </button>
         </div>
 
-        <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
-          <Image
-            src="/brand/kok-logo-lockup.png"
-            alt="KŌK — Тез. Таза. Fresh. Пита с курицей су-вид"
-            width={1482}
-            height={1061}
-            preload
-            className="h-auto w-full"
-            sizes="(max-width: 1024px) 90vw, 520px"
-          />
+        <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+          <BrushStroke className="pointer-events-none absolute -left-10 -right-6 top-4 h-[92%] w-[120%] text-cobalt sm:-left-16" />
+          <LeafSprig className="pointer-events-none absolute -right-2 bottom-24 h-14 w-12 rotate-[22deg] text-leaf sm:h-16" />
+          <div className="relative aspect-[4/5] rotate-[-3deg] overflow-hidden printed">
+            <Image
+              src="/brand/kok-pita-wrap.png"
+              alt="KŌK пита с курицей су-вид"
+              fill
+              preload
+              className="object-cover"
+              sizes="(max-width: 1024px) 90vw, 480px"
+            />
+          </div>
+          <StickerSeal className="absolute -left-3 bottom-24 w-24 rotate-[-12deg] drop-shadow-md sm:-left-6 sm:w-32" />
+          <div className="absolute -bottom-6 -right-3 w-28 rotate-[8deg] overflow-hidden rounded-full border-4 border-paper shadow-lg sm:-right-4 sm:w-36">
+            <div className="relative aspect-square bg-ochre">
+              <Image
+                src="/brand/kok-green-cup.png"
+                alt="KŌK стакан street food"
+                fill
+                className="object-cover"
+                sizes="144px"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

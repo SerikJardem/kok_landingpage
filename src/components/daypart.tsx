@@ -7,12 +7,9 @@ export function Daypart() {
       <SparkBurst className="pointer-events-none absolute left-[6%] top-12 h-8 w-8 text-ochre" />
       <div className="relative mx-auto max-w-6xl">
         <Stamp className="text-leaf">{daypart.stamp}</Stamp>
-        <p className="mt-8 font-display text-3xl font-black leading-tight tracking-[-0.03em] text-ink sm:text-5xl">
-          {daypart.kazakh}
-        </p>
-        <p className="mt-4 max-w-2xl font-display text-xl font-bold text-ink/80 sm:text-2xl">
+        <h2 className="mt-8 max-w-3xl font-display text-3xl font-black leading-tight tracking-[-0.03em] text-ink sm:text-5xl">
           {daypart.title}
-        </p>
+        </h2>
         <WavePattern className="mt-6 h-5 w-40 text-leaf" />
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">

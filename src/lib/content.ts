@@ -259,8 +259,8 @@ export const sauces = {
 
 export const daypart = {
   stamp: "КОФЕ · GRAB&GO",
-  kazakh: "Таңертең — қозғалтқыш.",
-  title: "Утро гонит трафик. День продаёт с собой.",
+  title:
+    "Дополнительные продукты на продажу — всё, что можно есть и пить тремя пальцами",
   coffeeStamp: "8:00–11:30",
   coffeeTitle: "Кофе как двигатель трафика",
   coffeeBody:
