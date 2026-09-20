@@ -21,6 +21,11 @@ export default async function Home() {
     <ApplyProvider>
       <Header />
       <main>
+        <p className="sr-only">
+          KŌK (KOK) franchise / франшиза: үшбармақ · ushbarmak street food, Hub &amp; Spoke, Spoke
+          точка продажи for investors, fast growth business · быстрый рост · жылдам өсу. Алматы,
+          Қазақстан.
+        </p>
         <Hero />
         <Marquee />
         <Manifesto />

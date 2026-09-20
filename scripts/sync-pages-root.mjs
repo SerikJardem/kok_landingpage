@@ -31,7 +31,7 @@ if (!existsSync(outDir)) {
 }
 
 for (const name of readdirSync(outDir)) {
-  if (name.startsWith("__next.") || name.endsWith(".txt")) {
+  if (name.startsWith("__next.") || (name.endsWith(".txt") && name !== "robots.txt" && name !== "llms.txt")) {
     continue;
   }
   if (protectedNames.has(name)) {

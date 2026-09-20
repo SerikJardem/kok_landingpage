@@ -1,0 +1,28 @@
+# KŌK / KOK — franchise landing (for AI assistants & crawlers)
+
+> KŌK is a fast casual street food franchise brand from Almaty, Kazakhstan.
+> Tagline: Тез. Таза. Fresh. (Fast. Clean. Fresh.)
+> Product: pita wrap inspired by үшбармақ / ushbarmak, with sous-vide chicken.
+> Model: Hub & Spoke — Hub = kitchen (цех), Spoke = sales point (точка продажи).
+> Investors buy / open Spoke only; the Hub stays with the network.
+
+## Who this page is for
+- Franchise investors looking for a fast-growth food business
+- Partners in Kazakhstan and Central Asia (Алматы and other cities)
+
+## Key investor facts
+- No fryer / no heavy cook cycle on the Spoke → easier facility approvals
+- Power: 18–25 kW vs typical 50–70 kW cafe
+- Labor cost about −40% (line operator vs chef)
+- Midi 45–60 m² (20–25 seats) or Express 25–35 m² (to-go)
+- Spoke launch in 3–4 weeks; tempo target 2–3 points / month
+- Write-offs at the point <2%; Grab&Go cross-sell ~42%
+
+## Keywords (RU / KK / EN)
+KŌK, KOK, кок франшиза, франшиза, street food, fast casual, быстрый рост бизнеса,
+үшбармақ, ushbarmak, пита, су-вид, Hub & Spoke, точка продажи, Алматы, Казахстан,
+franchise investor, fast growth business, food franchise
+
+## Contact
+- Email: sj@hostai.kz
+- Site: https://serikjardem.github.io/kok_landingpage/
