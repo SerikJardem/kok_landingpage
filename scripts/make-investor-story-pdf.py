@@ -168,9 +168,10 @@ def main():
     ]
 
     col_w = (max_w - 6 * mm) / 2
-    card_h = 28 * mm
-    row_h = 32 * mm
-    pad = 5 * mm
+    card_h = 30 * mm
+    row_h = 34 * mm
+    pad_x = 7 * mm
+    pad_top = 8 * mm
     for i, (value, label, note) in enumerate(cards):
         col = i % 2
         row = i // 2
@@ -182,24 +183,23 @@ def main():
         c.setFillColor(HexColor("#FFFDF8"))
         c.roundRect(x, bottom, col_w, card_h, 2.5 * mm, fill=1, stroke=1)
 
-        text_x = x + pad
-        text_w = col_w - 2 * pad
-        # Baseline inset from top edge so 16pt numbers clear the box
-        value_y = top - pad - 4.5 * mm
+        text_x = x + pad_x
+        text_w = col_w - 2 * pad_x
+        value_y = top - pad_top - 1 * mm
         c.setFillColor(LEAF)
         c.setFont("SansBold", 15)
         c.drawString(text_x, value_y, value)
 
-        label_y = value_y - 6 * mm
+        label_y = value_y - 6.5 * mm
         c.setFillColor(INK)
         c.setFont("SansBold", 9)
         c.drawString(text_x, label_y, label)
 
-        note_y = label_y - 5 * mm
+        note_y = label_y - 5.2 * mm
         c.setFillColor(MUTED)
         c.setFont("Sans", 8)
         for line in wrap(c, note, "Sans", 8, text_w):
-            if note_y < bottom + 3 * mm:
+            if note_y < bottom + 4 * mm:
                 break
             c.drawString(text_x, note_y, line)
             note_y -= 3.6 * mm
