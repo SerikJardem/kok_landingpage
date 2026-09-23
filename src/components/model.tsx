@@ -8,15 +8,18 @@ import { model } from "@/lib/content";
 export function Model() {
   return (
     <section className="relative overflow-hidden bg-paper px-4 py-12 sm:px-6 sm:py-16">
-      <div className="mx-auto max-w-6xl">
-        <div className="grid items-end gap-4 lg:grid-cols-[1fr_auto] lg:gap-6">
+      <div className="mx-auto grid max-w-6xl items-start gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:gap-10">
+        <div>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h2 className="max-w-2xl font-display text-3xl font-black tracking-[-0.03em] text-ink sm:text-4xl">
+            <p className="max-w-2xl font-display text-sm font-bold leading-snug tracking-[-0.01em] text-leaf sm:text-base">
+              {model.lead}
+            </p>
+            <h2 className="mt-5 max-w-2xl font-display text-3xl font-black tracking-[-0.03em] text-ink sm:mt-6 sm:text-4xl">
               {model.title}
             </h2>
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink/75">
@@ -24,67 +27,69 @@ export function Model() {
             </p>
           </motion.div>
 
-          <motion.div
-            className="relative mx-auto h-28 w-28 shrink-0 sm:h-32 sm:w-32 lg:mx-0"
-            initial={{ opacity: 0, scale: 0.92 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          >
+          {/* Bottom pair under copy — as in the attached variant */}
+          <div className="mt-8 grid overflow-hidden sm:grid-cols-2">
+            {model.points.map((point, index) => {
+              const isNetwork = index === 0;
+              return (
+                <motion.div
+                  key={point.title}
+                  className={`relative px-5 py-8 sm:px-6 sm:py-9 ${
+                    isNetwork ? "bg-leaf text-cream" : "bg-[#fffdf8] text-ink"
+                  }`}
+                  initial={{ opacity: 0, y: 14 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{
+                    duration: 0.45,
+                    delay: 0.08 * index,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                >
+                  {isNetwork ? (
+                    <SparkBurst className="pointer-events-none absolute right-5 top-5 h-6 w-6 text-ochre" />
+                  ) : null}
+                  <p
+                    className={`font-mono text-[10px] uppercase tracking-[0.18em] ${
+                      isNetwork ? "text-cream/70" : "text-leaf"
+                    }`}
+                  >
+                    {point.role}
+                  </p>
+                  <h3 className="mt-3 font-display text-xl font-bold tracking-[-0.02em] sm:text-2xl">
+                    {point.title}
+                  </h3>
+                  <p
+                    className={`mt-2 text-sm leading-relaxed ${
+                      isNetwork ? "text-cream/80" : "text-ink/65"
+                    }`}
+                  >
+                    {point.note}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+
+        <motion.figure
+          className="relative mx-auto w-full max-w-sm lg:mx-0 lg:max-w-none"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.5, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <div className="relative aspect-[3/4] overflow-hidden printed">
             <Image
               src="/brand/kok-pita-wrap.png"
               alt="Пита KŌK — быстрая сборка на точке"
               fill
-              className="object-contain drop-shadow-[0_12px_24px_rgba(42,42,42,0.12)]"
-              sizes="128px"
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 70vw, 380px"
             />
-          </motion.div>
-        </div>
-
-        <div className="mt-8 grid gap-0 overflow-hidden sm:grid-cols-2">
-          {model.points.map((point, index) => {
-            const isNetwork = index === 0;
-            return (
-              <motion.div
-                key={point.title}
-                className={`relative px-5 py-8 sm:px-7 sm:py-9 ${
-                  isNetwork ? "bg-leaf text-cream" : "bg-cream text-ink"
-                }`}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{
-                  duration: 0.45,
-                  delay: 0.08 * index,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-              >
-                {isNetwork ? (
-                  <SparkBurst className="pointer-events-none absolute right-6 top-6 h-7 w-7 text-ochre" />
-                ) : (
-                  <WavePattern className="pointer-events-none absolute right-6 top-6 h-4 w-28 text-leaf/40" />
-                )}
-                <p
-                  className={`font-mono text-[10px] uppercase tracking-[0.18em] ${
-                    isNetwork ? "text-ochre" : "text-leaf"
-                  }`}
-                >
-                  {isNetwork ? "Сеть" : "Точка"}
-                </p>
-                <h3 className="mt-3 font-display text-2xl font-bold tracking-[-0.02em]">
-                  {point.title}
-                </h3>
-                <p
-                  className={`mt-3 text-sm leading-relaxed ${
-                    isNetwork ? "text-cream/80" : "text-ink/65"
-                  }`}
-                >
-                  {point.note}
-                </p>
-              </motion.div>
-            );
-          })}
-        </div>
+          </div>
+          <WavePattern className="mt-4 h-4 w-44 text-leaf/45" />
+        </motion.figure>
       </div>
     </section>
   );
