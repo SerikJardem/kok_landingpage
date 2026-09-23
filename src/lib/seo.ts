@@ -2,18 +2,16 @@
 export const siteUrl = "https://serikjardem.github.io/kok_landingpage";
 
 export const seo = {
-  title: "KŌK — франшиза street food / үшбармақ / fast casual | Hub & Spoke",
+  title: "KŌK — франшиза street food / үшбармақ / fast casual",
   titleTemplate: "%s | KŌK Franchise",
   description:
-    "KŌK (KOK) — fast-growth street food franchise: үшбармақ / ushbarmak-style pita with sous-vide chicken. Hub & Spoke model for investors — Spoke sales point only, no fryer, −40% labor, launch in 3–4 weeks. Франшиза быстрого роста · Қазақстан · Алматы. Тез. Таза. Fresh.",
+    "KŌK (KOK) — fast-growth street food franchise: үшбармақ / ushbarmak-style pita with sous-vide chicken. You open a sales point; the network kitchen cooks. No fryer, −40% labor, launch in 3–4 weeks. Франшиза быстрого роста · Қазақстан · Алматы. Тез. Таза. Fresh.",
   keywords: [
-    // Brand
     "KŌK",
     "KOK",
     "KØK",
     "кок",
     "кок франшиза",
-    // RU
     "франшиза",
     "франшиза общественного питания",
     "франшиза фастфуд",
@@ -22,15 +20,12 @@ export const seo = {
     "быстрорастущий бизнес",
     "инвестиции в франшизу",
     "открыть точку питания",
-    "Hub and Spoke",
-    "хаб энд споук",
-    "фабрика кухня",
     "точка продажи",
+    "центральный цех",
     "су-вид курица",
     "пита",
     "стрит фуд Алматы",
     "франшиза Казахстан",
-    // KK
     "үшбармақ",
     "франшиза Қазақстан",
     "стрит фуд",
@@ -38,10 +33,8 @@ export const seo = {
     "жылдам өсу бизнесі",
     "инвестиция франшиза",
     "Алматы франшиза",
-    // EN
     "ushbarmak",
     "ushparmak",
-    "beshbarmak street food",
     "franchise",
     "food franchise",
     "fast casual franchise",
@@ -50,7 +43,6 @@ export const seo = {
     "high growth franchise",
     "franchise investor",
     "sous-vide chicken",
-    "Hub & Spoke restaurant",
     "Almaty franchise",
     "Kazakhstan franchise",
   ],
@@ -73,10 +65,7 @@ export function buildJsonLd() {
         email: "sj@hostai.kz",
         description: seo.description,
         slogan: "Тез. Таза. Fresh.",
-        areaServed: {
-          "@type": "Country",
-          name: "Kazakhstan",
-        },
+        areaServed: { "@type": "Country", name: "Kazakhstan" },
         knowsLanguage: ["ru", "kk", "en"],
       },
       {
@@ -108,7 +97,7 @@ export function buildJsonLd() {
         "@id": `${siteUrl}/#brand`,
         name: "KŌK",
         description:
-          "Fast casual street food brand: pita / үшбармақ-style wraps with sous-vide chicken. No fryer on site. Hub kitchen + Spoke sales points.",
+          "Fast casual street food: pita / үшбармақ-style wraps with sous-vide chicken. Network kitchen cooks; the partner runs a sales point for assembly and serving. No fryer on site.",
         servesCuisine: ["Street Food", "Kazakh-inspired", "Fast Casual"],
         slogan: "Тез. Таза. Fresh.",
         url: siteUrl,
@@ -122,9 +111,9 @@ export function buildJsonLd() {
       {
         "@type": "Offer",
         "@id": `${siteUrl}/#franchise`,
-        name: "KŌK Spoke franchise / франшиза точки продажи",
+        name: "KŌK franchise / франшиза точки продажи",
         description:
-          "Investor franchise for a KŌK Spoke sales point (точка продажи). Hub (цех) stays with the network. Fast growth: 3–4 week launch, −40% labor vs classic cafe, 18–25 kW power, midi 45–60 m² or express 25–35 m². Keywords: kok franchise, ushbarmak, үшбармақ, fast growth business, франшиза быстрого роста.",
+          "Investor franchise for a KŌK sales point. The network kitchen supplies sous-vide chicken and sauces. Fast growth: 3–4 week launch, −40% labor vs classic cafe, 18–25 kW power, midi 45–60 m² or express 25–35 m².",
         category: "Food franchise",
         businessFunction: "http://purl.org/goodrelations/v1#Sell",
         areaServed: "KZ",
@@ -141,7 +130,7 @@ export function buildJsonLd() {
             name: "What is KŌK / KOK franchise?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "KŌK is a fast casual street food franchise from Almaty, Kazakhstan. The product is a pita wrap in the spirit of үшбармақ / ushbarmak with sous-vide chicken. Investors open a Spoke sales point; the Hub kitchen supplies the network.",
+              text: "KŌK is a fast casual street food franchise from Almaty, Kazakhstan. The product is a pita wrap in the spirit of үшбармақ / ushbarmak with sous-vide chicken. Investors open a sales point; the network kitchen supplies the food.",
             },
           },
           {
@@ -149,7 +138,7 @@ export function buildJsonLd() {
             name: "Что такое франшиза KŌK для инвестора?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Инвестор входит только в Spoke — точку продажи. Hub (цех) готовит су-вид курицу и заготовки. На точке нет фритюра и тяжёлой кухни: labor −40%, мощность 18–25 кВт, запуск 3–4 недели — модель быстрого роста сети.",
+              text: "Инвестор открывает точку продажи. Центральный цех сети готовит су-вид курицу и заготовки. На точке нет фритюра и тяжёлой кухни: labor −40%, мощность 18–25 кВт, запуск 3–4 недели.",
             },
           },
           {
@@ -157,7 +146,7 @@ export function buildJsonLd() {
             name: "KŌK франшизасы дегеніміз не?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "KŌK — Алматыдағы street food бренді: үшбармақ рухындағы пита, су-вид тауық. Инвестор Spoke сату нүктесін ашады; Hub цех желіні қамтамасыз етеді. Тез. Таза. Fresh.",
+              text: "KŌK — Алматыдағы street food бренді: үшбармақ рухындағы пита, су-вид тауық. Инвестор сату нүктесін ашады; желінің цехі дайындайды. Тез. Таза. Fresh.",
             },
           },
           {
@@ -165,7 +154,7 @@ export function buildJsonLd() {
             name: "Is KŌK a fast growth food business for franchise investors?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Yes. The Hub & Spoke model is built for speed: Spoke fit-out in 3–4 weeks, 2–3 new points per month target tempo, smaller footprint (−50–60% vs classic cafe), and lower power and labor costs than a full restaurant.",
+              text: "Yes. Fit-out in 3–4 weeks, smaller footprint (−50–60% vs classic cafe), and lower power and labor costs than a full restaurant.",
             },
           },
         ],
