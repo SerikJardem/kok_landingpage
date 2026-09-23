@@ -25,14 +25,14 @@ export function Hero() {
           alt="KŌK пита — моно продукт курица"
           fill
           preload
-          className="object-cover object-[70%_center] max-sm:object-[62%_center]"
+          className="object-cover object-[58%_center] max-sm:object-[55%_center]"
           sizes="100vw"
         />
       </motion.div>
 
       <div className="hero-photo-scrim pointer-events-none absolute inset-0 -z-10" aria-hidden />
 
-      <div className="relative mx-auto w-full max-w-6xl px-4 pb-12 pt-28 sm:px-6 sm:pb-16 sm:pt-32">
+      <div className="relative mx-auto w-full max-w-5xl px-4 pb-10 pt-28 sm:px-6 sm:pb-12 sm:pt-28">
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -41,13 +41,13 @@ export function Hero() {
           <p className="font-display text-[10px] font-bold uppercase tracking-[0.22em] text-cream/75">
             {hero.eyebrow}
           </p>
-          <p className="mt-3 font-display text-xl font-bold tracking-[-0.02em] text-cream sm:text-2xl">
+          <p className="mt-2 font-display text-xl font-bold tracking-[-0.02em] text-cream sm:text-2xl">
             {hero.tagline}
           </p>
         </motion.div>
 
         <motion.h1
-          className="mt-5 max-w-2xl font-display text-3xl font-black leading-[1.08] tracking-[-0.03em] text-cream sm:mt-6 sm:text-5xl"
+          className="mt-4 max-w-xl font-display text-3xl font-black leading-[1.08] tracking-[-0.03em] text-cream sm:mt-5 sm:text-5xl"
           initial={reduceMotion ? false : { opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: reduceMotion ? 0 : 0.1, ease: [0.22, 1, 0.36, 1] }}
@@ -60,14 +60,14 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: reduceMotion ? 0 : 0.18, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="mt-3 max-w-lg text-sm leading-relaxed text-cream/80 sm:text-base">
+          <p className="mt-3 max-w-md text-sm leading-relaxed text-cream/80 sm:text-base">
             {hero.deck}
           </p>
 
           <button
             type="button"
             onClick={() => openApply()}
-            className="mt-6 bg-leaf px-7 py-3 font-display text-[12px] font-bold uppercase tracking-[0.18em] text-cream transition hover:bg-ochre hover:text-ink"
+            className="mt-5 bg-leaf px-7 py-3 font-display text-[12px] font-bold uppercase tracking-[0.18em] text-cream transition hover:bg-ochre hover:text-ink"
           >
             {hero.ctaApply}
           </button>
