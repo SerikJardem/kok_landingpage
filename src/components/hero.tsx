@@ -12,31 +12,32 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative isolate flex min-h-[100svh] items-end overflow-hidden"
+      className="relative isolate flex min-h-[85svh] items-start overflow-hidden bg-[#1a1a1a] sm:min-h-[88svh]"
     >
       <motion.div
         className="absolute inset-0 -z-10"
-        initial={reduceMotion ? false : { scale: 1.08 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 1.35, ease: [0.22, 1, 0.36, 1] }}
+        initial={reduceMotion ? false : { opacity: 0.7, scale: 1.04 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.15, ease: [0.22, 1, 0.36, 1] }}
       >
         <Image
           src="/brand/kok-pita-wrap.png"
           alt="KŌK пита — моно продукт курица"
           fill
           preload
-          className="object-cover object-[58%_center] max-sm:object-[55%_center]"
+          className="object-contain object-center sm:object-[78%_45%] sm:scale-[0.94]"
           sizes="100vw"
         />
       </motion.div>
 
       <div className="hero-photo-scrim pointer-events-none absolute inset-0 -z-10" aria-hidden />
 
-      <div className="relative mx-auto w-full max-w-5xl px-4 pb-10 pt-28 sm:px-6 sm:pb-12 sm:pt-28">
+      {/* Content sits under the nav — not pinned to the bottom */}
+      <div className="relative mx-auto flex w-full max-w-5xl flex-col justify-start px-4 pb-12 pt-[4.75rem] sm:px-6 sm:pb-14 sm:pt-24">
         <motion.div
-          initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+          initial={reduceMotion ? false : { opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
           <p className="font-display text-[10px] font-bold uppercase tracking-[0.22em] text-cream/75">
             {hero.eyebrow}
@@ -47,18 +48,18 @@ export function Hero() {
         </motion.div>
 
         <motion.h1
-          className="mt-4 max-w-xl font-display text-3xl font-black leading-[1.08] tracking-[-0.03em] text-cream sm:mt-5 sm:text-5xl"
-          initial={reduceMotion ? false : { opacity: 0, y: 18 }}
+          className="mt-3 max-w-xl font-display text-3xl font-black leading-[1.08] tracking-[-0.03em] text-cream sm:mt-4 sm:text-[2.75rem] sm:leading-[1.06]"
+          initial={reduceMotion ? false : { opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: reduceMotion ? 0 : 0.1, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.5, delay: reduceMotion ? 0 : 0.08, ease: [0.22, 1, 0.36, 1] }}
         >
           {hero.title}
         </motion.h1>
 
         <motion.div
-          initial={reduceMotion ? false : { opacity: 0, y: 14 }}
+          initial={reduceMotion ? false : { opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: reduceMotion ? 0 : 0.18, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.45, delay: reduceMotion ? 0 : 0.14, ease: [0.22, 1, 0.36, 1] }}
         >
           <p className="mt-3 max-w-md text-sm leading-relaxed text-cream/80 sm:text-base">
             {hero.deck}
