@@ -1,50 +1,44 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { LeafSprig } from "@/components/brand";
 import { problem } from "@/lib/content";
 
 export function Problem() {
   return (
-    <section className="relative overflow-hidden bg-[#eef6ef] px-4 py-16 sm:px-6 sm:py-20">
-      <LeafSprig className="pointer-events-none absolute right-[6%] top-8 h-20 w-16 rotate-[18deg] text-leaf/25" />
-      <div className="relative mx-auto grid max-w-6xl items-center gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8">
+    <section className="relative overflow-hidden bg-[#eef6ef] px-4 py-12 sm:px-6 sm:py-14">
+      <div className="relative mx-auto grid max-w-6xl items-center gap-4 lg:grid-cols-[1.2fr_0.8fr] lg:gap-6">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
         >
           <h2 className="max-w-xl font-display text-3xl font-black tracking-[-0.03em] text-ink sm:text-4xl">
             {problem.title}
           </h2>
-          <p className="mt-4 max-w-xl text-base leading-relaxed text-ink/75 sm:text-lg">
+          <p className="mt-3 max-w-xl text-base leading-relaxed text-ink/75 sm:text-lg">
             {problem.body}
           </p>
         </motion.div>
 
-        <motion.div
-          className="relative mx-auto w-full max-w-sm lg:max-w-none"
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.55, delay: 0.06, ease: [0.22, 1, 0.36, 1] }}
+        <motion.dl
+          className="grid grid-cols-2 gap-px overflow-hidden bg-ink/10"
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.45, delay: 0.06, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="relative aspect-[4/5] overflow-hidden printed">
-            <Image
-              src="/brand/kok-street-male.png"
-              alt=""
-              fill
-              className="object-cover object-center grayscale-[40%] contrast-[0.9] brightness-[0.85]"
-              sizes="(max-width: 1024px) 85vw, 380px"
-            />
-            <div
-              className="absolute inset-0 bg-gradient-to-tr from-ink/45 via-transparent to-leaf/15"
-              aria-hidden
-            />
-          </div>
-        </motion.div>
+          {problem.burdens.map((item) => (
+            <div key={item.label} className="bg-[#e6f0e7] px-4 py-5 sm:px-5 sm:py-6">
+              <dt className="font-display text-xl font-black tracking-[-0.03em] text-ink sm:text-2xl">
+                {item.value}
+              </dt>
+              <dd className="mt-1 font-mono text-[10px] uppercase tracking-[0.16em] text-ink/50">
+                {item.label}
+              </dd>
+            </div>
+          ))}
+        </motion.dl>
       </div>
     </section>
   );

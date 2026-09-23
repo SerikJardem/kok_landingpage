@@ -7,10 +7,10 @@ import { product } from "@/lib/content";
 
 export function Product() {
   return (
-    <section className="relative overflow-hidden bg-[#eef6ef] px-4 py-16 sm:px-6 sm:py-24">
-      <LeafSprig className="pointer-events-none absolute left-[3%] bottom-14 h-16 w-12 rotate-[-20deg] text-leaf/25" />
+    <section className="relative overflow-hidden bg-[#eef6ef] px-4 py-12 sm:px-6 sm:py-16">
+      <LeafSprig className="pointer-events-none absolute left-[3%] bottom-10 h-14 w-10 rotate-[-20deg] text-leaf/25" />
       <div className="relative mx-auto max-w-6xl">
-        <div className="grid items-center gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
+        <div className="grid items-center gap-4 lg:grid-cols-[1.05fr_0.95fr] lg:gap-6">
           <motion.div
             className="relative"
             initial={{ opacity: 0, x: -18 }}

@@ -50,17 +50,17 @@ export function Locations({
   return (
     <section
       id="locations"
-      className="relative overflow-hidden scroll-mt-24 bg-paper px-4 py-16 text-ink sm:px-6 sm:py-24"
+      className="relative overflow-hidden scroll-mt-24 bg-paper px-4 py-12 text-ink sm:px-6 sm:py-16"
     >
       <LeafSprig className="pointer-events-none absolute right-8 top-12 h-16 w-12 rotate-12 text-leaf/35" />
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <Stamp className="text-leaf">{territories.stamp}</Stamp>
-            <h2 className="mt-5 font-display text-3xl font-black tracking-[-0.03em] text-ink sm:text-5xl">
+            <h2 className="mt-4 font-display text-3xl font-black tracking-[-0.03em] text-ink sm:text-4xl">
               {territories.title}
             </h2>
-            <p className="mt-3 max-w-xl text-ink/75">{territories.deck}</p>
+            <p className="mt-2 max-w-xl text-ink/75">{territories.deck}</p>
           </div>
           <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-leaf">
             {liveSource === "sheet" ? territories.sourceSheet : territories.sourceFallback}
@@ -68,11 +68,11 @@ export function Locations({
         </div>
 
         {available.length > 0 ? (
-          <div className="mt-8 border-y border-leaf/25 py-6">
+          <div className="mt-6 border-y border-leaf/25 py-5">
             <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-leaf">
               {territories.availableTitle}
             </p>
-            <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-3">
+            <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2">
               {available.map((location) => (
                 <li key={`available-${location.city}`}>
                   <button
@@ -88,7 +88,7 @@ export function Locations({
           </div>
         ) : null}
 
-        <div className="paper-card mt-8 overflow-hidden">
+        <div className="paper-card mt-6 overflow-hidden">
           <div className="hidden grid-cols-[1.2fr_1fr_0.9fr_0.9fr_auto] gap-4 border-b border-ink/10 bg-leaf/10 px-5 py-3 font-mono text-[10px] uppercase tracking-[0.18em] text-leaf md:grid">
             <span>Город</span>
             <span>Регион</span>
