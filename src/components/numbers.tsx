@@ -8,7 +8,7 @@ export function Numbers() {
   return (
     <section
       id="numbers"
-      className="relative scroll-mt-24 overflow-hidden bg-paper px-4 py-20 sm:px-6 sm:py-28"
+      className="relative scroll-mt-24 overflow-hidden bg-paper px-4 py-16 sm:px-6 sm:py-24"
     >
       <DashField className="pointer-events-none absolute -right-8 top-16 h-48 w-72 text-leaf/[0.07] sm:h-64 sm:w-96" />
       <DashField className="pointer-events-none absolute -left-10 bottom-20 hidden h-40 w-64 text-leaf/[0.06] sm:block" />
@@ -20,15 +20,12 @@ export function Numbers() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-leaf">
-            {numbers.no}
-          </p>
-          <h2 className="mt-4 max-w-2xl font-display text-3xl font-black tracking-[-0.03em] text-ink sm:text-4xl">
+          <h2 className="max-w-2xl font-display text-3xl font-black tracking-[-0.03em] text-ink sm:text-4xl">
             {numbers.title}
           </h2>
         </motion.div>
 
-        <div className="mt-14 grid gap-px bg-leaf/20 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-px bg-leaf/20 sm:grid-cols-2 lg:grid-cols-3">
           {numbers.cards.map((card, index) => (
             <motion.article
               key={card.label}

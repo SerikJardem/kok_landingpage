@@ -7,10 +7,10 @@ import { product } from "@/lib/content";
 
 export function Product() {
   return (
-    <section className="relative overflow-hidden bg-[#eef6ef] px-4 py-20 sm:px-6 sm:py-28">
+    <section className="relative overflow-hidden bg-[#eef6ef] px-4 py-16 sm:px-6 sm:py-24">
       <LeafSprig className="pointer-events-none absolute left-[3%] bottom-14 h-16 w-12 rotate-[-20deg] text-leaf/25" />
       <div className="relative mx-auto max-w-6xl">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+        <div className="grid items-center gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
           <motion.div
             className="relative"
             initial={{ opacity: 0, x: -18 }}
@@ -23,7 +23,7 @@ export function Product() {
               {product.dayparts.map((part, index) => (
                 <motion.figure
                   key={part.label}
-                  className={`relative ${index === 1 ? "mt-8 sm:mt-12" : ""}`}
+                  className={`relative ${index === 1 ? "mt-6 sm:mt-8" : ""}`}
                   initial={{ opacity: 0, y: 18 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
@@ -61,13 +61,10 @@ export function Product() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.5, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-leaf">
-              {product.no}
-            </p>
-            <h2 className="mt-4 max-w-xl font-display text-3xl font-black tracking-[-0.03em] text-ink sm:text-4xl">
+            <h2 className="max-w-xl font-display text-3xl font-black tracking-[-0.03em] text-ink sm:text-4xl">
               {product.title}
             </h2>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-ink/75">
+            <p className="mt-4 max-w-xl text-base leading-relaxed text-ink/75">
               {product.body}
             </p>
 
