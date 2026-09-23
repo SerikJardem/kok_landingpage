@@ -82,14 +82,14 @@ export const product = {
     {
       label: "Утро",
       note: "Кофейня 8:00–11:30",
-      image: "/brand/kok-green-cup.png",
-      alt: "Зелёный стакан кофе KŌK",
+      image: "/brand/kok-coffee-cup.png",
+      alt: "Кофе в стакане KŌK",
     },
     {
       label: "День",
       note: "Еда с собой",
-      image: "/brand/kok-pita-wrap.png",
-      alt: "Пита KŌK — моно продукт курица",
+      image: "/brand/kok-green-cup.png",
+      alt: "Пита KŌK в фирменном стакане — еда с собой",
     },
   ],
   beats: [
