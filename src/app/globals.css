@@ -122,13 +122,13 @@ body {
 .hero-photo-scrim {
   background:
     linear-gradient(
-      95deg,
-      rgba(26, 26, 26, 0.92) 0%,
-      rgba(26, 26, 26, 0.72) 28%,
-      rgba(26, 26, 26, 0.28) 52%,
-      rgba(26, 26, 26, 0.08) 100%
+      90deg,
+      rgba(26, 26, 26, 0.78) 0%,
+      rgba(26, 26, 26, 0.45) 36%,
+      rgba(26, 26, 26, 0.12) 62%,
+      transparent 100%
     ),
-    linear-gradient(to top, rgba(26, 26, 26, 0.55) 0%, transparent 32%);
+    linear-gradient(to top, rgba(26, 26, 26, 0.4) 0%, transparent 28%);
 }
 
 @media (prefers-reduced-motion: reduce) {

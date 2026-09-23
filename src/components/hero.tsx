@@ -16,23 +16,22 @@ export function Hero() {
     >
       <motion.div
         className="absolute inset-0 -z-10"
-        initial={reduceMotion ? false : { opacity: 0.7, scale: 1.04 }}
+        initial={reduceMotion ? false : { opacity: 0.75, scale: 1.04 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.15, ease: [0.22, 1, 0.36, 1] }}
       >
         <Image
-          src="/brand/kok-pita-wrap.png"
+          src="/brand/kok-pita-wrap-landscape.png"
           alt="KŌK пита — моно продукт курица"
           fill
           preload
-          className="object-contain object-center sm:object-[78%_45%] sm:scale-[0.94]"
+          className="object-cover object-[72%_center] max-sm:object-[68%_center]"
           sizes="100vw"
         />
       </motion.div>
 
       <div className="hero-photo-scrim pointer-events-none absolute inset-0 -z-10" aria-hidden />
 
-      {/* Content sits under the nav — not pinned to the bottom */}
       <div className="relative mx-auto flex w-full max-w-5xl flex-col justify-start px-4 pb-12 pt-[4.75rem] sm:px-6 sm:pb-14 sm:pt-24">
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 12 }}
