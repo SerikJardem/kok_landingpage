@@ -7,9 +7,9 @@ import { model } from "@/lib/content";
 
 export function Model() {
   return (
-    <section className="relative overflow-hidden bg-paper px-4 py-16 sm:px-6 sm:py-24">
+    <section className="relative overflow-hidden bg-paper px-4 py-12 sm:px-6 sm:py-16">
       <div className="mx-auto max-w-6xl">
-        <div className="grid items-end gap-5 lg:grid-cols-[1fr_auto] lg:gap-8">
+        <div className="grid items-end gap-4 lg:grid-cols-[1fr_auto] lg:gap-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -41,13 +41,13 @@ export function Model() {
           </motion.div>
         </div>
 
-        <div className="mt-10 grid gap-0 overflow-hidden sm:grid-cols-2">
+        <div className="mt-8 grid gap-0 overflow-hidden sm:grid-cols-2">
           {model.points.map((point, index) => {
             const isNetwork = index === 0;
             return (
               <motion.div
                 key={point.title}
-                className={`relative px-6 py-10 sm:px-8 sm:py-12 ${
+                className={`relative px-5 py-8 sm:px-7 sm:py-9 ${
                   isNetwork ? "bg-leaf text-cream" : "bg-cream text-ink"
                 }`}
                 initial={{ opacity: 0, y: 16 }}

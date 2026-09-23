@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { useApply } from "@/components/apply-context";
 import { SparkBurst, WavePattern } from "@/components/brand";
 import { closeCta } from "@/lib/content";
@@ -9,25 +8,12 @@ import { closeCta } from "@/lib/content";
 export function CloseCta() {
   const { openApply } = useApply();
   return (
-    <section className="relative overflow-hidden bg-leaf px-4 py-16 text-cream sm:px-6 sm:py-20">
-      <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[38%] opacity-[0.18] lg:block">
-        <Image
-          src="/brand/kok-street-female.png"
-          alt=""
-          fill
-          className="object-cover object-[center_20%]"
-          sizes="38vw"
-        />
-        <div
-          className="absolute inset-0 bg-gradient-to-r from-leaf via-leaf/80 to-transparent"
-          aria-hidden
-        />
-      </div>
-      <SparkBurst className="pointer-events-none absolute left-[8%] top-10 h-10 w-10 text-ochre" />
-      <SparkBurst className="pointer-events-none absolute right-[10%] bottom-10 h-8 w-8 text-ochre lg:right-[42%]" />
+    <section className="relative overflow-hidden bg-leaf px-4 py-12 text-cream sm:px-6 sm:py-14">
+      <SparkBurst className="pointer-events-none absolute left-[8%] top-8 h-8 w-8 text-ochre" />
+      <SparkBurst className="pointer-events-none absolute right-[10%] bottom-8 h-7 w-7 text-ochre" />
 
       <motion.div
-        className="relative mx-auto max-w-3xl text-center lg:mx-0 lg:max-w-xl lg:text-left"
+        className="relative mx-auto max-w-3xl text-center"
         initial={{ opacity: 0, y: 18 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
@@ -36,14 +22,14 @@ export function CloseCta() {
         <h2 className="font-display text-4xl font-black leading-tight tracking-[-0.04em] sm:text-5xl">
           {closeCta.title}
         </h2>
-        <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-cream/85 lg:mx-0">
+        <p className="mx-auto mt-3 max-w-xl text-base leading-relaxed text-cream/85">
           {closeCta.deck}
         </p>
-        <WavePattern className="mx-auto mt-6 h-5 w-48 text-ochre lg:mx-0" />
+        <WavePattern className="mx-auto mt-5 h-5 w-48 text-ochre" />
         <button
           type="button"
           onClick={() => openApply()}
-          className="mt-8 bg-ochre px-8 py-4 font-display text-[12px] font-bold uppercase tracking-[0.2em] text-ink transition hover:bg-cream"
+          className="mt-6 bg-ochre px-8 py-4 font-display text-[12px] font-bold uppercase tracking-[0.2em] text-ink transition hover:bg-cream"
         >
           {closeCta.cta}
         </button>
