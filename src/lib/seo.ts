@@ -5,7 +5,7 @@ export const seo = {
   title: "KŌK — франшиза street food / үшбармақ / fast casual",
   titleTemplate: "%s | KŌK Franchise",
   description:
-    "KŌK (KOK) — fast-growth street food franchise: үшбармақ / ushbarmak-style pita with sous-vide chicken. You open a sales point; the network kitchen cooks. No fryer, −40% labor, launch in 3–4 weeks. Франшиза быстрого роста · Қазақстан · Алматы. Тез. Таза. Fresh.",
+    "KŌK (KOK) — fast-growth street food franchise: үшбармақ / ushbarmak-style pita, mono-product chicken. You open a sales point; the network kitchen cooks. No fryer, −40% labor, launch in 3–4 weeks. Франшиза быстрого роста · Қазақстан · Алматы. Тез. Таза. Fresh.",
   keywords: [
     "KŌK",
     "KOK",
@@ -22,7 +22,7 @@ export const seo = {
     "открыть точку питания",
     "точка продажи",
     "центральный цех",
-    "су-вид курица",
+    "моно продукт курица",
     "пита",
     "стрит фуд Алматы",
     "франшиза Казахстан",
@@ -138,7 +138,7 @@ export function buildJsonLd() {
             name: "Что такое франшиза KŌK для инвестора?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Инвестор открывает точку продажи. Центральный цех сети готовит су-вид курицу и заготовки. На точке нет фритюра и тяжёлой кухни: labor −40%, мощность 18–25 кВт, запуск 3–4 недели.",
+              text: "Инвестор открывает точку продажи. Центральный цех сети готовит моно продукт курица и заготовки. На точке нет фритюра и тяжёлой кухни: labor −40%, мощность 18–25 кВт, запуск 3–4 недели, быстрая сборка.",
             },
           },
           {
@@ -146,7 +146,7 @@ export function buildJsonLd() {
             name: "KŌK франшизасы дегеніміз не?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "KŌK — Алматыдағы street food бренді: үшбармақ рухындағы пита, су-вид тауық. Инвестор сату нүктесін ашады; желінің цехі дайындайды. Тез. Таза. Fresh.",
+              text: "KŌK — Алматыдағы street food бренді: үшбармақ рухындағы пита, моно продукт тауық. Инвестор сату нүктесін ашады; желінің цехі дайындайды. Тез. Таза. Fresh.",
             },
           },
           {

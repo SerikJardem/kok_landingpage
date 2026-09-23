@@ -30,8 +30,8 @@ export default async function Home() {
         <Model />
         <Numbers />
         <Product />
-        <CloseCta />
         <Locations locations={locations} source={source} />
+        <CloseCta />
       </main>
       <Footer />
       <ApplyModal cities={locations} />

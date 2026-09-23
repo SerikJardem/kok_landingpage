@@ -9,7 +9,7 @@ import { closeCta } from "@/lib/content";
 export function CloseCta() {
   const { openApply } = useApply();
   return (
-    <section className="relative overflow-hidden bg-leaf px-4 py-20 text-cream sm:px-6 sm:py-24">
+    <section className="relative overflow-hidden bg-leaf px-4 py-16 text-cream sm:px-6 sm:py-20">
       <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[38%] opacity-[0.18] lg:block">
         <Image
           src="/brand/kok-street-female.png"
@@ -33,20 +33,17 @@ export function CloseCta() {
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       >
-        <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ochre">
-          {closeCta.no}
-        </p>
-        <h2 className="mt-4 font-display text-4xl font-black leading-tight tracking-[-0.04em] sm:text-5xl">
+        <h2 className="font-display text-4xl font-black leading-tight tracking-[-0.04em] sm:text-5xl">
           {closeCta.title}
         </h2>
-        <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-cream/85 lg:mx-0">
+        <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-cream/85 lg:mx-0">
           {closeCta.deck}
         </p>
-        <WavePattern className="mx-auto mt-8 h-5 w-48 text-ochre lg:mx-0" />
+        <WavePattern className="mx-auto mt-6 h-5 w-48 text-ochre lg:mx-0" />
         <button
           type="button"
           onClick={() => openApply()}
-          className="mt-10 bg-ochre px-8 py-4 font-display text-[12px] font-bold uppercase tracking-[0.2em] text-ink transition hover:bg-cream"
+          className="mt-8 bg-ochre px-8 py-4 font-display text-[12px] font-bold uppercase tracking-[0.2em] text-ink transition hover:bg-cream"
         >
           {closeCta.cta}
         </button>
