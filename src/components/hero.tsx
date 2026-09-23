@@ -12,7 +12,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative isolate flex min-h-[78svh] items-start overflow-hidden bg-[#1a1a1a] sm:min-h-[82svh]"
+      className="relative isolate flex min-h-[82svh] items-center overflow-hidden bg-[#1a1a1a] sm:min-h-[86svh]"
     >
       <motion.div
         className="absolute inset-0 -z-10"
@@ -32,8 +32,8 @@ export function Hero() {
 
       <div className="hero-photo-scrim pointer-events-none absolute inset-0 -z-10" aria-hidden />
 
-      {/* Top-biased stack with open internal rhythm — not a centered island */}
-      <div className="relative mx-auto flex w-full max-w-5xl flex-col px-4 pb-16 pt-24 sm:px-6 sm:pb-20 sm:pt-28">
+      {/* Vertically centered stack; open gaps between copy beats kept */}
+      <div className="relative mx-auto flex w-full max-w-5xl flex-col px-4 py-16 sm:px-6 sm:py-20">
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
