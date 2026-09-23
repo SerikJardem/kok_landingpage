@@ -35,11 +35,8 @@ export function Header() {
           </span>
         </a>
         <nav className="hidden items-center gap-8 font-display text-[12px] font-bold uppercase tracking-[0.18em] text-ink md:flex">
-          <a href="#format" className="hover:text-leaf">
-            {nav.format}
-          </a>
-          <a href="#economics" className="hover:text-leaf">
-            {nav.economics}
+          <a href="#numbers" className="hover:text-leaf">
+            {nav.numbers}
           </a>
           <a href="#locations" className="hover:text-leaf">
             {nav.locations}
@@ -64,11 +61,8 @@ export function Header() {
       {menuOpen ? (
         <div className="border-t border-leaf/20 bg-paper px-4 py-4 md:hidden">
           <div className="flex flex-col gap-3 font-display text-[12px] font-bold uppercase tracking-[0.18em] text-ink">
-            <a href="#format" onClick={() => setMenuOpen(false)}>
-              {nav.format}
-            </a>
-            <a href="#economics" onClick={() => setMenuOpen(false)}>
-              {nav.economics}
+            <a href="#numbers" onClick={() => setMenuOpen(false)}>
+              {nav.numbers}
             </a>
             <a href="#locations" onClick={() => setMenuOpen(false)}>
               {nav.locations}

@@ -1,17 +1,15 @@
 import { ApplyProvider } from "@/components/apply-context";
 import { ApplyModal } from "@/components/apply-modal";
 import { CloseCta } from "@/components/close-cta";
-import { Daypart } from "@/components/daypart";
-import { Economics } from "@/components/economics";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { Locations } from "@/components/locations";
-import { Manifesto } from "@/components/manifesto";
 import { Marquee } from "@/components/marquee";
-import { Phygital } from "@/components/phygital";
-import { Sauces } from "@/components/sauces";
-import { Zoning } from "@/components/zoning";
+import { Model } from "@/components/model";
+import { Numbers } from "@/components/numbers";
+import { Problem } from "@/components/problem";
+import { Product } from "@/components/product";
 import { loadLocations } from "@/lib/locations";
 
 export default async function Home() {
@@ -22,20 +20,18 @@ export default async function Home() {
       <Header />
       <main>
         <p className="sr-only">
-          KŌK (KOK) franchise / франшиза: үшбармақ · ushbarmak street food, Hub &amp; Spoke, Spoke
-          точка продажи for investors, fast growth business · быстрый рост · жылдам өсу. Алматы,
-          Қазақстан.
+          KŌK (KOK) franchise / франшиза: үшбармақ · ushbarmak street food, точка продажи для
+          инвесторов без ресторанной кухни на смене, fast growth business · быстрый рост · жылдам
+          өсу. Алматы, Қазақстан.
         </p>
         <Hero />
         <Marquee />
-        <Manifesto />
-        <Phygital />
-        <Zoning />
-        <Sauces />
-        <Daypart />
-        <Economics />
-        <Locations locations={locations} source={source} />
+        <Problem />
+        <Model />
+        <Numbers />
+        <Product />
         <CloseCta />
+        <Locations locations={locations} source={source} />
       </main>
       <Footer />
       <ApplyModal cities={locations} />

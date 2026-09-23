@@ -1,10 +1,8 @@
 import { SparkBurst } from "@/components/brand";
-import { hero, stamps } from "@/lib/content";
-
-const items = [hero.tagline, stamps[1], stamps[2], stamps[3], hero.kazakh];
+import { stamps } from "@/lib/content";
 
 export function Marquee() {
-  const sequence = [...items, ...items];
+  const sequence = [...stamps, ...stamps];
   return (
     <div className="overflow-hidden border-y-2 border-leaf bg-ochre py-3 text-ink">
       <div className="marquee-track font-display text-sm font-bold tracking-[0.18em]">
