@@ -16,10 +16,7 @@ export function Model() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="max-w-2xl font-display text-sm font-bold leading-snug tracking-[-0.01em] text-leaf sm:text-base">
-              {model.lead}
-            </p>
-            <h2 className="mt-5 max-w-2xl font-display text-3xl font-black tracking-[-0.03em] text-ink sm:mt-6 sm:text-4xl">
+            <h2 className="max-w-2xl font-display text-3xl font-black tracking-[-0.03em] text-ink sm:text-4xl">
               {model.title}
             </h2>
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink/75">

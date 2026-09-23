@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useApply } from "@/components/apply-context";
-import { LeafSprig, Stamp } from "@/components/brand";
+import { LeafSprig } from "@/components/brand";
 import { territories } from "@/lib/content";
 import { fetchSheetLocations } from "@/lib/location-parse";
 import { googleSheetsCsvUrl } from "@/lib/public-config";
@@ -56,11 +56,10 @@ export function Locations({
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <Stamp className="text-leaf">{territories.stamp}</Stamp>
-            <h2 className="mt-4 font-display text-3xl font-black tracking-[-0.03em] text-ink sm:text-4xl">
+            <h2 className="font-display text-3xl font-black tracking-[-0.03em] text-ink sm:text-4xl">
               {territories.title}
             </h2>
-            <p className="mt-2 max-w-xl text-ink/75">{territories.deck}</p>
+            <p className="mt-2 max-w-2xl text-ink/75">{territories.deck}</p>
           </div>
           <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-leaf">
             {liveSource === "sheet" ? territories.sourceSheet : territories.sourceFallback}
