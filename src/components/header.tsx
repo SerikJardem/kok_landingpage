@@ -17,10 +17,15 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const overPhoto = !scrolled;
+  const inkOnPaper = scrolled || menuOpen;
+
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors ${
-        scrolled ? "bg-paper/95 shadow-[0_1px_0_#3dae5a] backdrop-blur-md" : "bg-paper/80"
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+        inkOnPaper
+          ? "bg-paper/95 shadow-[0_1px_0_#3dae5a] backdrop-blur-md"
+          : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
@@ -30,11 +35,19 @@ export function Header() {
           onClick={() => setMenuOpen(false)}
         >
           <Wordmark className="h-8 w-auto shrink-0 sm:h-9" />
-          <span className="truncate font-display text-[12px] font-bold tracking-[-0.02em] text-ink sm:text-sm">
+          <span
+            className={`truncate font-display text-[12px] font-bold tracking-[-0.02em] sm:text-sm ${
+              overPhoto && !menuOpen ? "text-cream" : "text-ink"
+            }`}
+          >
             Тез. Таза. Fresh.
           </span>
         </a>
-        <nav className="hidden items-center gap-8 font-display text-[12px] font-bold uppercase tracking-[0.18em] text-ink md:flex">
+        <nav
+          className={`hidden items-center gap-8 font-display text-[12px] font-bold uppercase tracking-[0.18em] md:flex ${
+            overPhoto ? "text-cream" : "text-ink"
+          }`}
+        >
           <a href="#numbers" className="hover:text-leaf">
             {nav.numbers}
           </a>
@@ -51,7 +64,9 @@ export function Header() {
         </nav>
         <button
           type="button"
-          className="font-display text-[11px] font-bold uppercase tracking-[0.16em] text-ink md:hidden"
+          className={`font-display text-[11px] font-bold uppercase tracking-[0.16em] md:hidden ${
+            overPhoto && !menuOpen ? "text-cream" : "text-ink"
+          }`}
           onClick={() => setMenuOpen((open) => !open)}
           aria-expanded={menuOpen}
         >

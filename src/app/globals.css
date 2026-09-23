@@ -118,6 +118,19 @@ body {
   }
 }
 
+/* Full-bleed hero: left/bottom ink wash for cream type over food photo */
+.hero-photo-scrim {
+  background:
+    linear-gradient(
+      105deg,
+      rgba(42, 42, 42, 0.88) 0%,
+      rgba(42, 42, 42, 0.62) 38%,
+      rgba(42, 42, 42, 0.22) 62%,
+      rgba(42, 42, 42, 0.08) 100%
+    ),
+    linear-gradient(to top, rgba(42, 42, 42, 0.72) 0%, transparent 42%);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

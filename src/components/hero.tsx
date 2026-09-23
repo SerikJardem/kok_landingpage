@@ -1,80 +1,82 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import { useApply } from "@/components/apply-context";
-import { BrushStroke, StickerSeal, WaveTriple } from "@/components/brand";
+import { Wordmark } from "@/components/brand";
 import { hero } from "@/lib/content";
 
 export function Hero() {
   const { openApply } = useApply();
+  const reduceMotion = useReducedMotion();
 
   return (
     <section
       id="top"
-      className="relative overflow-hidden bg-paper px-4 pb-16 pt-24 sm:px-6 sm:pb-20 sm:pt-28"
+      className="relative isolate flex min-h-[100svh] items-end overflow-hidden"
     >
-      <div className="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
+      <motion.div
+        className="absolute inset-0 -z-10"
+        initial={reduceMotion ? false : { scale: 1.08 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1.35, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <Image
+          src="/brand/kok-pita-wrap.png"
+          alt="KŌK пита с курицей су-вид"
+          fill
+          preload
+          className="object-cover object-[70%_center] max-sm:object-[62%_center]"
+          sizes="100vw"
+        />
+      </motion.div>
+
+      {/* Readability atmosphere only — no stickers or floating chrome */}
+      <div className="hero-photo-scrim pointer-events-none absolute inset-0 -z-10" aria-hidden />
+
+      <div className="relative mx-auto w-full max-w-6xl px-4 pb-16 pt-28 sm:px-6 sm:pb-24 sm:pt-32">
         <motion.div
-          initial={{ opacity: 0, y: 18 }}
+          initial={reduceMotion ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="flex items-center gap-3 text-leaf">
-            <p className="font-display text-[10px] font-bold uppercase tracking-[0.22em]">
-              {hero.eyebrow}
-            </p>
-            <WaveTriple className="h-5 w-20 shrink-0" />
-          </div>
-
-          <h1 className="mt-6 max-w-xl font-display text-3xl font-black leading-[1.08] tracking-[-0.03em] text-ink sm:text-5xl">
-            {hero.title}
-          </h1>
-
-          <p className="mt-4 max-w-lg text-sm leading-relaxed text-ink/75 sm:text-base">
-            {hero.deck}
+          <p className="font-display text-[10px] font-bold uppercase tracking-[0.22em] text-cream/75">
+            {hero.eyebrow}
           </p>
 
-          <dl className="mt-8 flex flex-wrap gap-x-8 gap-y-4">
-            {hero.metricsPreview.map((metric) => (
-              <div key={metric.label}>
-                <dt className="font-display text-2xl font-black tracking-[-0.03em] text-leaf sm:text-3xl">
-                  {metric.value}
-                </dt>
-                <dd className="mt-1 max-w-[9rem] font-mono text-[10px] uppercase tracking-[0.14em] text-ink/55">
-                  {metric.label}
-                </dd>
-              </div>
-            ))}
-          </dl>
+          <div className="mt-5 flex flex-col items-start gap-3 sm:flex-row sm:items-end sm:gap-6">
+            <Wordmark className="h-16 w-auto drop-shadow-[0_2px_24px_rgba(0,0,0,0.35)] sm:h-20 md:h-28" />
+            <p className="font-display text-xl font-bold tracking-[-0.02em] text-cream sm:mb-1.5 sm:text-2xl">
+              {hero.tagline}
+            </p>
+          </div>
+        </motion.div>
+
+        <motion.h1
+          className="mt-8 max-w-2xl font-display text-3xl font-black leading-[1.08] tracking-[-0.03em] text-cream sm:mt-10 sm:text-5xl"
+          initial={reduceMotion ? false : { opacity: 0, y: 22 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: reduceMotion ? 0 : 0.12, ease: [0.22, 1, 0.36, 1] }}
+        >
+          {hero.title}
+        </motion.h1>
+
+        <motion.div
+          initial={reduceMotion ? false : { opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, delay: reduceMotion ? 0 : 0.22, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <p className="mt-4 max-w-lg text-sm leading-relaxed text-cream/80 sm:text-base">
+            {hero.deck}
+          </p>
 
           <button
             type="button"
             onClick={() => openApply()}
-            className="mt-10 bg-leaf px-7 py-3 font-display text-[12px] font-bold uppercase tracking-[0.18em] text-cream transition hover:bg-ink"
+            className="mt-8 bg-leaf px-7 py-3 font-display text-[12px] font-bold uppercase tracking-[0.18em] text-cream transition hover:bg-ochre hover:text-ink"
           >
             {hero.ctaApply}
           </button>
-        </motion.div>
-
-        <motion.div
-          className="relative mx-auto w-full max-w-md lg:max-w-none"
-          initial={{ opacity: 0, x: 28 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.65, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <BrushStroke className="pointer-events-none absolute -left-12 -right-8 top-2 h-[95%] w-[125%] text-cobalt sm:-left-16" />
-          <div className="relative aspect-[4/5] overflow-hidden printed">
-            <Image
-              src="/brand/kok-pita-wrap.png"
-              alt="KŌK пита с курицей су-вид"
-              fill
-              preload
-              className="object-cover"
-              sizes="(max-width: 1024px) 90vw, 480px"
-            />
-          </div>
-          <StickerSeal className="absolute -left-2 bottom-20 w-24 rotate-[-12deg] drop-shadow-md sm:-left-5 sm:w-28" />
         </motion.div>
       </div>
     </section>

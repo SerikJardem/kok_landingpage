@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { SparkBurst, WavePattern } from "@/components/brand";
 import { model } from "@/lib/content";
 
@@ -8,20 +9,40 @@ export function Model() {
   return (
     <section className="relative overflow-hidden bg-paper px-4 py-20 sm:px-6 sm:py-28">
       <div className="mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-leaf">{model.no}</p>
-          <h2 className="mt-4 max-w-2xl font-display text-3xl font-black tracking-[-0.03em] text-ink sm:text-4xl">
-            {model.title}
-          </h2>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink/75">
-            {model.body}
-          </p>
-        </motion.div>
+        <div className="grid items-end gap-8 lg:grid-cols-[1fr_auto] lg:gap-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-leaf">
+              {model.no}
+            </p>
+            <h2 className="mt-4 max-w-2xl font-display text-3xl font-black tracking-[-0.03em] text-ink sm:text-4xl">
+              {model.title}
+            </h2>
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink/75">
+              {model.body}
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="relative mx-auto h-36 w-36 shrink-0 sm:h-40 sm:w-40 lg:mx-0"
+            initial={{ opacity: 0, scale: 0.92 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <Image
+              src="/brand/kok-pita-wrap.png"
+              alt="Пита KŌK — сборка на точке"
+              fill
+              className="object-contain drop-shadow-[0_12px_24px_rgba(42,42,42,0.12)]"
+              sizes="160px"
+            />
+          </motion.div>
+        </div>
 
         <div className="mt-12 grid gap-0 overflow-hidden sm:grid-cols-2">
           {model.points.map((point, index) => {

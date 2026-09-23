@@ -1,15 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { DashField } from "@/components/brand";
 import { numbers } from "@/lib/content";
 
 export function Numbers() {
   return (
     <section
       id="numbers"
-      className="scroll-mt-24 bg-paper px-4 py-20 sm:px-6 sm:py-28"
+      className="relative scroll-mt-24 overflow-hidden bg-paper px-4 py-20 sm:px-6 sm:py-28"
     >
-      <div className="mx-auto max-w-6xl">
+      <DashField className="pointer-events-none absolute -right-8 top-16 h-48 w-72 text-leaf/[0.07] sm:h-64 sm:w-96" />
+      <DashField className="pointer-events-none absolute -left-10 bottom-20 hidden h-40 w-64 text-leaf/[0.06] sm:block" />
+
+      <div className="relative mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -24,11 +28,11 @@ export function Numbers() {
           </h2>
         </motion.div>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-px bg-leaf/20 sm:grid-cols-2 lg:grid-cols-3">
           {numbers.cards.map((card, index) => (
             <motion.article
               key={card.label}
-              className="border border-leaf/25 bg-[#fffdf8] p-6 sm:p-7"
+              className="bg-[#fffdf8] px-6 py-8 sm:px-7 sm:py-9"
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
@@ -38,13 +42,15 @@ export function Numbers() {
                 ease: [0.22, 1, 0.36, 1],
               }}
             >
-              <p className="font-display text-3xl font-black tracking-[-0.03em] text-leaf sm:text-4xl">
+              <p className="font-display text-4xl font-black tracking-[-0.04em] text-leaf sm:text-[2.75rem]">
                 {card.value}
               </p>
-              <p className="mt-3 font-display text-sm font-bold uppercase tracking-[0.12em] text-ink">
+              <p className="mt-4 font-display text-sm font-bold uppercase tracking-[0.12em] text-ink">
                 {card.label}
               </p>
-              <p className="mt-2 text-sm leading-relaxed text-ink/65">{card.note}</p>
+              <p className="mt-2 max-w-[18rem] text-sm leading-relaxed text-ink/60">
+                {card.note}
+              </p>
             </motion.article>
           ))}
         </div>
