@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { SparkBurst, WavePattern } from "@/components/brand";
+import { SparkBurst } from "@/components/brand";
 import { model } from "@/lib/content";
 
 export function Model() {
@@ -70,22 +70,21 @@ export function Model() {
         </div>
 
         <motion.figure
-          className="relative mx-auto w-full max-w-sm lg:mx-0 lg:max-w-none"
+          className="relative mx-auto w-full max-w-md lg:mx-0 lg:max-w-none lg:sticky lg:top-28"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.5, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="relative aspect-[3/4] overflow-hidden printed">
+          <div className="relative aspect-[3/2] overflow-hidden">
             <Image
-              src="/brand/kok-pita-wrap.png"
-              alt="Пита KŌK — быстрая сборка на точке"
+              src="/brand/kok-pita-brand-graphic.png"
+              alt="KŌK пита — Тез. Таза. Fresh."
               fill
-              className="object-cover object-center"
-              sizes="(max-width: 1024px) 70vw, 380px"
+              className="object-contain object-center"
+              sizes="(max-width: 1024px) 85vw, 420px"
             />
           </div>
-          <WavePattern className="mt-4 h-4 w-44 text-leaf/45" />
         </motion.figure>
       </div>
     </section>
