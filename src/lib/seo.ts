@@ -2,10 +2,10 @@
 export const siteUrl = "https://www.kokfood.kz";
 
 export const seo = {
-  title: "KŌK — франшиза street food / үшбармақ / fast casual",
+  title: "KŌK — франшиза urban food / үшбармақ / fast casual",
   titleTemplate: "%s | KŌK Franchise",
   description:
-    "KŌK (KOK) — fast-growth street food franchise: үшбармақ / ushbarmak-style pita, mono-product chicken. You open a sales point; the network kitchen cooks. No fryer, −40% labor, launch in 3–4 weeks. Франшиза быстрого роста · Қазақстан · Алматы. Тез. Таза. Fresh.",
+    "KŌK (KOK) — fast-growth urban food franchise: үшбармақ / ushbarmak-style pita, mono-product chicken. You open a sales point; the network kitchen cooks. No fryer, −40% labor, launch in 3–4 weeks. Франшиза быстрого роста · Қазақстан · Алматы. Тез. Таза. Fresh.",
   keywords: [
     "KŌK",
     "KOK",
@@ -15,7 +15,9 @@ export const seo = {
     "франшиза",
     "франшиза общественного питания",
     "франшиза фастфуд",
-    "франшиза street food",
+    "франшиза urban food",
+    "urban food",
+    "urban food Алматы",
     "быстрый рост бизнеса",
     "быстрорастущий бизнес",
     "инвестиции в франшизу",
@@ -38,6 +40,7 @@ export const seo = {
     "franchise",
     "food franchise",
     "fast casual franchise",
+    "urban food franchise",
     "street food franchise",
     "fast growth business",
     "high growth franchise",
@@ -46,7 +49,7 @@ export const seo = {
     "Almaty franchise",
     "Kazakhstan franchise",
   ],
-  ogImage: "/brand/kok-pita-wrap.png",
+  ogImage: "/brand/og-share.jpg",
   locale: "ru_KZ",
   alternateLocales: ["kk_KZ", "en_US"],
 } as const;
@@ -97,8 +100,8 @@ export function buildJsonLd() {
         "@id": `${siteUrl}/#brand`,
         name: "KŌK",
         description:
-          "Fast casual street food: pita / үшбармақ-style wraps with sous-vide chicken. Network kitchen cooks; the partner runs a sales point for assembly and serving. No fryer on site.",
-        servesCuisine: ["Street Food", "Kazakh-inspired", "Fast Casual"],
+          "Fast casual urban food: pita / үшбармақ-style wraps with sous-vide chicken. Network kitchen cooks; the partner runs a sales point for assembly and serving. No fryer on site.",
+        servesCuisine: ["Urban Food", "Kazakh-inspired", "Fast Casual"],
         slogan: "Тез. Таза. Fresh.",
         url: siteUrl,
         image: `${siteUrl}${seo.ogImage}`,
@@ -130,7 +133,7 @@ export function buildJsonLd() {
             name: "What is KŌK / KOK franchise?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "KŌK is a fast casual street food franchise from Almaty, Kazakhstan. The product is a pita wrap in the spirit of үшбармақ / ushbarmak with sous-vide chicken. Investors open a sales point; the network kitchen supplies the food.",
+              text: "KŌK is a fast casual urban food franchise from Almaty, Kazakhstan. The product is a pita wrap in the spirit of үшбармақ / ushbarmak with sous-vide chicken. Investors open a sales point; the network kitchen supplies the food.",
             },
           },
           {
@@ -146,7 +149,7 @@ export function buildJsonLd() {
             name: "KŌK франшизасы дегеніміз не?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "KŌK — Алматыдағы street food бренді: үшбармақ рухындағы пита, моно продукт тауық. Инвестор сату нүктесін ашады; желінің цехі дайындайды. Тез. Таза. Fresh.",
+              text: "KŌK — Алматыдағы urban food бренді: үшбармақ рухындағы пита, моно продукт тауық. Инвестор сату нүктесін ашады; желінің цехі дайындайды. Тез. Таза. Fresh.",
             },
           },
           {

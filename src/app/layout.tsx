@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   creator: "KŌK",
   publisher: "KŌK",
   category: "franchise",
-  classification: "Food franchise / Fast casual street food",
+  classification: "Food franchise / Fast casual urban food",
   referrer: "origin-when-cross-origin",
   robots: {
     index: true,
@@ -68,8 +68,8 @@ export const metadata: Metadata = {
       {
         url: seo.ogImage,
         width: 1200,
-        height: 1500,
-        alt: "KŌK — street food франшиза, пита / үшбармақ, sous-vide chicken",
+        height: 630,
+        alt: "KŌK — urban food франшиза, пита / үшбармақ, моно продукт курица",
       },
     ],
   },
