@@ -7,7 +7,7 @@ export const nav = {
 } as const;
 
 export const hero = {
-  eyebrow: "FAST CASUAL · STREET FOOD",
+  eyebrow: "FAST CASUAL · URBAN FOOD",
   tagline: "Тез. Таза. Fresh.",
   title: "Почему точка KŌK — рациональная ставка, а не «ещё одно кафе».",
   deck: "Меньше площади, людей и киловатт — быстрее до открытия и проще в жилом фонде.",
@@ -157,14 +157,14 @@ export const quiz = {
 
 export const footer = {
   tagline: "Тез. Таза. Fresh.",
-  line: "Fast casual street food. Пита — моно продукт курица. Точка продажи без ресторанной кухни.",
+  line: "Fast casual urban food. Пита — моно продукт курица. Точка продажи без ресторанной кухни.",
   email: "sj@hostai.kz",
   rights: "KŌK · Алматы",
 } as const;
 
 export const stamps = [
   "ТЕЗ. ТАЗА. FRESH.",
-  "STREET FOOD",
+  "URBAN FOOD",
   "МОНО ПРОДУКТ КУРИЦА",
   "БЫСТРАЯ СБОРКА",
 ] as const;
