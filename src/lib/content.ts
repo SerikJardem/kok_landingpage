@@ -7,7 +7,7 @@ export const nav = {
 } as const;
 
 export const hero = {
-  eyebrow: "FAST CASUAL · STREET FOOD",
+  eyebrow: "FAST CASUAL · URBAN FOOD",
   tagline: "Тез. Таза. Fresh.",
   title: "Почему точка KŌK — рациональная ставка, а не «ещё одно кафе».",
   deck: "Меньше площади, людей и киловатт — быстрее до открытия и проще в жилом фонде.",
