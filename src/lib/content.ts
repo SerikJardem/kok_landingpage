@@ -157,14 +157,14 @@ export const quiz = {
 
 export const footer = {
   tagline: "Тез. Таза. Fresh.",
-  line: "Fast casual street food. Пита — моно продукт курица. Точка продажи без ресторанной кухни.",
+  line: "Fast casual urban food. Пита — моно продукт курица. Точка продажи без ресторанной кухни.",
   email: "sj@hostai.kz",
   rights: "KŌK · Алматы",
 } as const;
 
 export const stamps = [
   "ТЕЗ. ТАЗА. FRESH.",
-  "STREET FOOD",
+  "URBAN FOOD",
   "МОНО ПРОДУКТ КУРИЦА",
   "БЫСТРАЯ СБОРКА",
 ] as const;
