@@ -46,7 +46,8 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          PAGES_BASE_PATH: ${{ steps.setup_pages.outputs.base_path }}
+          # Custom domain (www.kokfood.kz) serves from site root — no project basePath
+          PAGES_BASE_PATH: ""
           GOOGLE_SHEETS_CSV_URL: ${{ vars.GOOGLE_SHEETS_CSV_URL }}
           NEXT_PUBLIC_GOOGLE_SHEETS_CSV_URL: ${{ vars.GOOGLE_SHEETS_CSV_URL }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}

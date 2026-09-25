@@ -1,8 +1,8 @@
 # KŌK Franchise Landing
 
-Next.js landing page for KŌK franchise partners. The production site is a static export on GitHub Pages:
+Next.js landing page for KŌK franchise partners. Production is a static export on GitHub Pages with custom domain:
 
-**https://serikjardem.github.io/kok_landingpage/**
+**https://www.kokfood.kz/**
 
 ```bash
 npm install
@@ -29,9 +29,9 @@ Repository Actions secrets / variables used by `.github/workflows/deploy.yml`:
 - `TELEGRAM_BOT_TOKEN` (Actions secret)
 - `TELEGRAM_CHAT_ID` (Actions secret)
 
-## GitHub Pages
+## GitHub Pages + custom domain
 
-This repository currently publishes from the branch root (not GitHub Actions), so the static export is committed at the repo root: `index.html`, `_next/`, `brand/`.
+Publishes from the Pages branch root: `index.html`, `_next/`, `brand/`, `CNAME`.
 
 Rebuild and refresh those files with:
 
@@ -39,7 +39,13 @@ Rebuild and refresh those files with:
 npm run build:pages
 ```
 
-That uses `basePath` `/kok_landingpage` so assets load at https://serikjardem.github.io/kok_landingpage/. `.nojekyll` tells GitHub not to run Jekyll, which would otherwise hide `_next` and fall back to this README.
+Builds **without** `PAGES_BASE_PATH` so assets load at the site root. `public/CNAME` is `www.kokfood.kz`.
 
-If you later switch Pages to **Source: GitHub Actions**, `.github/workflows/deploy.yml` will build `out/` on each push to `main`.
+DNS (ps.kz) for GitHub Pages:
 
+- Apex `kokfood.kz` → A: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+- `www` → CNAME `serikjardem.github.io`
+
+GitHub → Settings → Pages → Custom domain: `www.kokfood.kz` → Enforce HTTPS after DNS propagates.
+
+`.nojekyll` tells GitHub not to run Jekyll (keeps `_next` visible).
