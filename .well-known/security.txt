@@ -1,0 +1,5 @@
+Contact: mailto:sj@hostai.kz
+Preferred-Languages: ru, en, kk
+Canonical: https://www.kokfood.kz/.well-known/security.txt
+Policy: https://www.kokfood.kz/
+Expires: 2027-09-25T00:00:00.000Z
