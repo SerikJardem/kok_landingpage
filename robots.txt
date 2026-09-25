@@ -19,5 +19,5 @@ Allow: /
 User-Agent: PerplexityBot
 Allow: /
 
-Host: https://serikjardem.github.io/kok_landingpage
-Sitemap: https://serikjardem.github.io/kok_landingpage/sitemap.xml
+Host: https://www.kokfood.kz
+Sitemap: https://www.kokfood.kz/sitemap.xml

@@ -1,5 +1,5 @@
-/** Site URL used for metadata, sitemap, and JSON-LD (GitHub Pages). */
-export const siteUrl = "https://serikjardem.github.io/kok_landingpage";
+/** Canonical site URL (custom domain on GitHub Pages). */
+export const siteUrl = "https://www.kokfood.kz";
 
 export const seo = {
   title: "KŌK — франшиза street food / үшбармақ / fast casual",
