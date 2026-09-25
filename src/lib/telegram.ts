@@ -1,8 +1,11 @@
 import { quiz } from "./content";
+import { telegramCredentials } from "./public-config";
 import type { ApplyRequestBody, BudgetBand, ExperienceLevel } from "./types";
 
 const EXPERIENCE: ExperienceLevel[] = ["yes", "no", "partial"];
 const BUDGETS: BudgetBand[] = ["under25", "25to50", "50to80", "over80"];
+const WINDOW_MS = 10 * 60 * 1000;
+const MAX_HITS = 8;
 
 function isExperience(value: unknown): value is ExperienceLevel {
   return typeof value === "string" && EXPERIENCE.includes(value as ExperienceLevel);
@@ -69,9 +72,26 @@ function escapeHtml(value: string) {
     .replaceAll(">", "&gt;");
 }
 
+function clientRateLimited() {
+  if (typeof window === "undefined") {
+    return false;
+  }
+  const key = "kok-apply-hits";
+  const now = Date.now();
+  const recent = (JSON.parse(sessionStorage.getItem(key) || "[]") as number[]).filter(
+    (stamp) => now - stamp < WINDOW_MS,
+  );
+  if (recent.length >= MAX_HITS) {
+    sessionStorage.setItem(key, JSON.stringify(recent));
+    return true;
+  }
+  recent.push(now);
+  sessionStorage.setItem(key, JSON.stringify(recent));
+  return false;
+}
+
 export async function sendTelegramMessage(text: string) {
-  const token = process.env.TELEGRAM_BOT_TOKEN?.trim();
-  const chatId = process.env.TELEGRAM_CHAT_ID?.trim();
+  const { token, chatId } = telegramCredentials();
   if (!token || !chatId) {
     return { delivered: false as const, reason: "telegram_not_configured" as const };
   }
@@ -97,4 +117,27 @@ export async function sendTelegramMessage(text: string) {
   }
 
   return { delivered: true as const };
+}
+
+export async function submitFranchiseApplication(input: unknown) {
+  if (clientRateLimited()) {
+    return { ok: false as const, error: "Слишком много заявок. Подождите немного." };
+  }
+
+  const parsed = validateApplication(input);
+  if ("error" in parsed) {
+    if (parsed.error === "rejected") {
+      return { ok: true as const, delivered: true };
+    }
+    return { ok: false as const, error: parsed.error };
+  }
+
+  const submittedAt = new Date().toISOString();
+  const text = formatTelegramMessage(parsed, submittedAt);
+  const telegram = await sendTelegramMessage(text);
+  return {
+    ok: true as const,
+    delivered: telegram.delivered,
+    reason: "reason" in telegram ? telegram.reason : undefined,
+  };
 }
