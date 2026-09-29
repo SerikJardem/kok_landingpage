@@ -1,16 +1,18 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-forest: #2f3a25;
-  --color-cream: #f3ede2;
-  --color-ochre: #e2b83a;
-  --color-terra: #d86f45;
-  --color-sage: #abb27a;
-  --color-ink: #121212;
-  --color-leaf: #2e6b48;
-  --color-lime: #b8e52e;
+  --color-forest: #2a2a2a;
+  --color-cream: #f5f0e6;
+  --color-ochre: #f4c430;
+  --color-terra: #e24a30;
+  --color-sage: #3dae5a;
+  --color-ink: #2a2a2a;
+  --color-leaf: #3dae5a;
+  --color-lime: #3dae5a;
+  --color-cobalt: #3c6eea;
+  --color-paper: #f5f0e6;
   --font-display: var(--font-unbounded);
-  --font-sans: var(--font-manrope);
+  --font-sans: var(--font-inter);
   --font-mono: var(--font-ibm);
 }
 
@@ -19,14 +21,14 @@ html {
 }
 
 body {
-  background: var(--color-cream);
+  background: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-sans), system-ui, sans-serif;
 }
 
 ::selection {
   background: var(--color-ochre);
-  color: var(--color-forest);
+  color: var(--color-ink);
 }
 
 .grain {
@@ -34,8 +36,8 @@ body {
   position: fixed;
   inset: 0;
   z-index: 80;
-  opacity: 0.05;
-  mix-blend-mode: soft-light;
+  opacity: 0.055;
+  mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
 }
 
@@ -59,43 +61,10 @@ body {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   transform: rotate(-2deg);
-  box-shadow: 2px 2px 0 currentColor;
 }
 
-.ink-bleed {
+.brush {
   position: relative;
-  isolation: isolate;
-}
-
-.ink-bleed .layer {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  user-select: none;
-}
-
-.ink-bleed .layer.terra {
-  color: var(--color-terra);
-  transform: translate(-5px, 4px);
-  filter: url(#ink-bleed);
-  opacity: 0.72;
-  z-index: -2;
-}
-
-.ink-bleed .layer.sage {
-  color: var(--color-sage);
-  transform: translate(4px, -3px);
-  mix-blend-mode: multiply;
-  opacity: 0.85;
-  z-index: -1;
-}
-
-.ink-bleed:hover .layer.terra {
-  transform: translate(-10px, 7px);
-}
-
-.ink-bleed:hover .layer.sage {
-  transform: translate(8px, -6px);
 }
 
 .marquee-track {
@@ -106,11 +75,11 @@ body {
 }
 
 .receipt {
-  background: #f7f3ea;
-  color: #1a1a1a;
+  background: #fffdf8;
+  color: #2a2a2a;
   box-shadow:
-    0 18px 40px rgba(26, 26, 26, 0.18),
-    inset 0 0 0 1px rgba(26, 26, 26, 0.08);
+    0 18px 40px rgba(42, 42, 42, 0.12),
+    inset 0 0 0 1px rgba(42, 42, 42, 0.08);
 }
 
 .receipt::before,
@@ -120,7 +89,7 @@ body {
   left: 0;
   right: 0;
   height: 12px;
-  background-image: radial-gradient(circle, var(--color-forest) 5px, transparent 6px);
+  background-image: radial-gradient(circle, var(--color-leaf) 5px, transparent 6px);
   background-size: 16px 12px;
   background-repeat: repeat-x;
 }
@@ -133,6 +102,13 @@ body {
   bottom: -6px;
 }
 
+.paper-card {
+  background: #fffdf8;
+  box-shadow:
+    0 14px 32px rgba(42, 42, 42, 0.08),
+    inset 0 0 0 1px rgba(42, 42, 42, 0.06);
+}
+
 @keyframes marquee {
   from {
     transform: translateX(0);
@@ -142,28 +118,17 @@ body {
   }
 }
 
-@keyframes floaty {
-  0%,
-  100% {
-    transform: translateY(0) rotate(-6deg);
-  }
-  50% {
-    transform: translateY(-14px) rotate(-3deg);
-  }
-}
-
-@keyframes drip {
-  0%,
-  100% {
-    transform: scaleY(1);
-  }
-  50% {
-    transform: scaleY(1.08);
-  }
-}
-
-.floaty {
-  animation: floaty 7s ease-in-out infinite;
+/* Full-bleed hero: left/bottom ink wash for cream type over food photo */
+.hero-photo-scrim {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(26, 26, 26, 0.78) 0%,
+      rgba(26, 26, 26, 0.45) 36%,
+      rgba(26, 26, 26, 0.12) 62%,
+      transparent 100%
+    ),
+    linear-gradient(to top, rgba(26, 26, 26, 0.4) 0%, transparent 28%);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -171,10 +136,7 @@ body {
     scroll-behavior: auto;
   }
 
-  .marquee-track,
-  .floaty,
-  .ink-bleed .layer {
+  .marquee-track {
     animation: none !important;
-    transition: none !important;
   }
 }
