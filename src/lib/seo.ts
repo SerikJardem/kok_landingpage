@@ -113,7 +113,7 @@ export function buildJsonLd() {
         "@id": `${siteUrl}/#franchise`,
         name: "KŌK franchise / франшиза точки продажи",
         description:
-          "Investor franchise for a KŌK sales point. The network kitchen supplies sous-vide chicken and sauces. Fast growth: 3–4 week launch, −40% labor vs classic cafe, 18–25 kW power, midi 45–60 m² or express 25–35 m².",
+          "Investor franchise for a KŌK sales point. The network kitchen supplies sous-vide chicken and sauces. Fast growth: 3–4 week launch, −40% labor vs classic cafe, 18–25 kW power, midi 45–60 m² or express up to 30 m².",
         category: "Food franchise",
         businessFunction: "http://purl.org/goodrelations/v1#Sell",
         areaServed: "KZ",

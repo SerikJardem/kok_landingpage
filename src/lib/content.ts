@@ -101,7 +101,7 @@ export const product = {
 
 export const closeCta = {
   title: "Следующий шаг",
-  deck: "Если город свободен и цифры сходятся — оставляете контакт. Считаем локацию: midi 45–60 м² или express 25–35 м².",
+  deck: "Если город свободен и цифры сходятся — оставляете контакт. Считаем локацию: midi 45–60 м² или express до 30 м².",
   cta: "Оставить контакт",
 } as const;
 
@@ -135,7 +135,7 @@ export const quiz = {
   } satisfies Record<ExperienceLevel, string>,
   budgetLabel: "Какой формат рассматриваете?",
   budget: {
-    under25: "Express 25–35 м²",
+    under25: "Express до 30 м²",
     "25to50": "Midi 45–60 м²",
     "50to80": "Несколько точек",
     over80: "Сеть / несколько городов",
