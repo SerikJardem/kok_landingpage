@@ -85,13 +85,14 @@ export function Model() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.5, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="relative aspect-[3/2] overflow-hidden">
+          <div className="relative aspect-[16/9] overflow-hidden bg-[#1a1a1a] sm:aspect-[3/2]">
             <Image
-              src="/brand/kok-pita-brand-graphic.png"
-              alt="KŌK пита — Тез. Таза. Fresh."
+              src="/brand/kok-kitchen-prep.jpg"
+              alt="Сборка питы KŌK на точке — свежие овощи и моно продукт курица"
               fill
-              className="object-contain object-center"
-              sizes="(max-width: 1024px) 85vw, 420px"
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 90vw, 440px"
+              priority={false}
             />
           </div>
         </motion.figure>
