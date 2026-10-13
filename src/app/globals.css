@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-forest: #2a2a2a;
+  --color-forest: #2f3a25;
   --color-cream: #f5f0e6;
   --color-ochre: #f4c430;
   --color-terra: #e24a30;
-  --color-sage: #3dae5a;
+  --color-sage: #abb27a;
   --color-ink: #2a2a2a;
   --color-leaf: #3dae5a;
-  --color-lime: #3dae5a;
+  --color-lime: #b8e52e;
   --color-cobalt: #3c6eea;
   --color-paper: #f5f0e6;
   --font-display: var(--font-unbounded);
@@ -61,6 +61,7 @@ body {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   transform: rotate(-2deg);
+  box-shadow: 2px 2px 0 currentColor;
 }
 
 .brush {

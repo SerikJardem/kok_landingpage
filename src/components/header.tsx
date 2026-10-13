@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useApply } from "@/components/apply-context";
 import { Wordmark } from "@/components/brand";
@@ -57,6 +58,9 @@ export function Header() {
           <a href="#locations" className="hover:text-leaf">
             {nav.locations}
           </a>
+          <Link href="/ops" className="hover:text-leaf">
+            {nav.partners}
+          </Link>
           <button
             type="button"
             onClick={() => openApply()}
@@ -88,6 +92,9 @@ export function Header() {
             <a href="#locations" onClick={() => setMenuOpen(false)}>
               {nav.locations}
             </a>
+            <Link href="/ops" onClick={() => setMenuOpen(false)}>
+              {nav.partners}
+            </Link>
             <button
               type="button"
               className="bg-leaf px-4 py-3 text-left text-cream"

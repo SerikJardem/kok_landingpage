@@ -4,6 +4,7 @@ export const nav = {
   numbers: "Цифры",
   menu: "Меню",
   locations: "Города",
+  partners: "Партнёрам",
   apply: "Заявка",
 } as const;
 

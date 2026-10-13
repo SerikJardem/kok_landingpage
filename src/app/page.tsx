@@ -9,6 +9,7 @@ import { Marquee } from "@/components/marquee";
 import { Menu } from "@/components/menu";
 import { Model } from "@/components/model";
 import { Numbers } from "@/components/numbers";
+import { PartnersTeaser } from "@/components/partners-teaser";
 import { Problem } from "@/components/problem";
 import { Product } from "@/components/product";
 import { loadLocations } from "@/lib/locations";
@@ -32,6 +33,7 @@ export default async function Home() {
         <Numbers />
         <Product />
         <Menu />
+        <PartnersTeaser />
         <Locations locations={locations} source={source} />
         <CloseCta />
       </main>
