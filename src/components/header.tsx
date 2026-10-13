@@ -8,8 +8,6 @@ import { Wordmark } from "@/components/brand";
 import { nav } from "@/lib/content";
 
 const homeLinks = [
-  { href: "/#numbers", label: nav.numbers },
-  { href: "/#menu", label: nav.menu },
   { href: "/catering", label: nav.catering },
   { href: "/ops", label: nav.partners },
 ] as const;
@@ -56,7 +54,7 @@ export function Header() {
               overPhoto ? "text-cream" : "text-ink"
             }`}
           >
-            URBAN FOOD
+            Tez&Fresh
           </span>
         </Link>
         <nav

@@ -3,19 +3,27 @@ import Image from "next/image";
 import Link from "next/link";
 import { Stamp } from "@/components/brand";
 import { Footer } from "@/components/footer";
+import { Numbers } from "@/components/numbers";
 import { OpsTelegramMock } from "@/components/ops-telegram-mock";
+import { Product } from "@/components/product";
 import { opsProof } from "@/lib/ops-proof";
 
 export const metadata: Metadata = {
   title: "KŌK — что даём партнёру: Vision AI, аналитика, смены",
   description:
-    "Vision AI по зонам, аналитика гостей и удержания, смены в Telegram. Что получает франчайзи KŌK.",
+    "Цифры точки, продукт, Vision AI по зонам, аналитика гостей и смены в Telegram. Что получает франчайзи KŌK.",
 };
 
 export default function OpsPage() {
   return (
     <>
-      <main className="bg-[#121212] pt-16 text-cream">
+      <main>
+        <div className="pt-16">
+          <Numbers />
+          <Product />
+        </div>
+
+        <div className="bg-[#121212] text-cream">
         <section className="border-b border-cream/10 px-4 pb-8 pt-8 sm:px-6 sm:pt-10">
           <div className="mx-auto max-w-6xl">
             <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-lime/90">
@@ -144,6 +152,7 @@ export default function OpsPage() {
             <OpsTelegramMock />
           </div>
         </section>
+        </div>
       </main>
 
       <div className="print:hidden">
