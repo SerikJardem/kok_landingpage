@@ -51,6 +51,9 @@ export function Header() {
           <a href="#numbers" className="hover:text-leaf">
             {nav.numbers}
           </a>
+          <a href="#menu" className="hover:text-leaf">
+            {nav.menu}
+          </a>
           <a href="#locations" className="hover:text-leaf">
             {nav.locations}
           </a>
@@ -78,6 +81,9 @@ export function Header() {
           <div className="flex flex-col gap-3 font-display text-[12px] font-bold uppercase tracking-[0.18em] text-ink">
             <a href="#numbers" onClick={() => setMenuOpen(false)}>
               {nav.numbers}
+            </a>
+            <a href="#menu" onClick={() => setMenuOpen(false)}>
+              {nav.menu}
             </a>
             <a href="#locations" onClick={() => setMenuOpen(false)}>
               {nav.locations}

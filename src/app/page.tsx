@@ -6,6 +6,7 @@ import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { Locations } from "@/components/locations";
 import { Marquee } from "@/components/marquee";
+import { Menu } from "@/components/menu";
 import { Model } from "@/components/model";
 import { Numbers } from "@/components/numbers";
 import { Problem } from "@/components/problem";
@@ -30,6 +31,7 @@ export default async function Home() {
         <Model />
         <Numbers />
         <Product />
+        <Menu />
         <Locations locations={locations} source={source} />
         <CloseCta />
       </main>
