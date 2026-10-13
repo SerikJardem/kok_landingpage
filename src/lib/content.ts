@@ -1,16 +1,21 @@
-import type { BudgetBand, ExperienceLevel } from "./types";
+import type {
+  BudgetBand,
+  CateringHeadcount,
+  CateringNeed,
+  ExperienceLevel,
+} from "./types";
 
 export const nav = {
   numbers: "Цифры",
   menu: "Меню",
+  catering: "Кейтеринг",
   locations: "Города",
   partners: "Партнёрам",
   apply: "Заявка",
 } as const;
 
 export const hero = {
-  eyebrow: "FAST CASUAL · URBAN FOOD",
-  tagline: "Тез. Таза. Fresh.",
+  eyebrow: "URBAN FOOD",
   title: "Почему точка KŌK — рациональная ставка, а не «ещё одно кафе».",
   deck: "Меньше площади, людей и киловатт — быстрее до открытия и проще в жилом фонде.",
   metricsPreview: [
@@ -239,15 +244,65 @@ export const quiz = {
 } as const;
 
 export const footer = {
-  tagline: "Тез. Таза. Fresh.",
-  line: "Fast casual urban food. Пита — моно продукт курица. Точка продажи без ресторанной кухни.",
+  tagline: "URBAN FOOD",
+  line: "Urban food. Пита — моно продукт курица. Точка продажи без ресторанной кухни.",
   email: "sj@hostai.kz",
   rights: "KŌK · Алматы",
 } as const;
 
 export const stamps = [
-  "ТЕЗ. ТАЗА. FRESH.",
   "URBAN FOOD",
   "МОНО ПРОДУКТ КУРИЦА",
   "БЫСТРАЯ СБОРКА",
 ] as const;
+
+export const catering = {
+  stamp: "CATERING",
+  title: "Еда для вашей встречи — без ресторанной возни.",
+  deck: "От индивидуальных порций до пита-спреда для 50, 100 или 200+ гостей. Заявка за 24 часа — соберём еду и напитки под ваш формат.",
+  notice: "Все заказы — минимум за 24 часа.",
+  points: [
+    "Питы со свежими овощами — порционно или спредом.",
+    "Напитки: cold brew, лимонады; кофе уточняем при подтверждении.",
+    "Для офиса, кампуса, встречи или сбора — без банкетного театра.",
+  ],
+  sizes: [
+    { key: "50" as const, label: "50 гостей", hint: "небольшая встреча" },
+    { key: "100" as const, label: "100 гостей", hint: "офис / кампус" },
+    { key: "200plus" as const, label: "200+", hint: "крупное событие" },
+  ],
+  formTitle: "Заявка на кейтеринг",
+  formDeck: "Короткий опросник. Заявка уходит команде в Telegram.",
+  needLabel: "Что нужно?",
+  need: {
+    food: "Только еда",
+    drinks: "Только напитки",
+    both: "Еда и напитки",
+  } satisfies Record<CateringNeed, string>,
+  headcountLabel: "Сколько гостей?",
+  headcount: {
+    "50": "≈ 50",
+    "100": "≈ 100",
+    "200plus": "200+",
+  } satisfies Record<CateringHeadcount, string>,
+  dateLabel: "Дата события",
+  timeLabel: "Время (необязательно)",
+  cityLabel: "Город",
+  venueLabel: "Адрес / площадка",
+  organizationLabel: "Организация (необязательно)",
+  nameLabel: "Имя",
+  contactLabel: "Телефон или Telegram",
+  contactPlaceholder: "+7 … или @handle",
+  notesLabel: "Комментарий",
+  notesPlaceholder: "Аллергии, упаковка, окно доставки…",
+  submit: "Отправить заявку",
+  successTitle: "Заявка на кейтеринг ушла.",
+  successBody:
+    "Команда KŌK увидит её в Telegram и напишет для подтверждения меню и объёма.",
+  queuedTitle: "Заявка собрана.",
+  queuedBody:
+    "Telegram ещё не подключён. Добавьте TELEGRAM_BOT_TOKEN и TELEGRAM_CHAT_ID — или передайте данные команде вручную.",
+  error: "Не отправилось. Проверьте поля и попробуйте ещё раз.",
+  dateTooSoon: "Нужно минимум 24 часа до события.",
+  cta: "Оставить заявку",
+} as const;

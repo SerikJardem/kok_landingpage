@@ -42,13 +42,10 @@ export function Hero() {
           <p className="font-display text-[10px] font-bold uppercase tracking-[0.22em] text-cream/75">
             {hero.eyebrow}
           </p>
-          <p className="mt-4 font-display text-xl font-bold tracking-[-0.02em] text-cream sm:text-2xl">
-            {hero.tagline}
-          </p>
         </motion.div>
 
         <motion.h1
-          className="mt-9 max-w-xl font-display text-3xl font-black leading-[1.18] tracking-[-0.03em] text-cream sm:mt-10 sm:text-[2.75rem] sm:leading-[1.16]"
+          className="mt-7 max-w-xl font-display text-3xl font-black leading-[1.18] tracking-[-0.03em] text-cream sm:mt-8 sm:text-[2.75rem] sm:leading-[1.16]"
           initial={reduceMotion ? false : { opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: reduceMotion ? 0 : 0.08, ease: [0.22, 1, 0.36, 1] }}

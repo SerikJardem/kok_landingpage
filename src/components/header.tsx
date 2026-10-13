@@ -41,7 +41,7 @@ export function Header() {
               overPhoto && !menuOpen ? "text-cream" : "text-ink"
             }`}
           >
-            Тез. Таза. Fresh.
+            URBAN FOOD
           </span>
         </a>
         <nav
@@ -55,6 +55,9 @@ export function Header() {
           <a href="#menu" className="hover:text-leaf">
             {nav.menu}
           </a>
+          <Link href="/catering" className="hover:text-leaf">
+            {nav.catering}
+          </Link>
           <a href="#locations" className="hover:text-leaf">
             {nav.locations}
           </a>
@@ -89,6 +92,9 @@ export function Header() {
             <a href="#menu" onClick={() => setMenuOpen(false)}>
               {nav.menu}
             </a>
+            <Link href="/catering" onClick={() => setMenuOpen(false)}>
+              {nav.catering}
+            </Link>
             <a href="#locations" onClick={() => setMenuOpen(false)}>
               {nav.locations}
             </a>
