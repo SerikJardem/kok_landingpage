@@ -11,7 +11,6 @@ const homeLinks = [
   { href: "/#numbers", label: nav.numbers },
   { href: "/#menu", label: nav.menu },
   { href: "/catering", label: nav.catering },
-  { href: "/#locations", label: nav.locations },
   { href: "/ops", label: nav.partners },
 ] as const;
 

@@ -88,7 +88,7 @@ export function CateringForm({ compact = false }: { compact?: boolean }) {
   return (
     <form
       onSubmit={submit}
-      className={`relative border-2 border-forest bg-cream shadow-[8px_10px_0_#2f3a25] ${pad}`}
+      className={`relative min-w-0 overflow-hidden border-2 border-forest bg-cream shadow-[8px_10px_0_#2f3a25] ${pad}`}
     >
       <h2 className="font-display text-xl font-black text-forest sm:text-2xl">
         {catering.formTitle}
@@ -137,14 +137,14 @@ export function CateringForm({ compact = false }: { compact?: boolean }) {
         </div>
       </fieldset>
 
-      <div className={`${gap} grid gap-3 sm:grid-cols-2`}>
-        <label className="grid gap-1 text-xs sm:text-sm">
+      <div className={`${gap} grid min-w-0 gap-3 sm:grid-cols-2`}>
+        <label className="grid min-w-0 gap-1 text-xs sm:text-sm">
           {catering.dateLabel}
           <input
             type="date"
             required
             min={minDate}
-            className={`border-2 border-forest bg-cream outline-none ${inputPad}`}
+            className={`w-full min-w-0 border-2 border-forest bg-cream outline-none ${inputPad}`}
             value={form.eventDate}
             onChange={(event) =>
               setForm((current) => ({
@@ -154,11 +154,11 @@ export function CateringForm({ compact = false }: { compact?: boolean }) {
             }
           />
         </label>
-        <label className="grid gap-1 text-xs sm:text-sm">
+        <label className="grid min-w-0 gap-1 text-xs sm:text-sm">
           {catering.timeLabel}
           <input
             type="time"
-            className={`border-2 border-forest bg-cream outline-none ${inputPad}`}
+            className={`w-full min-w-0 border-2 border-forest bg-cream outline-none ${inputPad}`}
             value={form.eventTime}
             onChange={(event) =>
               setForm((current) => ({
@@ -206,24 +206,24 @@ export function CateringForm({ compact = false }: { compact?: boolean }) {
             }
           />
         </label>
-        <div className="grid gap-3 sm:grid-cols-2">
-          <label className="grid gap-1 text-xs sm:text-sm">
+        <div className="grid min-w-0 gap-3 sm:grid-cols-2">
+          <label className="grid min-w-0 gap-1 text-xs sm:text-sm">
             {catering.nameLabel}
             <input
               required
-              className={`border-2 border-forest bg-cream outline-none ${inputPad}`}
+              className={`w-full min-w-0 border-2 border-forest bg-cream outline-none ${inputPad}`}
               value={form.name}
               onChange={(event) =>
                 setForm((current) => ({ ...current, name: event.target.value }))
               }
             />
           </label>
-          <label className="grid gap-1 text-xs sm:text-sm">
+          <label className="grid min-w-0 gap-1 text-xs sm:text-sm">
             {catering.contactLabel}
             <input
               required
               placeholder={catering.contactPlaceholder}
-              className={`border-2 border-forest bg-cream outline-none ${inputPad}`}
+              className={`w-full min-w-0 border-2 border-forest bg-cream outline-none ${inputPad}`}
               value={form.contact}
               onChange={(event) =>
                 setForm((current) => ({

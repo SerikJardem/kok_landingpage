@@ -72,7 +72,7 @@ export default function CateringPage() {
               </div>
             </div>
 
-            <div id="catering-form" className="lg:sticky lg:top-24">
+            <div id="catering-form" className="min-w-0 lg:sticky lg:top-24">
               <CateringForm compact />
             </div>
           </div>
