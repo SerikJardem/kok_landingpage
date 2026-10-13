@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Stamp, Wordmark } from "@/components/brand";
+import { Stamp } from "@/components/brand";
 import { Footer } from "@/components/footer";
 import { OpsTelegramMock } from "@/components/ops-telegram-mock";
 import { opsProof } from "@/lib/ops-proof";
@@ -15,30 +15,8 @@ export const metadata: Metadata = {
 export default function OpsPage() {
   return (
     <>
-      <header className="border-b border-forest/15 bg-cream print:hidden">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-          <Link href="/" className="text-leaf">
-            <Wordmark className="h-8 w-auto" />
-          </Link>
-          <div className="flex items-center gap-3">
-            <Link
-              href="/"
-              className="font-display text-[11px] font-bold uppercase tracking-[0.16em] text-ink/70 hover:text-ink"
-            >
-              {opsProof.back}
-            </Link>
-            <Link
-              href="/?apply=1"
-              className="bg-leaf px-4 py-2 font-display text-[11px] font-bold uppercase tracking-[0.16em] text-cream transition hover:bg-ink"
-            >
-              {opsProof.cta}
-            </Link>
-          </div>
-        </div>
-      </header>
-
-      <main className="bg-[#121212] text-cream">
-        <section className="border-b border-cream/10 px-4 pb-8 pt-10 sm:px-6 sm:pt-12">
+      <main className="bg-[#121212] pt-16 text-cream">
+        <section className="border-b border-cream/10 px-4 pb-8 pt-8 sm:px-6 sm:pt-10">
           <div className="mx-auto max-w-6xl">
             <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-lime/90">
               {opsProof.eyebrow}

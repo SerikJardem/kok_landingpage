@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Mono, Inter, Unbounded } from "next/font/google";
 import { SvgFilters } from "@/components/brand";
 import { JsonLd } from "@/components/json-ld";
+import { SiteShell } from "@/components/site-shell";
+import { loadLocations } from "@/lib/locations";
 import { seo, siteUrl } from "@/lib/seo";
 import "./globals.css";
 
@@ -92,7 +94,9 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+  const { locations } = await loadLocations();
+
   return (
     <html
       lang="ru"
@@ -102,7 +106,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <JsonLd />
         <SvgFilters />
         <div className="grain" aria-hidden />
-        {children}
+        <SiteShell cities={locations}>{children}</SiteShell>
       </body>
     </html>
   );

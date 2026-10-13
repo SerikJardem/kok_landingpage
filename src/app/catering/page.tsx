@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
-import { Stamp, Wordmark } from "@/components/brand";
+import { Stamp } from "@/components/brand";
 import { CateringForm } from "@/components/catering-form";
 import { Footer } from "@/components/footer";
 import { catering } from "@/lib/content";
@@ -15,29 +14,7 @@ export const metadata: Metadata = {
 export default function CateringPage() {
   return (
     <>
-      <header className="sticky top-0 z-40 border-b border-forest/15 bg-cream/95 backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-          <Link href="/" className="text-leaf">
-            <Wordmark className="h-8 w-auto" />
-          </Link>
-          <div className="flex items-center gap-4">
-            <Link
-              href="/#menu"
-              className="font-display text-[11px] font-bold uppercase tracking-[0.16em] text-ink/70 hover:text-ink"
-            >
-              Меню
-            </Link>
-            <Link
-              href="/"
-              className="font-display text-[11px] font-bold uppercase tracking-[0.16em] text-ink/70 hover:text-ink"
-            >
-              Франшиза
-            </Link>
-          </div>
-        </div>
-      </header>
-
-      <main className="bg-cream">
+      <main className="bg-cream pt-16">
         <section className="px-4 py-6 sm:px-6 sm:py-8 lg:py-10">
           <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(320px,420px)] lg:items-start lg:gap-8">
             <div className="min-w-0">
@@ -95,7 +72,7 @@ export default function CateringPage() {
               </div>
             </div>
 
-            <div id="catering-form" className="lg:sticky lg:top-20">
+            <div id="catering-form" className="lg:sticky lg:top-24">
               <CateringForm compact />
             </div>
           </div>

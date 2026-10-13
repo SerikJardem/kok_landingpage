@@ -1,15 +1,27 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useApply } from "@/components/apply-context";
 import { Wordmark } from "@/components/brand";
 import { nav } from "@/lib/content";
 
+const homeLinks = [
+  { href: "/#numbers", label: nav.numbers },
+  { href: "/#menu", label: nav.menu },
+  { href: "/catering", label: nav.catering },
+  { href: "/#locations", label: nav.locations },
+  { href: "/ops", label: nav.partners },
+] as const;
+
 export function Header() {
   const { openApply } = useApply();
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const isHome = pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -18,8 +30,12 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const overPhoto = !scrolled;
-  const inkOnPaper = scrolled || menuOpen;
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
+
+  const overPhoto = isHome && !scrolled && !menuOpen;
+  const inkOnPaper = !isHome || scrolled || menuOpen;
 
   return (
     <header
@@ -30,40 +46,30 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-        <a
-          href="#top"
+        <Link
+          href="/"
           className="flex min-w-0 items-center gap-3 text-leaf"
           onClick={() => setMenuOpen(false)}
         >
           <Wordmark className="h-8 w-auto shrink-0 sm:h-9" />
           <span
             className={`truncate font-display text-[12px] font-bold tracking-[-0.02em] sm:text-sm ${
-              overPhoto && !menuOpen ? "text-cream" : "text-ink"
+              overPhoto ? "text-cream" : "text-ink"
             }`}
           >
             URBAN FOOD
           </span>
-        </a>
+        </Link>
         <nav
-          className={`hidden items-center gap-8 font-display text-[12px] font-bold uppercase tracking-[0.18em] md:flex ${
+          className={`hidden items-center gap-6 font-display text-[12px] font-bold uppercase tracking-[0.18em] lg:gap-8 md:flex ${
             overPhoto ? "text-cream" : "text-ink"
           }`}
         >
-          <a href="#numbers" className="hover:text-leaf">
-            {nav.numbers}
-          </a>
-          <a href="#menu" className="hover:text-leaf">
-            {nav.menu}
-          </a>
-          <Link href="/catering" className="hover:text-leaf">
-            {nav.catering}
-          </Link>
-          <a href="#locations" className="hover:text-leaf">
-            {nav.locations}
-          </a>
-          <Link href="/ops" className="hover:text-leaf">
-            {nav.partners}
-          </Link>
+          {homeLinks.map((item) => (
+            <Link key={item.href} href={item.href} className="hover:text-leaf">
+              {item.label}
+            </Link>
+          ))}
           <button
             type="button"
             onClick={() => openApply()}
@@ -75,7 +81,7 @@ export function Header() {
         <button
           type="button"
           className={`font-display text-[11px] font-bold uppercase tracking-[0.16em] md:hidden ${
-            overPhoto && !menuOpen ? "text-cream" : "text-ink"
+            overPhoto ? "text-cream" : "text-ink"
           }`}
           onClick={() => setMenuOpen((open) => !open)}
           aria-expanded={menuOpen}
@@ -86,21 +92,15 @@ export function Header() {
       {menuOpen ? (
         <div className="border-t border-leaf/20 bg-paper px-4 py-4 md:hidden">
           <div className="flex flex-col gap-3 font-display text-[12px] font-bold uppercase tracking-[0.18em] text-ink">
-            <a href="#numbers" onClick={() => setMenuOpen(false)}>
-              {nav.numbers}
-            </a>
-            <a href="#menu" onClick={() => setMenuOpen(false)}>
-              {nav.menu}
-            </a>
-            <Link href="/catering" onClick={() => setMenuOpen(false)}>
-              {nav.catering}
-            </Link>
-            <a href="#locations" onClick={() => setMenuOpen(false)}>
-              {nav.locations}
-            </a>
-            <Link href="/ops" onClick={() => setMenuOpen(false)}>
-              {nav.partners}
-            </Link>
+            {homeLinks.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
             <button
               type="button"
               className="bg-leaf px-4 py-3 text-left text-cream"

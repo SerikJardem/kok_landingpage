@@ -1,8 +1,5 @@
-import { ApplyProvider } from "@/components/apply-context";
-import { ApplyModal } from "@/components/apply-modal";
 import { CloseCta } from "@/components/close-cta";
 import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { Locations } from "@/components/locations";
 import { Marquee } from "@/components/marquee";
@@ -18,8 +15,7 @@ export default async function Home() {
   const { locations, source } = await loadLocations();
 
   return (
-    <ApplyProvider>
-      <Header />
+    <>
       <main>
         <p className="sr-only">
           KŌK (KOK) franchise / франшиза: үшбармақ · ushbarmak street food, точка продажи для
@@ -38,7 +34,6 @@ export default async function Home() {
         <CloseCta />
       </main>
       <Footer />
-      <ApplyModal cities={locations} />
-    </ApplyProvider>
+    </>
   );
 }
