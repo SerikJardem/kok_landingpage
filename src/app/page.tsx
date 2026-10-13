@@ -1,35 +1,35 @@
-import { ApplyProvider } from "@/components/apply-context";
-import { ApplyModal } from "@/components/apply-modal";
 import { CloseCta } from "@/components/close-cta";
-import { Economics } from "@/components/economics";
 import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { Locations } from "@/components/locations";
-import { Manifesto } from "@/components/manifesto";
 import { Marquee } from "@/components/marquee";
-import { Phygital } from "@/components/phygital";
+import { Menu } from "@/components/menu";
+import { Model } from "@/components/model";
+import { PartnersTeaser } from "@/components/partners-teaser";
+import { Problem } from "@/components/problem";
 import { loadLocations } from "@/lib/locations";
-
-export const revalidate = 60;
 
 export default async function Home() {
   const { locations, source } = await loadLocations();
 
   return (
-    <ApplyProvider>
-      <Header />
+    <>
       <main>
+        <p className="sr-only">
+          KŌK (KOK) franchise / франшиза: үшбармақ · ushbarmak street food, точка продажи для
+          инвесторов без ресторанной кухни на смене, fast growth business · быстрый рост · жылдам
+          өсу. Алматы, Қазақстан.
+        </p>
         <Hero />
         <Marquee />
-        <Manifesto />
-        <Phygital />
-        <Economics />
+        <Menu />
+        <Problem />
+        <Model />
+        <PartnersTeaser />
         <Locations locations={locations} source={source} />
         <CloseCta />
       </main>
       <Footer />
-      <ApplyModal cities={locations} />
-    </ApplyProvider>
+    </>
   );
 }
