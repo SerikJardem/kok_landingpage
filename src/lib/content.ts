@@ -50,10 +50,6 @@ export const problem = {
 
 export const model = {
   body: "Urban food без тяжёлой кухни: нежная курица с цеха, фирменные соусы и хруст свежих овощей. Короткий лист — быстрая сборка, чистый вкус, ощущение «homemade · healthy · natural».",
-  points: [
-    { role: "Сеть", title: "Сеть готовит", note: "моно продукт курица, соусы, заготовки" },
-    { role: "Точка", title: "Вы собираете и продаёте", note: "линия выдачи по техкарте" },
-  ],
 } as const;
 
 export const numbers = {
