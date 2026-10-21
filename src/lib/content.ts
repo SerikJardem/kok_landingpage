@@ -202,7 +202,7 @@ export const closeCta = {
 } as const;
 
 export const territories = {
-  title: "Свободные для франшизы",
+  title: "Скоро в вашем городе",
   deck: "Города, где ещё можно открыть точку. Midi в стрит-ритейле. Express на фудкорте.",
   availableTitle: "Открыты к заявке",
   book: "Оставить контакт",
