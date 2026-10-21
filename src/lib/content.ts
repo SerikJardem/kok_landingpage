@@ -25,9 +25,10 @@ export const franchiseDeck = {
 } as const;
 
 export const hero = {
-  eyebrow: "URBAN FOOD",
-  title: "Почему точка KŌK — рациональная ставка, а не «ещё одно кафе».",
+  brand: "fast gourmet",
   deck: "Родное в новом ритме. Знакомый бешбармак концепт мы переводим на язык города: быстрее, легче и ближе к повседневной жизни. Ушбармак — традиция есть тремя пальцами.",
+  image: "/brand/kok-pita-gourmet.jpg",
+  imageAlt: "KŌK fast gourmet — пита с курицей и свежими овощами",
   metricsPreview: [
     { value: "−40%", label: "фонд оплаты труда" },
     { value: "18–25 кВт", label: "мощность точки" },

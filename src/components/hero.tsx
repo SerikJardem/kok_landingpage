@@ -4,7 +4,6 @@ import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import { useApply } from "@/components/apply-context";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { easeOutExpo } from "@/lib/motion";
 import { hero } from "@/lib/content";
 
@@ -24,11 +23,11 @@ export function Hero() {
         transition={{ duration: 1.15, ease: easeOutExpo }}
       >
         <Image
-          src="/brand/kok-pita-wrap-landscape.png"
-          alt="KŌK пита — моно продукт курица"
+          src={hero.image}
+          alt={hero.imageAlt}
           fill
           preload
-          className="object-cover object-[70%_42%] max-sm:object-[66%_40%]"
+          className="object-cover object-[58%_48%] max-sm:object-[52%_45%]"
           sizes="100vw"
         />
       </motion.div>
@@ -36,27 +35,13 @@ export function Hero() {
       <div className="hero-photo-scrim pointer-events-none absolute inset-0 -z-10" aria-hidden />
 
       <div className="relative mx-auto flex w-full max-w-5xl flex-col px-4 py-16 sm:px-6 sm:py-20">
-        <motion.div
-          initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+        <motion.h1
+          className="max-w-xl font-display text-4xl font-black uppercase leading-[1.05] tracking-[-0.04em] text-cream sm:text-6xl sm:leading-[1.02]"
+          initial={reduceMotion ? false : { opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: easeOutExpo }}
         >
-          <Badge variant="cream" className="border-cream/40 text-cream/85">
-            {hero.eyebrow}
-          </Badge>
-        </motion.div>
-
-        <motion.h1
-          className="mt-7 max-w-xl font-display text-3xl font-black leading-[1.18] tracking-[-0.03em] text-cream sm:mt-8 sm:text-[2.75rem] sm:leading-[1.16]"
-          initial={reduceMotion ? false : { opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.5,
-            delay: reduceMotion ? 0 : 0.08,
-            ease: easeOutExpo,
-          }}
-        >
-          {hero.title}
+          {hero.brand}
         </motion.h1>
 
         <motion.p
@@ -65,7 +50,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{
             duration: 0.45,
-            delay: reduceMotion ? 0 : 0.14,
+            delay: reduceMotion ? 0 : 0.1,
             ease: easeOutExpo,
           }}
         >
@@ -77,7 +62,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{
             duration: 0.45,
-            delay: reduceMotion ? 0 : 0.2,
+            delay: reduceMotion ? 0 : 0.18,
             ease: easeOutExpo,
           }}
         >
