@@ -8,7 +8,7 @@ import { problem } from "@/lib/content";
 export function Problem() {
   return (
     <section className="relative overflow-hidden bg-[#eef6ef] px-4 py-12 sm:px-6 sm:py-14">
-      <div className="relative mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[1fr_0.95fr] lg:gap-10">
+      <div className="relative mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[1.25fr_0.75fr] lg:gap-8">
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -38,19 +38,19 @@ export function Problem() {
         </motion.div>
 
         <motion.figure
-          className="relative mx-auto w-full max-w-md lg:mx-0 lg:max-w-none"
+          className="relative mx-auto w-full max-w-sm justify-self-center lg:max-w-md lg:justify-self-end"
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.45, delay: 0.06, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="relative aspect-[3/4] overflow-hidden border-2 border-forest/15 bg-[#e6f0e7]">
+          <div className="relative aspect-[4/3] overflow-hidden border-2 border-forest/15 bg-[#e6f0e7]">
             <Image
               src={problem.image}
               alt={problem.imageAlt}
               fill
               className="object-cover object-center"
-              sizes="(max-width: 1024px) 90vw, 480px"
+              sizes="(max-width: 1024px) 80vw, 360px"
               priority={false}
             />
           </div>
