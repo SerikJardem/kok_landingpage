@@ -16,6 +16,7 @@ const unbounded = Unbounded({
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin", "cyrillic", "cyrillic-ext"],
+  weight: ["400", "500", "600"],
 });
 
 const ibm = IBM_Plex_Mono({

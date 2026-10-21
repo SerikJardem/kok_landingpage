@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useApply } from "@/components/apply-context";
 import { Wordmark } from "@/components/brand";
+import { Button } from "@/components/ui/button";
 import { nav } from "@/lib/content";
 
 const homeLinks = [
@@ -67,13 +68,9 @@ export function Header() {
               {item.label}
             </Link>
           ))}
-          <button
-            type="button"
-            onClick={() => openApply()}
-            className="bg-leaf px-4 py-2 text-cream transition hover:bg-ink"
-          >
+          <Button size="sm" onClick={() => openApply()}>
             {nav.apply}
-          </button>
+          </Button>
         </nav>
         <button
           type="button"
@@ -98,16 +95,16 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
-            <button
-              type="button"
-              className="bg-leaf px-4 py-3 text-left text-cream"
+            <Button
+              size="wide"
+              className="justify-start"
               onClick={() => {
                 setMenuOpen(false);
                 openApply();
               }}
             >
               {nav.apply}
-            </button>
+            </Button>
           </div>
         </div>
       ) : null}

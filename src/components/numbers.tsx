@@ -20,7 +20,7 @@ export function Numbers() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
-          <h2 className="max-w-2xl font-display text-3xl font-black tracking-[-0.03em] text-ink sm:text-4xl">
+          <h2 className="section-title max-w-2xl text-3xl text-ink sm:text-4xl">
             {numbers.title}
           </h2>
         </motion.div>
@@ -42,7 +42,7 @@ export function Numbers() {
               <p className="font-display text-4xl font-black tracking-[-0.04em] text-leaf sm:text-[2.75rem]">
                 {card.value}
               </p>
-              <p className="mt-4 font-display text-sm font-bold uppercase tracking-[0.12em] text-ink">
+              <p className="mt-4 font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-ink/80">
                 {card.label}
               </p>
               <p className="mt-2 max-w-[18rem] text-sm leading-relaxed text-ink/60">

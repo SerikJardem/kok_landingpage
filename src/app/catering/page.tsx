@@ -19,13 +19,13 @@ export default function CateringPage() {
           <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(320px,420px)] lg:items-start lg:gap-8">
             <div className="min-w-0">
               <div className="relative overflow-hidden border-2 border-forest bg-forest text-cream">
-                <div className="relative aspect-[16/10] w-full sm:aspect-[2/1] lg:aspect-[16/9]">
+                <div className="relative aspect-[4/3] w-full sm:aspect-[16/10] lg:aspect-[2/1]">
                   <Image
                     src="/brand/catering-spread.jpg"
                     alt="KŌK кейтеринг — пита-спред и напитки"
                     fill
                     priority
-                    className="object-cover"
+                    className="object-cover object-[center_40%]"
                     sizes="(max-width: 1024px) 100vw, 55vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/35 to-transparent" />

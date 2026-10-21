@@ -20,7 +20,7 @@ export function Menu() {
           <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-leaf">
             Гостевое меню · без цен
           </p>
-          <h2 className="mt-3 max-w-2xl font-display text-3xl font-black tracking-[-0.03em] text-ink sm:text-4xl">
+          <h2 className="section-title mt-3 max-w-2xl text-3xl text-ink sm:text-4xl">
             {menu.title}
           </h2>
         </motion.div>
@@ -69,7 +69,11 @@ export function Menu() {
                         src={item.image}
                         alt={item.alt}
                         fill
-                        className="object-cover object-center"
+                        className={
+                          item.image.includes("veggie")
+                            ? "object-cover object-[58%_42%]"
+                            : "object-cover object-center"
+                        }
                         sizes="(max-width: 640px) 90vw, (max-width: 1024px) 44vw, 320px"
                       />
                     </div>

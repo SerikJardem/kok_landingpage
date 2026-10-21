@@ -46,20 +46,19 @@ export default function OpsPage() {
                 key={zone.id}
                 className="grid gap-4 border border-cream/15 lg:grid-cols-[1.4fr_0.9fr] lg:gap-6"
               >
-                <div className="relative min-h-[220px] overflow-hidden bg-[#121212]">
+                <div className="relative aspect-[4/3] overflow-hidden bg-[#121212]">
                   <Image
                     src={zone.image}
                     alt={zone.imageAlt}
-                    width={1448}
-                    height={1086}
-                    className="h-full w-full object-cover object-center"
+                    fill
+                    className="object-cover object-center"
                     sizes="(max-width: 1024px) 100vw, 65vw"
                     priority={zone.id === "bar"}
                   />
                 </div>
                 <div className="flex flex-col justify-center px-4 py-5 sm:px-6">
                   <Stamp className="w-fit text-lime">{zone.stamp}</Stamp>
-                  <h2 className="mt-3 font-display text-xl font-black tracking-[-0.03em] sm:text-2xl">
+                  <h2 className="section-title mt-3 text-xl text-cream sm:text-2xl">
                     {zone.title}
                   </h2>
                   <ul className="mt-4 space-y-2">

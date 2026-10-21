@@ -35,7 +35,7 @@ export function Product() {
                       src={part.image}
                       alt={part.alt}
                       fill
-                      className="object-cover object-center"
+                      className="object-cover object-top"
                       sizes="(max-width: 1024px) 42vw, 300px"
                     />
                   </div>
@@ -43,7 +43,7 @@ export function Product() {
                     <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-leaf">
                       {part.label}
                     </p>
-                    <p className="mt-0.5 font-display text-sm font-bold tracking-[-0.01em] text-ink">
+                    <p className="mt-0.5 text-sm font-medium tracking-[-0.01em] text-ink">
                       {part.note}
                     </p>
                   </figcaption>
@@ -59,10 +59,10 @@ export function Product() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.45, delay: 0.06, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h2 className="font-display text-3xl font-black tracking-[-0.03em] text-ink sm:text-4xl">
+            <h2 className="section-title text-3xl text-ink sm:text-4xl">
               {product.title}
             </h2>
-            <p className="mt-3 text-base leading-relaxed text-ink/75">
+            <p className="section-deck mt-3 text-base">
               {product.body}
             </p>
 

@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useApply } from "@/components/apply-context";
 import { LeafSprig } from "@/components/brand";
+import { Button } from "@/components/ui/button";
 import { territories } from "@/lib/content";
 import { fetchSheetLocations } from "@/lib/location-parse";
 import { googleSheetsCsvUrl } from "@/lib/public-config";
@@ -56,10 +57,10 @@ export function Locations({
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <h2 className="font-display text-3xl font-black tracking-[-0.03em] text-ink sm:text-4xl">
+            <h2 className="section-title text-3xl text-ink sm:text-4xl">
               {territories.title}
             </h2>
-            <p className="mt-2 max-w-2xl text-ink/75">{territories.deck}</p>
+            <p className="section-deck mt-2 max-w-2xl text-base">{territories.deck}</p>
           </div>
           <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-leaf">
             {liveSource === "sheet" ? territories.sourceSheet : territories.sourceFallback}
@@ -113,13 +114,9 @@ export function Locations({
               <p className="font-mono text-sm text-leaf">{location.launch || "—"}</p>
               <div>
                 {location.status === "available" ? (
-                  <button
-                    type="button"
-                    onClick={() => openApply(location.city)}
-                    className="bg-leaf px-4 py-2 font-display text-[11px] font-bold uppercase tracking-[0.14em] text-cream transition hover:bg-ink"
-                  >
+                  <Button size="sm" onClick={() => openApply(location.city)}>
                     {territories.book}
-                  </button>
+                  </Button>
                 ) : (
                   <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink/40">
                     {location.status === "construction"

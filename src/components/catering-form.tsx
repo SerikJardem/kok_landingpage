@@ -264,7 +264,7 @@ export function CateringForm({ compact = false }: { compact?: boolean }) {
       <button
         type="submit"
         disabled={!canSubmit || status === "submitting"}
-        className="mt-5 w-full bg-forest px-5 py-3 font-display text-[11px] font-bold uppercase tracking-[0.16em] text-cream disabled:opacity-40"
+        className="mt-5 w-full bg-forest px-5 py-3 font-display text-[11px] font-bold uppercase tracking-[0.16em] text-cream transition-[color,background-color,transform] duration-200 motion-safe:hover:-translate-y-px motion-safe:active:scale-[0.98] disabled:opacity-40"
       >
         {status === "submitting" ? "…" : catering.submit}
       </button>
