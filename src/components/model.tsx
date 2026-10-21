@@ -16,21 +16,9 @@ export function Model() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h2 className="max-w-2xl font-display text-3xl font-black tracking-[-0.03em] text-ink sm:text-4xl">
-              {model.title.split("Көк").map((part, index, parts) => (
-                <span key={`model-title-${index}`}>
-                  {part}
-                  {index < parts.length - 1 ? (
-                    <mark className="mx-0.5 inline bg-leaf px-1.5 py-0.5 text-ink [box-decoration-break:clone]">
-                      Көк
-                    </mark>
-                  ) : null}
-                </span>
-              ))}
-            </h2>
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink/75">
+            <h2 className="max-w-2xl font-display text-2xl font-black tracking-[-0.03em] text-ink sm:text-3xl">
               {model.body}
-            </p>
+            </h2>
           </motion.div>
 
           {/* Bottom pair under copy — as in the attached variant */}

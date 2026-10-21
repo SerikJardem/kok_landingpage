@@ -23,9 +23,6 @@ export function Menu() {
           <h2 className="mt-3 max-w-2xl font-display text-3xl font-black tracking-[-0.03em] text-ink sm:text-4xl">
             {menu.title}
           </h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink/75">
-            {menu.deck}
-          </p>
         </motion.div>
 
         <motion.div
