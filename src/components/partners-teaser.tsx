@@ -18,23 +18,23 @@ export function PartnersTeaser() {
           transition={fadeUpTransition}
         >
           <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-lime">
-            Что даём партнёру
+            Кейтеринг
           </p>
           <h2 className="section-title mt-3 text-3xl text-cream sm:text-4xl">
-            Камеры, аналитика гостей и смены в Telegram
+            Закажите Køk на выезд
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm font-normal leading-relaxed text-cream/70 sm:text-base">
-            Камеры ведут бар, кухню и зал. Вы читаете статусы, удержание гостей и
-            пуши смены — без ERP на точке.
+            Вайбово накормите посетителей вашего ивента легким и вкусным перекусом,
+            а также кофе и напитками
           </p>
           <Link
-            href="/ops"
+            href="/catering"
             className={cn(
               buttonVariants({ variant: "lime" }),
               "mt-7 motion-safe:hover:-translate-y-px",
             )}
           >
-            Смотреть, что даём
+            Сделать запрос
           </Link>
         </motion.div>
       </div>
