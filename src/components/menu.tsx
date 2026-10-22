@@ -148,9 +148,11 @@ export function Menu() {
           ))}
         </div>
 
-        <p className="mt-10 font-mono text-[10px] uppercase tracking-[0.12em] text-ink/40 whitespace-nowrap overflow-x-auto">
-          {menu.footnote}
-        </p>
+        <div className="mt-10 overflow-x-auto">
+          <p className="w-max font-mono text-[10px] uppercase tracking-[0.08em] text-ink/40 whitespace-nowrap sm:tracking-[0.12em]">
+            {menu.footnote}
+          </p>
+        </div>
       </div>
     </section>
   );
