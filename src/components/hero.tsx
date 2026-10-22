@@ -54,7 +54,18 @@ export function Hero() {
             ease: easeOutExpo,
           }}
         >
-          {hero.deck}
+          {hero.deck.split("без фритюрного масла").map((part, index, parts) =>
+            index < parts.length - 1 ? (
+              <span key={index}>
+                {part}
+                <mark className="rounded-sm bg-leaf px-1.5 py-0.5 font-medium text-white">
+                  без фритюрного масла
+                </mark>
+              </span>
+            ) : (
+              <span key={index}>{part}</span>
+            ),
+          )}
         </motion.p>
 
         <motion.div
