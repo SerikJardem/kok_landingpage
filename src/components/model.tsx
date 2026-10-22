@@ -36,7 +36,10 @@ export function Model() {
           viewport={viewportOnce}
           transition={{ ...fadeUpTransition, delay: 0.06 }}
         >
-          <p className="section-deck max-w-xl text-base sm:text-lg lg:justify-self-start">
+          <h2 className="section-title max-w-xl text-2xl text-ink sm:text-3xl lg:justify-self-start">
+            {model.title}
+          </h2>
+          <p className="section-deck mt-4 max-w-xl text-base sm:text-lg lg:justify-self-start">
             {model.body}
           </p>
         </motion.div>
