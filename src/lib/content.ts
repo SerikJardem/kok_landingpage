@@ -115,7 +115,7 @@ export const product = {
 
 /** Guest-facing menu — no prices; macros are approximate for positioning. */
 export const menu = {
-  title: "Меню, которое гости понимают с первого взгляда",
+  title: "Меню",
   ribbon: "Все питы — со свежими овощами",
   footnote:
     "Ккал и белок — ориентиры для гостя (±10%). Финальные значения зависят от порции и сезона овощей.",
