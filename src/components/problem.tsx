@@ -47,12 +47,12 @@ export function Problem() {
           viewport={viewportOnce}
           transition={{ ...fadeUpTransition, delay: 0.06 }}
         >
-          <div className="relative aspect-[4/3] overflow-hidden border-2 border-forest/15 bg-[#e6f0e7]">
+          <div className="relative aspect-[5/4] overflow-hidden border-2 border-forest/15 bg-[#e6f0e7]">
             <Image
               src={problem.image}
               alt={problem.imageAlt}
               fill
-              className="object-cover object-center"
+              className="object-cover object-[center_80%]"
               sizes="(max-width: 1024px) 80vw, 360px"
               priority={false}
             />
