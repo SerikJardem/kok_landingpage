@@ -50,7 +50,7 @@ export const problem = {
 } as const;
 
 export const model = {
-  title: "Ощущение: homemade · healthy · natural",
+  title: "Ощущение:\nhomemade · healthy · natural",
   body: "Urban food без тяжёлой кухни: сборочный формат из свежих овощей, с добавлением фирменных соусов и мяса приготовленного по стандартам Бренд-шефа в центральном цеху. Все наши блюда и продукция нацелена на уменьшение вреда вашему здоровью, но без фанатизма.",
 } as const;
 
