@@ -58,9 +58,9 @@ export function Hero() {
             index < parts.length - 1 ? (
               <span key={index}>
                 {part}
-                <mark className="rounded-sm bg-leaf px-1.5 py-0.5 font-medium text-white">
+                <span className="rounded-sm bg-[#6dcf7a] px-1.5 py-0.5 font-medium text-white box-decoration-clone">
                   без фритюрного масла
-                </mark>
+                </span>
               </span>
             ) : (
               <span key={index}>{part}</span>
