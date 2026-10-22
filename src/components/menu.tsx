@@ -87,16 +87,20 @@ export function Menu() {
                       ease: [0.22, 1, 0.36, 1],
                     }}
                   >
-                    <dl className="flex flex-wrap gap-x-5 gap-y-1 font-mono text-[10px] uppercase tracking-[0.14em] text-ink/55">
-                      <div className="flex gap-1.5">
-                        <dt className="text-ink/40">ккал</dt>
-                        <dd className="font-semibold text-leaf">{item.kcal}</dd>
-                      </div>
-                      <div className="flex gap-1.5">
-                        <dt className="text-ink/40">белок</dt>
-                        <dd className="font-semibold text-leaf">{item.protein}</dd>
-                      </div>
-                    </dl>
+                    {item.kcal && item.protein ? (
+                      <dl className="flex flex-wrap gap-x-5 gap-y-1 font-mono text-[10px] uppercase tracking-[0.14em] text-ink/55">
+                        <div className="flex gap-1.5">
+                          <dt className="text-ink/40">ккал</dt>
+                          <dd className="font-semibold text-leaf">{item.kcal}</dd>
+                        </div>
+                        <div className="flex gap-1.5">
+                          <dt className="text-ink/40">белок</dt>
+                          <dd className="font-semibold text-leaf">
+                            {item.protein}
+                          </dd>
+                        </div>
+                      </dl>
+                    ) : null}
 
                     {item.sauce ? (
                       <p className="mt-2.5 flex items-center gap-1.5 text-sm text-ink/75">
@@ -105,7 +109,19 @@ export function Menu() {
                       </p>
                     ) : null}
 
-                    <div className="relative mt-3 aspect-square overflow-hidden bg-[#fffdf8]">
+                    {item.highlight ? (
+                      <p className="text-sm leading-snug text-ink/70">
+                        {item.highlight}
+                      </p>
+                    ) : null}
+
+                    <div
+                      className={`relative aspect-square overflow-hidden bg-[#fffdf8] ${
+                        item.kcal || item.sauce || item.highlight
+                          ? "mt-3"
+                          : ""
+                      }`}
+                    >
                       <Image
                         src={item.image}
                         alt={item.alt}
