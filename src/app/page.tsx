@@ -16,9 +16,8 @@ export default async function Home() {
     <>
       <main>
         <p className="sr-only">
-          KŌK (KOK) franchise / франшиза: үшбармақ · ushbarmak street food, точка продажи для
-          инвесторов без ресторанной кухни на смене, fast growth business · быстрый рост · жылдам
-          өсу. Алматы, Қазақстан.
+          KØK — Жеңіл әрі тез · fast gourmet без фритюрного масла: питы, крудите и напитки.
+          Homemade · healthy · natural. Grab&Go. Алматы, Қазақстан.
         </p>
         <Hero />
         <Marquee />

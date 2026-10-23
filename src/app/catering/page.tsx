@@ -6,9 +6,9 @@ import { Footer } from "@/components/footer";
 import { catering } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "KŌK — кейтеринг",
+  title: "Кейтеринг",
   description:
-    "Кейтеринг KŌK для встреч и событий: питы и напитки для 50, 100 или 200+ гостей. Заявка за 24 часа.",
+    "Кейтеринг KØK для встреч и событий: питы и напитки для 50, 100 или 200+ гостей. Заявка за 24 часа.",
 };
 
 export default function CateringPage() {

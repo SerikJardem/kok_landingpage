@@ -17,9 +17,9 @@ export const nav = {
 
 /** Published Google Slides deck for franchise pitch. */
 export const franchiseDeck = {
-  title: "KŌK — франшиза",
+  title: "KØK — франшиза",
   description:
-    "Презентация франшизы KŌK: формат точки, продукт и модель партнёрства.",
+    "Презентация франшизы KØK: формат точки, продукт и модель партнёрства.",
   embedSrc:
     "https://docs.google.com/presentation/d/e/2PACX-1vQla4fx3QSdniKdAZflSW1BCBkGbInxcA7YkxtHCxYeE6mODyWKZ1bcj6_EJny2FGzfUKL2Z66AGiZM/pubembed?start=false&loop=true&delayms=10000",
 } as const;

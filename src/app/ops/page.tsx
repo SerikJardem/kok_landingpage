@@ -9,9 +9,9 @@ import { Product } from "@/components/product";
 import { opsProof } from "@/lib/ops-proof";
 
 export const metadata: Metadata = {
-  title: "KŌK — что даём партнёру: Vision AI, аналитика, смены",
+  title: "Партнёру: Vision AI, аналитика, смены",
   description:
-    "Цифры точки, продукт, Vision AI по зонам, аналитика гостей и смены в Telegram. Что получает франчайзи KŌK.",
+    "Цифры точки, продукт, Vision AI по зонам, аналитика гостей и смены в Telegram. Что получает франчайзи KØK.",
 };
 
 export default function OpsPage() {
