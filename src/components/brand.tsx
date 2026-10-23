@@ -223,8 +223,8 @@ export function LogoLockup({
       src={`${base}/brand/kok-logo-zhenil.png`}
       alt={title}
       className={`object-contain ${objectAlign} ${className}`}
-      width={910}
-      height={400}
+      width={1308}
+      height={612}
       decoding="async"
     />
   );
