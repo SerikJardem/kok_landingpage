@@ -10,7 +10,6 @@ export function Footer() {
             align="left"
             className="h-14 w-auto max-w-[12rem] sm:h-16 sm:max-w-[14rem]"
           />
-          <p className="mt-3 font-display text-sm font-bold text-ochre">{footer.tagline}</p>
         </div>
         <div className="sm:text-center">
           <a
@@ -19,7 +18,6 @@ export function Footer() {
           >
             {footer.email}
           </a>
-          <p className="mt-2 text-sm text-cream/55">{footer.line}</p>
         </div>
         <div className="sm:text-right">
           <Zigzag className="mb-3 h-4 w-32 text-terra sm:ml-auto" />

@@ -202,7 +202,7 @@ export function Wordmark({
  */
 export function LogoLockup({
   className = "",
-  title = "KŌK — Жеңіл әрі тез",
+  title = "KØK — Жеңіл әрі тез",
   align = "left",
 }: {
   className?: string;
@@ -223,8 +223,8 @@ export function LogoLockup({
       src={`${base}/brand/kok-logo-zhenil.png`}
       alt={title}
       className={`object-contain ${objectAlign} ${className}`}
-      width={1308}
-      height={612}
+      width={910}
+      height={400}
       decoding="async"
     />
   );

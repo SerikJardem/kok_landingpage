@@ -48,7 +48,7 @@ export function Header() {
           href="/"
           className="flex min-w-0 items-center text-leaf"
           onClick={() => setMenuOpen(false)}
-          aria-label="KŌK — Жеңіл әрі тез"
+          aria-label="KØK — Жеңіл әрі тез"
         >
           <LogoLockup
             align="left"

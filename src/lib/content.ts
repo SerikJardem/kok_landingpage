@@ -257,10 +257,8 @@ export const quiz = {
 } as const;
 
 export const footer = {
-  tagline: "URBAN FOOD",
-  line: "Urban food. Пита — моно продукт курица. Точка продажи без ресторанной кухни.",
   email: "sj@hostai.kz",
-  rights: "KŌK · Алматы",
+  rights: "KØK · Алматы",
 } as const;
 
 export const stamps = [
