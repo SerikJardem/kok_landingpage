@@ -51,8 +51,9 @@ export function Header() {
           aria-label="KØK — Жеңіл әрі тез"
         >
           <LogoLockup
+            variant="inline"
             align="left"
-            className="h-10 w-auto max-w-[9.5rem] shrink-0 sm:h-11 sm:max-w-[11rem]"
+            className="h-8 w-auto max-w-[14rem] shrink-0 sm:h-9 sm:max-w-[17rem]"
           />
         </Link>
         <nav

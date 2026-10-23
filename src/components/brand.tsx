@@ -197,18 +197,21 @@ export function Wordmark({
 }
 
 /**
- * KØK lockup with Kazakh slogan «Жеңіл әрі тез» centered under the wordmark.
- * Transparent PNG — works on paper header and ink footer.
+ * KØK lockup with Kazakh slogan «Жеңіл әрі тез».
+ * - stack: slogan under the wordmark (footer)
+ * - inline: slogan to the right of the wordmark (header)
  */
 export function LogoLockup({
   className = "",
   title = "KØK — Жеңіл әрі тез",
   align = "left",
+  variant = "stack",
 }: {
   className?: string;
   title?: string;
-  /** How the lockup sits in its box — slogan stays centered under KØK inside the asset. */
+  /** How the lockup sits in its box. */
   align?: "left" | "center" | "right";
+  variant?: "stack" | "inline";
 }) {
   const base = process.env.NEXT_PUBLIC_PAGES_BASE_PATH || "";
   const objectAlign =
@@ -217,14 +220,22 @@ export function LogoLockup({
       : align === "right"
         ? "object-right"
         : "object-left";
+  const src =
+    variant === "inline"
+      ? `${base}/brand/kok-logo-zhenil-inline.png`
+      : `${base}/brand/kok-logo-zhenil.png`;
+  const size =
+    variant === "inline"
+      ? { width: 1612, height: 232 }
+      : { width: 910, height: 400 };
   return (
     // eslint-disable-next-line @next/next/no-img-element -- keyed PNG lockup; basePath applied manually
     <img
-      src={`${base}/brand/kok-logo-zhenil.png`}
+      src={src}
       alt={title}
       className={`object-contain ${objectAlign} ${className}`}
-      width={1308}
-      height={612}
+      width={size.width}
+      height={size.height}
       decoding="async"
     />
   );
