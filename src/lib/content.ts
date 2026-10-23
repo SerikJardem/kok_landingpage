@@ -168,8 +168,8 @@ export const menu = {
           highlight: "20% клетчатки от ежедневной нормы",
           blurb:
             "Забудьте о фри, когда забота о себе не компромисс — хрустящий микс овощей с наивкуснейшим соусом.",
-          image: "/brand/menu-veggie-cup.jpg",
-          alt: "Крудите KŌK — хрустящий микс овощей с соусом",
+          image: "/brand/menu-veggie-cup.png",
+          alt: "Крудите KØK — хрустящий микс овощей с соусом",
           kcal: "",
           protein: "",
         },
@@ -179,8 +179,8 @@ export const menu = {
           highlight: "Чайная глубина вместо сладкой газировки",
           blurb:
             "Молочный улун с ананасовой свежестью — мягкая бодрость без сироповой тяжести. Напиток «на бегу».",
-          image: "/brand/menu-drink-oolong.jpg",
-          alt: "Cold улун с ананасом в стакане KŌK",
+          image: "/brand/menu-drink-oolong.png",
+          alt: "Cold улун с ананасом в бутылке KØK",
           kcal: "",
           protein: "",
         },
@@ -190,8 +190,8 @@ export const menu = {
           highlight: "Лёгкость и витаминный профиль",
           blurb:
             "Лимонад с кислинкой ягоды, яблока и прохладой алоэ. Без приторности — идеальный компаньон к пите.",
-          image: "/brand/menu-drink-lemonade.jpg",
-          alt: "Лимонад крыжовник–яблоко–алоэ в стакане KŌK",
+          image: "/brand/menu-drink-lemonade.png",
+          alt: "Лимонад крыжовник–яблоко–алоэ в бутылке KØK",
           kcal: "",
           protein: "",
         },
