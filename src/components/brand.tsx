@@ -224,7 +224,7 @@ export function LogoLockup({
       alt={title}
       className={`object-contain ${objectAlign} ${className}`}
       width={1308}
-      height={595}
+      height={612}
       decoding="async"
     />
   );
