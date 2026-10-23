@@ -7,8 +7,9 @@ export function Footer() {
       <div className="mx-auto grid max-w-6xl gap-6 sm:grid-cols-3 sm:items-center">
         <div>
           <LogoLockup
+            variant="stack"
             align="left"
-            className="h-14 w-auto max-w-[12rem] sm:h-16 sm:max-w-[14rem]"
+            className="h-16 w-auto max-w-[11rem] sm:h-[4.5rem] sm:max-w-[13rem]"
           />
         </div>
         <div className="sm:text-center">
