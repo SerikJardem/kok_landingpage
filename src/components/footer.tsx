@@ -1,4 +1,4 @@
-import { Wordmark, Zigzag } from "@/components/brand";
+import { LogoLockup, Zigzag } from "@/components/brand";
 import { footer } from "@/lib/content";
 
 export function Footer() {
@@ -6,7 +6,10 @@ export function Footer() {
     <footer className="bg-ink px-4 py-8 text-cream sm:px-6">
       <div className="mx-auto grid max-w-6xl gap-6 sm:grid-cols-3 sm:items-center">
         <div>
-          <Wordmark className="h-12 w-auto text-leaf" />
+          <LogoLockup
+            align="left"
+            className="h-14 w-auto max-w-[12rem] sm:h-16 sm:max-w-[14rem]"
+          />
           <p className="mt-3 font-display text-sm font-bold text-ochre">{footer.tagline}</p>
         </div>
         <div className="sm:text-center">

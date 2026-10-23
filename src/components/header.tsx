@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useApply } from "@/components/apply-context";
-import { Wordmark } from "@/components/brand";
+import { LogoLockup } from "@/components/brand";
 import { Button } from "@/components/ui/button";
 import { nav } from "@/lib/content";
 
@@ -46,17 +46,14 @@ export function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link
           href="/"
-          className="flex min-w-0 items-center gap-3 text-leaf"
+          className="flex min-w-0 items-center text-leaf"
           onClick={() => setMenuOpen(false)}
+          aria-label="KŌK — Жеңіл әрі тез"
         >
-          <Wordmark className="h-8 w-auto shrink-0 sm:h-9" />
-          <span
-            className={`truncate font-display text-[12px] font-bold tracking-[-0.02em] sm:text-sm ${
-              overPhoto ? "text-cream" : "text-ink"
-            }`}
-          >
-            Tez&Fresh
-          </span>
+          <LogoLockup
+            align="left"
+            className="h-10 w-auto max-w-[9.5rem] shrink-0 sm:h-11 sm:max-w-[11rem]"
+          />
         </Link>
         <nav
           className={`hidden items-center gap-6 font-display text-[12px] font-bold uppercase tracking-[0.18em] lg:gap-8 md:flex ${

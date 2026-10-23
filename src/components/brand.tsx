@@ -196,6 +196,40 @@ export function Wordmark({
   );
 }
 
+/**
+ * KØK lockup with Kazakh slogan «Жеңіл әрі тез» centered under the wordmark.
+ * Transparent PNG — works on paper header and ink footer.
+ */
+export function LogoLockup({
+  className = "",
+  title = "KŌK — Жеңіл әрі тез",
+  align = "left",
+}: {
+  className?: string;
+  title?: string;
+  /** How the lockup sits in its box — slogan stays centered under KØK inside the asset. */
+  align?: "left" | "center" | "right";
+}) {
+  const base = process.env.NEXT_PUBLIC_PAGES_BASE_PATH || "";
+  const objectAlign =
+    align === "center"
+      ? "object-center"
+      : align === "right"
+        ? "object-right"
+        : "object-left";
+  return (
+    // eslint-disable-next-line @next/next/no-img-element -- keyed PNG lockup; basePath applied manually
+    <img
+      src={`${base}/brand/kok-logo-zhenil.png`}
+      alt={title}
+      className={`object-contain ${objectAlign} ${className}`}
+      width={1308}
+      height={595}
+      decoding="async"
+    />
+  );
+}
+
 export function Stamp({
   children,
   className = "",
