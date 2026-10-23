@@ -5,14 +5,18 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:pages": "next build && node scripts/sync-pages-root.mjs",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "framer-motion": "^13.2.0",
     "next": "16.3.4",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "tailwind-merge": "^3.7.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

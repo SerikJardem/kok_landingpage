@@ -1,0 +1,45 @@
+1:"$Sreact.fragment"
+2:I[97367,["/_next/static/chunks/0h2qsuyze9ds1.js","/_next/static/chunks/0_35nf_nynsoj.js","/_next/static/chunks/0zehi7ma-xf7u.js","/_next/static/chunks/2v-4zwi-vm2y6.js"],"OutletBoundary"]
+3:"$Sreact.suspense"
+7:I[97367,["/_next/static/chunks/0h2qsuyze9ds1.js","/_next/static/chunks/0_35nf_nynsoj.js","/_next/static/chunks/0zehi7ma-xf7u.js","/_next/static/chunks/2v-4zwi-vm2y6.js"],"ViewportBoundary"]
+8:I[97367,["/_next/static/chunks/0h2qsuyze9ds1.js","/_next/static/chunks/0_35nf_nynsoj.js","/_next/static/chunks/0zehi7ma-xf7u.js","/_next/static/chunks/2v-4zwi-vm2y6.js"],"MetadataBoundary"]
+:HL["/brand/kok-logo-zhenil.png","image"]
+6:X
+23:X
+23:C
+0:{"buildId":"LOM_ujZdDpkda5tgoarvC","data":[{"rsc":["$","$1","c",{"children":[[["$","main",null,{"className":"bg-paper pt-16","children":["$","section",null,{"className":"px-0 py-0 sm:px-4 sm:py-6 lg:px-6 lg:py-8","children":["$","div",null,{"className":"mx-auto max-w-6xl overflow-hidden border-0 border-forest bg-ink sm:border-2","children":["$","div",null,{"className":"relative aspect-[1440/839] w-full min-h-[50vh] bg-ink","children":["$","iframe",null,{"src":"https://docs.google.com/presentation/d/e/2PACX-1vQla4fx3QSdniKdAZflSW1BCBkGbInxcA7YkxtHCxYeE6mODyWKZ1bcj6_EJny2FGzfUKL2Z66AGiZM/pubembed?start=false&loop=true&delayms=10000","title":"KØK — франшиза","className":"absolute inset-0 h-full w-full border-0","allowFullScreen":true}]}]}]}]}],["$","footer",null,{"className":"bg-ink px-4 py-8 text-cream sm:px-6","children":["$","div",null,{"className":"mx-auto grid max-w-6xl gap-6 sm:grid-cols-3 sm:items-center","children":[["$","div",null,{"children":["$","img",null,{"src":"/brand/kok-logo-zhenil.png","alt":"KØK — Жеңіл әрі тез","className":"object-contain object-left h-16 w-auto max-w-[11rem] sm:h-[4.5rem] sm:max-w-[13rem]","width":910,"height":400,"decoding":"async"}]}],["$","div",null,{"className":"sm:text-center","children":["$","a",null,{"href":"mailto:sj@hostai.kz","className":"font-mono text-[12px] lowercase tracking-[0.08em] text-ochre hover:text-cream","children":"sj@hostai.kz"}]}],["$","div",null,{"className":"sm:text-right","children":[["$","svg",null,{"className":"mb-3 h-4 w-32 text-terra sm:ml-auto","viewBox":"0 0 200 18","fill":"none","aria-hidden":true,"children":["$","path",null,{"d":"M0 14 L14 4 L28 14 L42 4 L56 14 L70 4 L84 14 L98 4 L112 14 L126 4 L140 14 L154 4 L168 14 L182 4 L196 14","stroke":"currentColor","strokeWidth":"3","strokeLinejoin":"round"}]}],["$","p",null,{"className":"font-mono text-[11px] uppercase tracking-[0.16em] text-cream/45","children":"KØK · Алматы"}]]}]]}]}]],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":"$@5","staleTime":"$6","varyParams":null},{"rsc":["$","$1","h",{"children":[null,["$","$L7",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#3DAE5A"}]]}],["$","div",null,{"hidden":true,"children":["$","$L8",null,{"children":["$","$3",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"KØK — франшиза | KØK"}],["$","meta","1",{"name":"description","content":"Презентация франшизы KØK: формат точки, продукт и модель партнёрства."}],["$","meta","2",{"name":"application-name","content":"KØK"}],["$","link","3",{"rel":"author","href":"https://www.kokfood.kz"}],["$","meta","4",{"name":"author","content":"KØK"}],["$","meta","5",{"name":"keywords","content":"KØK,KOK,KŌK,кок,kokfood,kokfood.kz,Жеңіл әрі тез,fast gourmet,homemade healthy natural,grab and go,GRAB&GO,пита,шелпек,крудите,без фритюра,стрит фуд Алматы,urban food,франшиза,франшиза Казахстан,франшиза Қазақстан,Алматы,кейтеринг,street food,Almaty,Kazakhstan"}],["$","meta","6",{"name":"referrer","content":"origin-when-cross-origin"}],["$","meta","7",{"name":"creator","content":"KØK"}],["$","meta","8",{"name":"publisher","content":"KØK"}],["$","meta","9",{"name":"robots","content":"index, follow"}],["$","meta","10",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","11",{"name":"category","content":"food"}],["$","meta","12",{"name":"classification","content":"Fast gourmet · Grab&Go · Urban food"}],["$","meta","13",{"name":"geo.region","content":"KZ-ALA"}],["$","meta","14",{"name":"geo.placename","content":"Almaty"}],["$","meta","15",{"name":"language","content":"Russian, Kazakh, English"}],["$","link","16",{"rel":"canonical","href":"https://www.kokfood.kz"}],["$","link","17",{"rel":"alternate","hrefLang":"ru-KZ","href":"https://www.kokfood.kz"}],["$","link","18",{"rel":"alternate","hrefLang":"kk-KZ","href":"https://www.kokfood.kz"}],["$","link","19",{"rel":"alternate","hrefLang":"en","href":"https://www.kokfood.kz"}],["$","meta","20",{"property":"og:title","content":"KØK — Жеңіл әрі тез · fast gourmet"}],["$","meta","21",{"property":"og:description","content":"KØK — fast gourmet без фритюрного масла: питы, крудите и напитки. Homemade · healthy · natural. Grab&Go в Алматы и по Казахстану. Жеңіл әрі тез."}],"$L9","$La","$Lb","$Lc","$Ld","$Le","$Lf","$L10","$L11","$L12","$L13","$L14","$L15","$L16","$L17","$L18","$L19","$L1a","$L1b","$L1c","$L1d","$L1e"]}]}]}],"$L1f"]}],"isPartial":"$@20","staleTime":"$6","varyParams":null},{"rsc":"$L21","isPartial":"$@22","staleTime":"$6","varyParams":"$23"}],"isUpgradeableISRFallback":false,"a":"$@24","rootVaryParams":null,"needsRuntimeRequest":"$@25"}
+26:I[27201,["/_next/static/chunks/0h2qsuyze9ds1.js","/_next/static/chunks/0_35nf_nynsoj.js","/_next/static/chunks/0zehi7ma-xf7u.js","/_next/static/chunks/2v-4zwi-vm2y6.js"],"IconMark"]
+27:I[39756,["/_next/static/chunks/0h2qsuyze9ds1.js","/_next/static/chunks/0_35nf_nynsoj.js","/_next/static/chunks/0zehi7ma-xf7u.js","/_next/static/chunks/2v-4zwi-vm2y6.js"],"default"]
+28:I[37457,["/_next/static/chunks/0h2qsuyze9ds1.js","/_next/static/chunks/0_35nf_nynsoj.js","/_next/static/chunks/0zehi7ma-xf7u.js","/_next/static/chunks/2v-4zwi-vm2y6.js"],"default"]
+4:null
+9:["$","meta","22",{"property":"og:url","content":"https://www.kokfood.kz"}]
+a:["$","meta","23",{"property":"og:site_name","content":"KØK"}]
+b:["$","meta","24",{"property":"og:locale","content":"ru_KZ"}]
+c:["$","meta","25",{"property":"og:image","content":"https://www.kokfood.kz/brand/kok-og.jpg"}]
+d:["$","meta","26",{"property":"og:image:width","content":"1200"}]
+e:["$","meta","27",{"property":"og:image:height","content":"630"}]
+f:["$","meta","28",{"property":"og:image:alt","content":"KØK — fast gourmet · Жеңіл әрі тез"}]
+10:["$","meta","29",{"property":"og:locale:alternate","content":"kk_KZ"}]
+11:["$","meta","30",{"property":"og:locale:alternate","content":"en_US"}]
+12:["$","meta","31",{"property":"og:type","content":"website"}]
+13:["$","meta","32",{"name":"twitter:card","content":"summary_large_image"}]
+14:["$","meta","33",{"name":"twitter:title","content":"KØK — Жеңіл әрі тез · fast gourmet"}]
+15:["$","meta","34",{"name":"twitter:description","content":"KØK — fast gourmet без фритюрного масла: питы, крудите и напитки. Homemade · healthy · natural. Grab&Go в Алматы и по Казахстану. Жеңіл әрі тез."}]
+16:["$","meta","35",{"name":"twitter:image","content":"https://www.kokfood.kz/brand/kok-og.jpg"}]
+17:["$","link","36",{"rel":"shortcut icon","href":"/favicon.ico"}]
+18:["$","link","37",{"rel":"icon","href":"/favicon.ico?favicon.3guljmio_665c.ico","sizes":"48x48","type":"image/x-icon"}]
+19:["$","link","38",{"rel":"icon","href":"/favicon.ico","sizes":"48x48"}]
+1a:["$","link","39",{"rel":"icon","href":"/icon-32.png","sizes":"32x32","type":"image/png"}]
+1b:["$","link","40",{"rel":"icon","href":"/icon-192.png","sizes":"192x192","type":"image/png"}]
+1c:["$","link","41",{"rel":"icon","href":"/brand/kok-mark-k.png","sizes":"512x512","type":"image/png"}]
+1d:["$","link","42",{"rel":"apple-touch-icon","href":"/apple-icon.png","sizes":"180x180","type":"image/png"}]
+1e:["$","$L26","43",{}]
+1f:["$","meta",null,{"name":"next-size-adjust","content":""}]
+21:["$","$1","c",{"children":[null,["$","$L27",null,{"parallelRouterKey":"children","template":["$","$L28",null,{}]}]]}]
+25:true
+6:300
+6:C
+24:0
+20:"$undefined"
+22:"$undefined"
+5:"$undefined"

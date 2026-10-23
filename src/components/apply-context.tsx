@@ -1,6 +1,13 @@
 "use client";
 
-import { createContext, useCallback, useContext, useMemo, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 
 type ApplyContextValue = {
   open: boolean;
@@ -26,6 +33,16 @@ export function ApplyProvider({ children }: { children: React.ReactNode }) {
   const closeApply = useCallback(() => {
     setOpen(false);
   }, []);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("apply") === "1") {
+      openApply();
+      const url = new URL(window.location.href);
+      url.searchParams.delete("apply");
+      window.history.replaceState({}, "", url.pathname + url.hash);
+    }
+  }, [openApply]);
 
   const value = useMemo(
     () => ({ open, city, session, openApply, closeApply }),

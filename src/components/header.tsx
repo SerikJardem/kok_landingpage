@@ -1,14 +1,25 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useApply } from "@/components/apply-context";
-import { Stamp, Wordmark } from "@/components/brand";
+import { LogoLockup } from "@/components/brand";
+import { Button } from "@/components/ui/button";
 import { nav } from "@/lib/content";
+
+const homeLinks = [
+  { href: "/catering", label: nav.catering },
+  { href: "/franchise", label: nav.franchise },
+] as const;
 
 export function Header() {
   const { openApply } = useApply();
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const isHome = pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -17,49 +28,52 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const onDark = !scrolled;
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
+
+  const overPhoto = isHome && !scrolled && !menuOpen;
+  const inkOnPaper = !isHome || scrolled || menuOpen;
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors ${
-        scrolled ? "bg-cream/94 shadow-[0_1px_0_#2f3a25] backdrop-blur-md" : "bg-transparent"
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+        inkOnPaper
+          ? "bg-paper/95 shadow-[0_1px_0_#3dae5a] backdrop-blur-md"
+          : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-        <a
-          href="#top"
-          className={onDark ? "text-lime" : "text-forest"}
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+        <Link
+          href="/"
+          className="flex min-w-0 items-center text-leaf"
           onClick={() => setMenuOpen(false)}
+          aria-label="KØK — Жеңіл әрі тез"
         >
-          <Wordmark className="h-8 w-auto sm:h-9" />
-        </a>
+          <LogoLockup
+            variant="inline"
+            align="left"
+            className="h-8 w-auto max-w-[14rem] shrink-0 sm:h-9 sm:max-w-[17rem]"
+          />
+        </Link>
         <nav
-          className={`hidden items-center gap-8 font-display text-[12px] font-bold uppercase tracking-[0.18em] md:flex ${
-            onDark ? "text-cream" : "text-forest"
+          className={`hidden items-center gap-6 font-display text-[12px] font-bold uppercase tracking-[0.18em] lg:gap-8 md:flex ${
+            overPhoto ? "text-cream" : "text-ink"
           }`}
         >
-          <a href="#locations" className="hover:opacity-70">
-            {nav.locations}
-          </a>
-          <a href="#economics" className="hover:opacity-70">
-            {nav.economics}
-          </a>
-          <button
-            type="button"
-            onClick={() => openApply()}
-            className={`px-4 py-2 transition ${
-              onDark
-                ? "bg-lime text-ink hover:bg-cream"
-                : "bg-forest text-cream shadow-[3px_3px_0_#d86f45] hover:translate-x-[1px] hover:translate-y-[1px]"
-            }`}
-          >
+          {homeLinks.map((item) => (
+            <Link key={item.href} href={item.href} className="hover:text-leaf">
+              {item.label}
+            </Link>
+          ))}
+          <Button size="sm" onClick={() => openApply()}>
             {nav.apply}
-          </button>
+          </Button>
         </nav>
         <button
           type="button"
           className={`font-display text-[11px] font-bold uppercase tracking-[0.16em] md:hidden ${
-            onDark ? "text-lime" : "text-forest"
+            overPhoto ? "text-cream" : "text-ink"
           }`}
           onClick={() => setMenuOpen((open) => !open)}
           aria-expanded={menuOpen}
@@ -68,25 +82,27 @@ export function Header() {
         </button>
       </div>
       {menuOpen ? (
-        <div className="border-t border-forest/20 bg-cream px-4 py-4 md:hidden">
-          <div className="flex flex-col gap-3 font-display text-[12px] font-bold uppercase tracking-[0.18em] text-forest">
-            <a href="#locations" onClick={() => setMenuOpen(false)}>
-              {nav.locations}
-            </a>
-            <a href="#economics" onClick={() => setMenuOpen(false)}>
-              {nav.economics}
-            </a>
-            <button
-              type="button"
-              className="bg-forest px-4 py-3 text-left text-cream"
+        <div className="border-t border-leaf/20 bg-paper px-4 py-4 md:hidden">
+          <div className="flex flex-col gap-3 font-display text-[12px] font-bold uppercase tracking-[0.18em] text-ink">
+            {homeLinks.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
+            <Button
+              size="wide"
+              className="justify-start"
               onClick={() => {
                 setMenuOpen(false);
                 openApply();
               }}
             >
               {nav.apply}
-            </button>
-            <Stamp className="w-fit text-terra">NOMAD MOOD</Stamp>
+            </Button>
           </div>
         </div>
       ) : null}
