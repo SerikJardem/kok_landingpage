@@ -74,17 +74,21 @@ export function Menu() {
               </motion.p>
 
               <ul className="mt-5 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-7 lg:gap-y-10">
-                {group.items.map((item, index) => (
+                {group.items.map((item, index) => {
+                  const isCutout = item.image.endsWith(".png");
+                  return (
                   <motion.li
                     key={item.name}
-                    className="flex flex-col"
+                    className="flex flex-col will-change-transform"
                     initial={{ opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
+                    whileHover={{ y: -8 }}
                     viewport={{ once: true, margin: "-40px" }}
                     transition={{
                       duration: 0.45,
                       delay: Math.min(index * 0.06, 0.2),
                       ease: [0.22, 1, 0.36, 1],
+                      y: { type: "spring", stiffness: 380, damping: 28 },
                     }}
                   >
                     {item.kcal && item.protein ? (
@@ -116,7 +120,9 @@ export function Menu() {
                     ) : null}
 
                     <div
-                      className={`relative aspect-square overflow-hidden bg-[#fffdf8] ${
+                      className={`relative aspect-square ${
+                        isCutout ? "overflow-visible bg-transparent" : "overflow-hidden bg-[#fffdf8]"
+                      } ${
                         item.kcal || item.sauce || item.highlight
                           ? "mt-3"
                           : ""
@@ -127,9 +133,11 @@ export function Menu() {
                         alt={item.alt}
                         fill
                         className={
-                          item.image.includes("veggie")
-                            ? "object-cover object-[58%_42%]"
-                            : "object-cover object-center"
+                          isCutout
+                            ? "object-contain object-center drop-shadow-[0_10px_18px_rgba(42,42,42,0.14)]"
+                            : item.image.includes("veggie")
+                              ? "object-cover object-[58%_42%]"
+                              : "object-cover object-center"
                         }
                         sizes="(max-width: 640px) 90vw, (max-width: 1024px) 44vw, 320px"
                       />
@@ -142,7 +150,8 @@ export function Menu() {
                       {item.blurb}
                     </p>
                   </motion.li>
-                ))}
+                  );
+                })}
               </ul>
             </div>
           ))}
