@@ -227,7 +227,7 @@ export function LogoLockup({
   const size =
     variant === "inline"
       ? { width: 1612, height: 232 }
-      : { width: 910, height: 400 };
+      : { width: 1308, height: 612 };
   return (
     // eslint-disable-next-line @next/next/no-img-element -- keyed PNG lockup; basePath applied manually
     <img
