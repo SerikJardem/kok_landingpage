@@ -1,6 +1,14 @@
 import { hero, stamps } from "@/lib/content";
 
-const items = [hero.mantra, stamps[1], stamps[3], "URBAN NOMAD FOOD", "РОДНОЕ В НОВОМ РИТМЕ"];
+const items = [
+  hero.mantra,
+  stamps[1],
+  "CHEF-CRAFTED FLAVOR",
+  "GRAB&GO",
+  "КØШЕ МіНЕЗДі ГАСТРОНОМИЯ",
+  "URBAN NOMAD FOOD",
+  "РОДНОЕ В НОВОМ РИТМЕ",
+];
 
 export function Marquee() {
   const sequence = [...items, ...items];
