@@ -263,8 +263,10 @@ export const footer = {
 
 export const stamps = [
   "URBAN FOOD",
-  "МОНО ПРОДУКТ КУРИЦА",
+  "CHEF-CRAFTED FLAVOR",
   "БЫСТРАЯ СБОРКА",
+  "GRAB&GO",
+  "КØШЕ МіНЕЗДі ГАСТРОНОМИЯ",
 ] as const;
 
 export const catering = {
