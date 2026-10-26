@@ -34,22 +34,19 @@ export const franchiseCases = {
       label: "скорость у кассы",
       blurb:
         "AI video analysis at checkout — очередь, время обслуживания, нагрузка на кассу. Computer vision for coffee shop / café POS speed.",
-      kind: "video" as const,
       src: "/videos/case-checkout-speed.mp4",
     },
     {
       label: "вход / ресепшен",
       blurb:
         "Видеоаналитика входа и ресепшена: поток гостей, встреча, пиковые часы. Hospitality computer vision at the door.",
-      kind: "video" as const,
       src: "/videos/case-reception.mp4",
     },
     {
       label: "зоны и время на производстве",
       blurb:
         "Зоны кухни и время на линии сборки — Vision AI для ресторана / dark kitchen. Kitchen zone video AI for HoReCa ops.",
-      kind: "youtube" as const,
-      src: "https://www.youtube.com/embed/ng1onQ42seE",
+      src: "/videos/case-production-zones.mp4",
     },
   ],
 } as const;

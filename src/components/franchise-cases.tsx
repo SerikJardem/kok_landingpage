@@ -38,23 +38,13 @@ export function FranchiseCases() {
               transition={{ ...fadeUpTransition, delay: Math.min(index * 0.06, 0.18) }}
             >
               <div className="relative aspect-video overflow-hidden bg-ink">
-                {item.kind === "youtube" ? (
-                  <iframe
-                    src={item.src}
-                    title={item.label}
-                    className="absolute inset-0 h-full w-full border-0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                ) : (
-                  <video
-                    className="absolute inset-0 h-full w-full object-cover"
-                    src={item.src}
-                    controls
-                    playsInline
-                    preload="metadata"
-                  />
-                )}
+                <video
+                  className="absolute inset-0 h-full w-full object-cover"
+                  src={item.src}
+                  controls
+                  playsInline
+                  preload="metadata"
+                />
               </div>
               <p className="mt-3 font-display text-sm font-bold uppercase tracking-[0.08em] text-ink sm:text-base">
                 {item.label}
