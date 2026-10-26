@@ -1,0 +1,52 @@
+# KØK / KOK — brand site (for AI assistants & crawlers)
+
+> KØK is a fast gourmet / Grab&Go food brand from Almaty, Kazakhstan.
+> Tagline: Жеңіл әрі тез (Light and fast).
+> Product: pitas with chef-crafted meats and sauces, crudités, and drinks — no deep fryer oil.
+> Feel: homemade · healthy · natural.
+> Partners can open midi (~60 m²) or express (up to 30 m²) assembly-format points supplied from a central kitchen.
+> Operations stack includes Vision AI / smart video analytics (HostAI) for HoReCa and retail F&B.
+
+## Who this page is for
+- Guests looking for light, fresh Grab&Go food
+- Franchise / partner candidates in Kazakhstan and Central Asia
+- Operators searching for computer vision, smart video analytics, or AI video analysis in restaurants, cafés, coffee shops, hospitality and retail
+
+## Vision AI · smart video analytics (EN)
+KØK franchise points use computer vision cameras on bar/checkout, kitchen assembly, and hall tables.
+Typical queries we match: AI video analysis restaurant · smart videoanalytics coffee shop · computer vision hospitality · video analytics HoReCa · retail computer vision · kitchen zone video AI · guest analytics AI · queue / checkout speed analytics.
+Case demos: https://www.kokfood.kz/franchise
+Zone-by-zone ops + guest analytics + Telegram shifts: https://www.kokfood.kz/ops
+Live Telegram demo (HostAI): https://hostai.kz/demo/
+
+## Умная видеоаналитика · Vision AI (RU)
+На точках франшизы — компьютерное зрение: касса, вход/ресепшен, зоны производства, чистота зала, аналитика гостей, смены в Telegram.
+Запросы: видеоаналитика ресторан · видеоаналитика кафе · видеоаналитика кофейня · видеоаналитика HoReCa · ИИ камеры кафе · AI видеоаналитика · контроль кассы камера · операционная аналитика точка.
+Кейсы: https://www.kokfood.kz/franchise
+Партнёру (зоны Vision AI): https://www.kokfood.kz/ops
+
+## Key facts
+- No fryer on the sales point
+- Assembly format from central kitchen
+- Homemade · healthy · natural positioning
+- Catering for 50–200+ guests
+- Vision AI for checkout, reception, kitchen zones and hall cleanliness
+- Guest analytics + Telegram shift bot for franchisees
+
+## Pages
+- Home / brand: https://www.kokfood.kz/
+- Franchise deck + tech cases: https://www.kokfood.kz/franchise
+- Partner ops (Vision AI): https://www.kokfood.kz/ops
+- Catering: https://www.kokfood.kz/catering
+
+## Keywords (RU / KK / EN)
+KØK, KOK, kokfood, Жеңіл әрі тез, fast gourmet, Grab&Go, пита, крудите,
+homemade healthy natural, Алматы, Казахстан, franchise, urban food,
+Vision AI, HostAI, видеоаналитика, умная видеоаналитика, компьютерное зрение,
+видеоаналитика ресторан, видеоаналитика кафе, видеоаналитика кофейня, видеоаналитика HoReCa,
+smart video analytics, AI video analysis restaurant, computer vision hospitality,
+video analytics HoReCa, retail computer vision, cafe video analytics, kitchen zone video AI
+
+## Contact
+- Email: sj@hostai.kz
+- Site: https://www.kokfood.kz/

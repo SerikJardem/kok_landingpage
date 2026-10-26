@@ -36,3 +36,21 @@ export interface ApplyRequestBody {
   contact: string;
   company?: string;
 }
+
+export type CateringNeed = "food" | "drinks" | "both";
+
+export type CateringHeadcount = "50" | "100" | "200plus";
+
+export interface CateringRequestBody {
+  need: CateringNeed;
+  headcount: CateringHeadcount;
+  eventDate: string;
+  eventTime: string;
+  city: string;
+  venue: string;
+  organization: string;
+  name: string;
+  contact: string;
+  notes: string;
+  company?: string;
+}

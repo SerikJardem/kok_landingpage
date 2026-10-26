@@ -1,28 +1,41 @@
 "use client";
 
-import { useApply } from "@/components/apply-context";
-import { Stamp, WavePattern } from "@/components/brand";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { SparkBurst, WavePattern } from "@/components/brand";
+import { buttonVariants } from "@/components/ui/button";
+import { fadeUp, fadeUpTransition, viewportOnce } from "@/lib/motion";
 import { closeCta } from "@/lib/content";
+import { cn } from "@/lib/utils";
 
 export function CloseCta() {
-  const { openApply } = useApply();
   return (
-    <section className="bg-terra px-4 py-20 text-cream sm:px-6 sm:py-24">
-      <div className="mx-auto max-w-4xl text-center">
-        <Stamp className="text-cream">APPLY</Stamp>
-        <h2 className="mt-6 font-display text-4xl font-black leading-tight tracking-[-0.04em] sm:text-6xl">
+    <section className="relative overflow-hidden bg-leaf px-4 py-12 text-cream sm:px-6 sm:py-14">
+      <SparkBurst className="pointer-events-none absolute left-[8%] top-8 h-8 w-8 text-ochre" />
+      <SparkBurst className="pointer-events-none absolute right-[10%] bottom-8 h-7 w-7 text-ochre" />
+
+      <motion.div
+        className="relative mx-auto max-w-3xl text-center"
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={viewportOnce}
+        transition={fadeUpTransition}
+      >
+        <h2 className="font-display text-4xl font-black leading-tight tracking-[-0.04em] sm:text-5xl">
           {closeCta.title}
         </h2>
-        <WavePattern className="mx-auto mt-6 h-5 w-48 text-ochre" />
-        <p className="mx-auto mt-6 max-w-xl text-lg text-cream/90">{closeCta.deck}</p>
-        <button
-          type="button"
-          onClick={() => openApply()}
-          className="mt-10 bg-forest px-8 py-4 font-display text-[12px] font-bold uppercase tracking-[0.2em] text-cream shadow-[5px_5px_0_#1a1a1a]"
+        <p className="mx-auto mt-3 max-w-xl text-base font-normal leading-relaxed text-cream/85">
+          {closeCta.deck}
+        </p>
+        <WavePattern className="mx-auto mt-5 h-5 w-48 text-ochre" />
+        <Link
+          href={closeCta.href}
+          className={cn(buttonVariants({ variant: "accent", size: "lg" }), "mt-6")}
         >
           {closeCta.cta}
-        </button>
-      </div>
+        </Link>
+      </motion.div>
     </section>
   );
 }
