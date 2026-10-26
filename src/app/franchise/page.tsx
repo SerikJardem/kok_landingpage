@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Footer } from "@/components/footer";
+import { FranchiseCases } from "@/components/franchise-cases";
 import { franchiseDeck } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -23,6 +24,7 @@ export default function FranchisePage() {
             </div>
           </div>
         </section>
+        <FranchiseCases />
       </main>
       <Footer />
     </>

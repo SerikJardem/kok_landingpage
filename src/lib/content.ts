@@ -24,6 +24,29 @@ export const franchiseDeck = {
     "https://docs.google.com/presentation/d/e/2PACX-1vQla4fx3QSdniKdAZflSW1BCBkGbInxcA7YkxtHCxYeE6mODyWKZ1bcj6_EJny2FGzfUKL2Z66AGiZM/pubembed?start=false&loop=true&delayms=10000",
 } as const;
 
+/** Franchise tech case clips under the deck. */
+export const franchiseCases = {
+  title: "Кейсы технологии",
+  deck: "Примеры Vision AI и операционной аналитики на точке: касса, вход и производство.",
+  items: [
+    {
+      label: "скорость у кассы",
+      kind: "video" as const,
+      src: "/videos/case-checkout-speed.mp4",
+    },
+    {
+      label: "вход / ресепшен",
+      kind: "video" as const,
+      src: "/videos/case-reception.mp4",
+    },
+    {
+      label: "зоны и время на производстве",
+      kind: "youtube" as const,
+      src: "https://www.youtube.com/embed/ng1onQ42seE",
+    },
+  ],
+} as const;
+
 export const hero = {
   brand: "fast gourmet",
   deck: "Мы объединили приготовление мяса в стиле \"гурме\", секретные соусы и свежие овощи в единый концепт без фритюрного масла, создавая ресторанный вкус по цене быстрого перекуса.",
