@@ -1,11 +1,26 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Footer } from "@/components/footer";
 import { FranchiseCases } from "@/components/franchise-cases";
 import { franchiseDeck } from "@/lib/content";
+import { franchiseSeo } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: franchiseDeck.title,
-  description: franchiseDeck.description,
+  title: franchiseSeo.title,
+  description: franchiseSeo.description,
+  keywords: [...franchiseSeo.keywords],
+  alternates: { canonical: "/franchise" },
+  openGraph: {
+    title: franchiseSeo.title,
+    description: franchiseSeo.description,
+    url: "/franchise",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: franchiseSeo.title,
+    description: franchiseSeo.description,
+  },
 };
 
 export default function FranchisePage() {
@@ -23,6 +38,15 @@ export default function FranchisePage() {
               />
             </div>
           </div>
+          <p className="mx-auto mt-4 max-w-6xl px-4 text-sm text-ink/60 sm:px-0">
+            {franchiseDeck.description} · Vision AI cases below ·{" "}
+            <Link
+              className="underline decoration-leaf/50 underline-offset-2"
+              href="/ops"
+            >
+              /ops
+            </Link>
+          </p>
         </section>
         <FranchiseCases />
       </main>

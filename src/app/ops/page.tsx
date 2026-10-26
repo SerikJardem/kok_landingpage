@@ -7,11 +7,24 @@ import { Numbers } from "@/components/numbers";
 import { OpsTelegramMock } from "@/components/ops-telegram-mock";
 import { Product } from "@/components/product";
 import { opsProof } from "@/lib/ops-proof";
+import { opsSeo } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Партнёру: Vision AI, аналитика, смены",
-  description:
-    "Цифры точки, продукт, Vision AI по зонам, аналитика гостей и смены в Telegram. Что получает франчайзи KØK.",
+  title: opsSeo.title,
+  description: opsSeo.description,
+  keywords: [...opsSeo.keywords],
+  alternates: { canonical: "/ops" },
+  openGraph: {
+    title: opsSeo.title,
+    description: opsSeo.description,
+    url: "/ops",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: opsSeo.title,
+    description: opsSeo.description,
+  },
 };
 
 export default function OpsPage() {

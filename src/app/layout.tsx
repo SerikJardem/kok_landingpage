@@ -38,7 +38,8 @@ export const metadata: Metadata = {
   creator: "KØK",
   publisher: "KØK",
   category: "food",
-  classification: "Fast gourmet · Grab&Go · Urban food",
+  classification:
+    "Fast gourmet · Grab&Go · Urban food · Vision AI · HoReCa video analytics",
   referrer: "origin-when-cross-origin",
   icons: {
     icon: [

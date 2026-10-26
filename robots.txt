@@ -7,7 +7,19 @@ Allow: /
 User-Agent: ChatGPT-User
 Allow: /
 
+User-Agent: OAI-SearchBot
+Allow: /
+
 User-Agent: Google-Extended
+Allow: /
+
+User-Agent: GoogleOther
+Allow: /
+
+User-Agent: Googlebot
+Allow: /
+
+User-Agent: Gemini-Deep-Research
 Allow: /
 
 User-Agent: anthropic-ai
@@ -16,7 +28,28 @@ Allow: /
 User-Agent: ClaudeBot
 Allow: /
 
+User-Agent: Claude-Web
+Allow: /
+
 User-Agent: PerplexityBot
+Allow: /
+
+User-Agent: Applebot-Extended
+Allow: /
+
+User-Agent: Bytespider
+Allow: /
+
+User-Agent: CCBot
+Allow: /
+
+User-Agent: meta-externalagent
+Allow: /
+
+User-Agent: FacebookBot
+Allow: /
+
+User-Agent: cohere-ai
 Allow: /
 
 Host: https://www.kokfood.kz

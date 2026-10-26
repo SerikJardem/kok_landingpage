@@ -59,6 +59,7 @@ export function FranchiseCases() {
               <p className="mt-3 font-display text-sm font-bold uppercase tracking-[0.08em] text-ink sm:text-base">
                 {item.label}
               </p>
+              <p className="mt-1.5 text-sm leading-snug text-ink/65">{item.blurb}</p>
             </motion.li>
           ))}
         </ul>
