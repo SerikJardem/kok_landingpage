@@ -230,7 +230,8 @@ export const menu = {
 export const closeCta = {
   title: "Вдохновлены KØK?",
   deck: "Если вам близка концепция и желаете открыть свой KøK — оставляйте контакт. Посчитаем локацию: midi 60 м² или express до 30 м².",
-  cta: "Оставить контакт",
+  cta: "Узнать условия",
+  href: "/franchise",
 } as const;
 
 export const territories = {

@@ -1,14 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useApply } from "@/components/apply-context";
+import Link from "next/link";
 import { SparkBurst, WavePattern } from "@/components/brand";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { fadeUp, fadeUpTransition, viewportOnce } from "@/lib/motion";
 import { closeCta } from "@/lib/content";
+import { cn } from "@/lib/utils";
 
 export function CloseCta() {
-  const { openApply } = useApply();
   return (
     <section className="relative overflow-hidden bg-leaf px-4 py-12 text-cream sm:px-6 sm:py-14">
       <SparkBurst className="pointer-events-none absolute left-[8%] top-8 h-8 w-8 text-ochre" />
@@ -29,14 +29,12 @@ export function CloseCta() {
           {closeCta.deck}
         </p>
         <WavePattern className="mx-auto mt-5 h-5 w-48 text-ochre" />
-        <Button
-          variant="accent"
-          size="lg"
-          onClick={() => openApply()}
-          className="mt-6"
+        <Link
+          href={closeCta.href}
+          className={cn(buttonVariants({ variant: "accent", size: "lg" }), "mt-6")}
         >
           {closeCta.cta}
-        </Button>
+        </Link>
       </motion.div>
     </section>
   );

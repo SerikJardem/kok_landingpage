@@ -36,7 +36,7 @@ export function Header() {
     setMenuOpen(false);
   }, [pathname]);
 
-  /** Rare soft nudges on home — only while scanning the hero, not mid-page. */
+  /** Rare soft nudges on home — keeps going after scroll so scanners still notice. */
   useEffect(() => {
     if (!isHome) {
       setNudge(null);
@@ -53,7 +53,7 @@ export function Header() {
     let clearTimer = 0;
 
     const fire = () => {
-      if (cancelled || window.scrollY > 140) return;
+      if (cancelled) return;
       const which: NudgeKey = step % 2 === 0 ? "catering" : "franchise";
       setNudge(which);
       window.clearTimeout(clearTimer);
