@@ -7,17 +7,21 @@ import { useApply } from "@/components/apply-context";
 import { LogoLockup } from "@/components/brand";
 import { Button } from "@/components/ui/button";
 import { nav } from "@/lib/content";
+import { cn } from "@/lib/utils";
 
 const homeLinks = [
-  { href: "/catering", label: nav.catering },
-  { href: "/franchise", label: nav.franchise },
+  { href: "/catering", label: nav.catering, key: "catering" as const },
+  { href: "/franchise", label: nav.franchise, key: "franchise" as const },
 ] as const;
+
+type NudgeKey = (typeof homeLinks)[number]["key"];
 
 export function Header() {
   const { openApply } = useApply();
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [nudge, setNudge] = useState<NudgeKey | null>(null);
 
   const isHome = pathname === "/";
 
@@ -31,6 +35,44 @@ export function Header() {
   useEffect(() => {
     setMenuOpen(false);
   }, [pathname]);
+
+  /** Rare soft nudges on home — only while scanning the hero, not mid-page. */
+  useEffect(() => {
+    if (!isHome) {
+      setNudge(null);
+      return;
+    }
+
+    const reduce =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) return;
+
+    let cancelled = false;
+    let step = 0;
+    let clearTimer = 0;
+
+    const fire = () => {
+      if (cancelled || window.scrollY > 140) return;
+      const which: NudgeKey = step % 2 === 0 ? "catering" : "franchise";
+      setNudge(which);
+      window.clearTimeout(clearTimer);
+      clearTimer = window.setTimeout(() => {
+        if (!cancelled) setNudge(null);
+      }, 1200);
+      step += 1;
+    };
+
+    const first = window.setTimeout(fire, 2200);
+    const interval = window.setInterval(fire, 7800);
+
+    return () => {
+      cancelled = true;
+      window.clearTimeout(first);
+      window.clearTimeout(clearTimer);
+      window.clearInterval(interval);
+    };
+  }, [isHome]);
 
   const overPhoto = isHome && !scrolled && !menuOpen;
   const inkOnPaper = !isHome || scrolled || menuOpen;
@@ -62,7 +104,15 @@ export function Header() {
           }`}
         >
           {homeLinks.map((item) => (
-            <Link key={item.href} href={item.href} className="hover:text-leaf">
+            <Link
+              key={item.href}
+              href={item.href}
+              className={cn(
+                "nav-attention hover:text-leaf",
+                isHome && "nav-attention--live",
+                nudge === item.key && "nav-attention--nudge",
+              )}
+            >
               {item.label}
             </Link>
           ))}
@@ -89,6 +139,10 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
+                className={cn(
+                  "nav-attention nav-attention--live",
+                  nudge === item.key && "nav-attention--nudge",
+                )}
               >
                 {item.label}
               </Link>
